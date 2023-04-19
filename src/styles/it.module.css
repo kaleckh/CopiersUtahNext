@@ -47,7 +47,7 @@
     font-size: 25px;
     font-weight: 400;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     letter-spacing: 1px;
 }
 
@@ -58,7 +58,7 @@
     font-size: 50px;
     font-weight: 400;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     letter-spacing: 1px;
 }
 
@@ -275,7 +275,7 @@
 
 .sideRowLeft {
     width: 20%;
-    text-align: end;
+    text-align: flex-end;
     padding: 20px;
 }
 

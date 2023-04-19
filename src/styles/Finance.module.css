@@ -55,7 +55,7 @@
     height: 10vh;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .centerLarge {
@@ -65,7 +65,7 @@
     font-size: 50px;
     font-weight: 400;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     letter-spacing: 1px;
 }
 
@@ -414,7 +414,7 @@
 .end {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     cursor: pointer;
 }
 

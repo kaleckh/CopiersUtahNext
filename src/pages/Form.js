@@ -82,7 +82,7 @@ const Form = (props) => {
 						name="telphone"
 						placeholder="Phone Number"
 						pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-						maxlength="12"
+						maxLength="12"
 						title="Ten digits code"
 						required
 					/>

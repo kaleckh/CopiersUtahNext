@@ -5,7 +5,7 @@ import Form from './Form';
 // import Logo from './logo.png';
 import styles from '../styles/Finance.module.css';
 import Footer from './Footer';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const Finance = () => {
 	const [ toggle, setToggle ] = useState(false);
@@ -24,12 +24,12 @@ const Finance = () => {
 	return (
 		<div className={styles.main}>
 			<div>
-				{/* <TawkMessengerReact
+				<TawkMessengerReact
 					onLoad={onLoad}
 					propertyId="5abd4931d7591465c7090c65"
 					widgetId="default"
 					useRef={tawkMessengerRef}
-				/> */}
+				/>
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
