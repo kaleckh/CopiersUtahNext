@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html style={{fontFamily:"arial", scrollBehavior:"smooth"}} lang="en">
       <Head />
       <body>
         <Main />
