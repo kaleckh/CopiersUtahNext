@@ -1,5 +1,5 @@
-import styles from '../styles/Header.module.css';
-import { useRouter } from 'next/router';
+import styles from "../styles/Header.module.css";
+import { useRouter } from "next/router";
 export default function Header(props) {
 	const router = useRouter();
 
@@ -7,7 +7,7 @@ export default function Header(props) {
 		<header className={styles.contactHeader}>
 			<div className={styles.headerContainer}>
 				<div className={styles.pieceContainer}>
-					<div className={styles.headerPieces} onClick={() => {router.push('/')}}>
+					<div className={styles.headerPieces} onClick={() => {router.push("/")}}>
 						Home
 					</div>
 				</div>
@@ -15,21 +15,21 @@ export default function Header(props) {
 					<div
 						className={styles.headerPieces}
 						onClick={() => {
-							router.push('/products')
+							router.push("/products")
 						}}
 					>
 						Product Line
 					</div>
 				</div>
 				<div className={styles.pieceContainer}>
-					<div className={styles.headerPieces} onClick={() => router.push('/finance')}>
+					<div className={styles.headerPieces} onClick={() => router.push("/finance")}>
 						Financing
 					</div>
 				</div>
 				<div className={styles.pieceContainer}>
 					<div
 						onClick={() => {
-							router.push('/contact');
+							router.push("/contact");
 						}}
 						className={styles.headerPieces}
 					>

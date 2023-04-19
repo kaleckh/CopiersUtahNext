@@ -1,14 +1,14 @@
-import { useRef, useState } from 'react';
-import Header from './Header';
-import Form from './Form';
-import Image from 'next/image';
-// import Logo from '../Photos/logo.png';
-// import Menu from '../Photos/menu.png';
-// import Repair from '../Photos/repair.jpg';
-import styles from '../styles/shortTerm.module.css';
+import { useRef, useState } from "react";
+import Header from "./Header";
+import Form from "./Form";
+import Image from "next/image";
+// import Logo from "../Photos/logo.png";
+// import Menu from "../Photos/menu.png";
+// import Repair from "../Photos/repair.jpg";
+import styles from "../styles/shortTerm.module.css";
 
-import Footer from './Footer';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import Footer from "./Footer";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = () => {
 	const tawkMessengerRef = useRef();
@@ -18,7 +18,7 @@ const Home = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log('onLoad works!');
+		console.log("onLoad works!");
 	};
 	// const navigate = useNavigate();
 	return (
@@ -33,7 +33,7 @@ const Home = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" width={150} height={100} />
+					<Image src="/static/logo.jpg" alt="our copiers utah logo" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
@@ -52,15 +52,15 @@ const Home = () => {
 						<div className={styles.woman} />
 					</div>
 					{quote ? (
-						<div style={{ fontSize: '30px', fontWeight: '300' }} className={styles.title}>
-							Awesome, you're next in line for a call!
+						<div style={{ fontSize: "30px", fontWeight: "300" }} className={styles.title}>
+							Awesome, you"re next in line for a call!
 						</div>
 					) : (
 						<Form
 							quote={() => {
 								setQuote(!quote);
 							}}
-							title={'Get A Quote'}
+							title={"Get A Quote"}
 						/>
 					)}
 				</div>

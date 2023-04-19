@@ -1,18 +1,18 @@
-import React, { useRef, useState } from 'react';
-import Header from './Header';
-import Axios from 'axios';
-import Image from 'next/image';
-// import Logo from '../Photos/logo.png';
-import styles from '../styles/Fix.module.css';
-import Footer from './Footer';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import React, { useRef, useState } from "react";
+import Header from "./Header";
+import Axios from "axios";
+import Image from "next/image";
+// import Logo from "../Photos/logo.png";
+import styles from "../styles/Fix.module.css";
+import Footer from "./Footer";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Fix = () => {
 	const tawkMessengerRef = useRef();
 	const [ toggle, setToggle ] = useState(false);
-	const [ SuccessMsg, setSuccessMsg ] = useState('');
-	const [ ErrorMsg, setErrorMsg ] = useState('');
+	const [ SuccessMsg, setSuccessMsg ] = useState("");
+	const [ ErrorMsg, setErrorMsg ] = useState("");
 	const [ valid_token, setValidToken ] = useState([]);
 	const [ token, setToken ] = useState();
 	const captchaRef = useRef(null);
@@ -31,11 +31,11 @@ const Fix = () => {
 			setValidToken(valid_token);
 
 			if (valid_token[0].success === true) {
-				console.log('verified');
-				setSuccessMsg('Hurray!! you have submitted the form');
+				console.log("verified");
+				setSuccessMsg("Hurray!! you have submitted the form");
 			} else {
-				console.log('not verified');
-				setErrorMsg(' Sorry!! Verify you are not a bot');
+				console.log("not verified");
+				setErrorMsg(" Sorry!! Verify you are not a bot");
 			}
 		}
 	};
@@ -48,7 +48,7 @@ const Fix = () => {
 				Secret_Key: SECRET_KEY
 			});
 
-			APIResponse.push(response['data']);
+			APIResponse.push(response["data"]);
 			return APIResponse;
 		} catch (error) {
 			console.log(error);
@@ -59,7 +59,7 @@ const Fix = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log('onLoad works!');
+		console.log("onLoad works!");
 	};
 
 	return (
@@ -74,7 +74,7 @@ const Fix = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" width={150} height={100} />
+					<Image src="/static/logo.jpg" alt="man with tools" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
@@ -92,10 +92,10 @@ const Fix = () => {
 				<div className={styles.secondSection}>
 					<div className={styles.container}>
 						<div className={styles.black}>Schedule A Maintanance Call!</div>
-						<div style={{ width: '97%', display: 'flex' }}>
+						<div style={{ width: "97%", display: "flex" }}>
 							<div className={styles.number}>1</div>
 							<input
-								style={{ width: '82%', color: 'black' }}
+								style={{ width: "82%", color: "black" }}
 								className={styles.inputSingle}
 								placeholder="First Name"
 								type="text"
@@ -127,7 +127,7 @@ const Fix = () => {
 							<option value="2010">Evening</option>
 						</select>
 						<input
-							style={{ color: 'black' }}
+							style={{ color: "black" }}
 							className={styles.inputSingle}
 							type="text"
 							name=""
@@ -135,9 +135,9 @@ const Fix = () => {
 							placeholder="What type of service?"
 						/>
 						<ReCAPTCHA
-							style={{ display: 'flex', justifyContent: 'center' }}
+							style={{ display: "flex", justifyContent: "center" }}
 							className="recaptcha"
-							sitekey={'6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi'}
+							sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
 							ref={captchaRef}
 						/>
 						<button

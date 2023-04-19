@@ -1,14 +1,14 @@
 import { useState, useRef } from "react"
-import Header from './Header';
-import Image from 'next/image';
-import Form from './Form';
-// import Logo from '../Photos/logo.png';
+import Header from "./Header";
+import Image from "next/image";
+import Form from "./Form";
+// import Logo from "../Photos/logo.png";
 
 
-import styles from '../styles/it.module.css';
+import styles from "../styles/it.module.css";
 
-import Footer from './Footer';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import Footer from "./Footer";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
@@ -20,7 +20,7 @@ const Home = (props) => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log('onLoad works!');
+		console.log("onLoad works!");
 	};
 console.log(process.env.RECAPTCHA_SITE_KEY)
 	return (
@@ -35,7 +35,7 @@ console.log(process.env.RECAPTCHA_SITE_KEY)
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-				<Image src="/static/logo.jpg" width={150} height={100} />
+				<Image src="/static/logo.jpg" alt="a lady with icons around her head for it form" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div></div>
 						<div className={styles.infoBig}>Copiers Utah</div>
@@ -85,7 +85,7 @@ console.log(process.env.RECAPTCHA_SITE_KEY)
 						</div>
 					) : (
             <div>
-              {buttonToggle? <><Form quote={() => {setButtonToggle(!buttonToggle)}}/></> : <div className={styles.title}>Awesome, you're next in line!</div>}
+              {buttonToggle? <><Form quote={() => {setButtonToggle(!buttonToggle)}}/></> : <div className={styles.title}>Awesome, you"re next in line!</div>}
             </div>
 
 					)}

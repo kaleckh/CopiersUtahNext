@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
-import Header from './Header';
-import Image from 'next/image';
-import Footer from './Footer';
-import { useRouter } from 'next/router';
-// import Logo from '../Photos/logo.png';
-import styles from '../styles/product.module.css';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import React, { useRef } from "react";
+import Header from "./Header";
+import Image from "next/image";
+import Footer from "./Footer";
+import { useRouter } from "next/router";
+// import Logo from "../Photos/logo.png";
+import styles from "../styles/product.module.css";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Products = () => {
 	const router = useRouter();
 
@@ -15,7 +15,7 @@ const Products = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log('onLoad works!');
+		console.log("onLoad works!");
 	};
 	return (
 		<div className={styles.main}>
@@ -29,7 +29,7 @@ const Products = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-				<Image src="/static/logo.jpg" width={150} height={100} />
+				<Image src="/static/logo.jpg" alt="Our copiers utah logo" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div></div>
 						<div className={styles.infoBig}>Copiers Utah</div>
@@ -44,11 +44,11 @@ const Products = () => {
 			<Header />
 			<div
 				style={{
-					height: '78%',
-					display: 'flex',
-					alignItems: 'center',
-					flexDirection: 'column',
-					justifyContent: 'center'
+					height: "78%",
+					display: "flex",
+					alignItems: "center",
+					flexDirection: "column",
+					justifyContent: "center"
 				}}
 			>
 				<div className={styles.color}>Our Products</div>
@@ -64,7 +64,7 @@ const Products = () => {
 					<div
 						onClick={() => {
                             
-							router.push('/lexmark')
+							router.push("/lexmark")
 						}}
 						className={styles.copierContainer}
 					>
@@ -73,7 +73,7 @@ const Products = () => {
 					<div
 						className={styles.copierContainer}
 						onClick={() => {
-							router.push('/konika')
+							router.push("/konika")
 						}}
 					>
 						<div className={styles.konika} />
@@ -81,10 +81,10 @@ const Products = () => {
 					<div
 						className={styles.copierContainer}
 						onClick={() => {
-							router.push('/epson')
+							router.push("/epson")
 						}}
 					>
-						<div style={{ marginTop: '40px' }} className={styles.epson} />
+						<div style={{ marginTop: "40px" }} className={styles.epson} />
 					</div>
 				</div>
 			</div>

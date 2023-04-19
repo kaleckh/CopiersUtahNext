@@ -2,7 +2,7 @@
 import styles from "../styles/Footer.module.css";
 
 
-// import Logo from '../media/logo.svg'
+// import Logo from "../media/logo.svg"
 export default function Footer(props) {
 //   const navigate = useNavigate();
 

@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
-import Header from './Header';
-import Form from './Form';
-import Image from 'next/image';
-import Footer from './Footer';
-import { useRouter } from 'next/router';
-// import Logo from '../Photos/logo.png';
-import styles from '../styles/konika.module.css';
-// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
-import { useState } from 'react';
+import React, { useRef } from "react";
+import Header from "./Header";
+import Form from "./Form";
+import Image from "next/image";
+import Footer from "./Footer";
+import { useRouter } from "next/router";
+// import Logo from "../Photos/logo.png";
+import styles from "../styles/konika.module.css";
+// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import { useState } from "react";
 const Products = () => {
 	const tawkMessengerRef = useRef();
 	const [ gray, setGray ] = useState(true);
@@ -17,7 +17,7 @@ const Products = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log('onLoad works!');
+		console.log("onLoad works!");
 	};
 	return (
 		<div className={styles.main}>
@@ -31,7 +31,7 @@ const Products = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" width={150} height={100} />
+					<Image src="/static/logo.jpg" alt="konica printer" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
@@ -46,21 +46,21 @@ const Products = () => {
 			<Header />
 			<div
 				style={{
-					height: '100vh',
-					display: 'flex',
-					alignItems: 'center',
-					flexDirection: 'column',
-					justifyContent: 'center'
+					height: "100vh",
+					display: "flex",
+					alignItems: "center",
+					flexDirection: "column",
+					justifyContent: "center"
 				}}
 			>
 				<div className={styles.backContainer}>
 					<div
 						onClick={() => {
-							router.push('/products');
+							router.push("/products");
 						}}
-						style={{ fontSize: '25px', fontWeight: '400', cursor: 'pointer' }}
+						style={{ fontSize: "25px", fontWeight: "400", cursor: "pointer" }}
 					>
-						{' '}
+						{" "}
 						{`X`}
 					</div>
 				</div>
@@ -114,10 +114,10 @@ const Products = () => {
 									Other Features
 								</div>
 							</div>
-							<div className={styles.line} style={{ backgroundColor: 'black', width: '100%' }} />
+							<div className={styles.line} style={{ backgroundColor: "black", width: "100%" }} />
 							<div>
 								{gray ? (
-									<div className={styles.paragraph} style={{ textAlign: 'center' }}>
+									<div className={styles.paragraph} style={{ textAlign: "center" }}>
 										The bizhub 227 provides productivity features to speed your output economically,
 										including 22 ppm printing, color scanning, powerful finishing options for
 										right-size scalability and enhanced control panel which now features a new

@@ -1,12 +1,12 @@
-import styles from '../styles/Form.module.css';
-import React, { useState, useRef } from 'react';
-import { MDBInput, MDBTextArea } from 'mdb-react-ui-kit';
-import Axios from 'axios';
-import ReCAPTCHA from 'react-google-recaptcha';
+import styles from "../styles/Form.module.css";
+import React, { useState, useRef } from "react";
+import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
+import Axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (props) => {
-	const [ SuccessMsg, setSuccessMsg ] = useState('');
-	const [ ErrorMsg, setErrorMsg ] = useState('');
+	const [ SuccessMsg, setSuccessMsg ] = useState("");
+	const [ ErrorMsg, setErrorMsg ] = useState("");
 	const [ valid_token, setValidToken ] = useState([]);
 	const [ token, setToken ] = useState();
 	const captchaRef = useRef(null);
@@ -25,11 +25,11 @@ const Form = (props) => {
 			setValidToken(valid_token);
 
 			if (valid_token[0].success === true) {
-				console.log('verified');
-				setSuccessMsg('Hurray!! you have submitted the form');
+				console.log("verified");
+				setSuccessMsg("Hurray!! you have submitted the form");
 			} else {
-				console.log('not verified');
-				setErrorMsg(' Sorry!! Verify you are not a bot');
+				console.log("not verified");
+				setErrorMsg(" Sorry!! Verify you are not a bot");
 			}
 		}
 	};
@@ -42,7 +42,7 @@ const Form = (props) => {
 				Secret_Key: SECRET_KEY
 			});
 
-			APIResponse.push(response['data']);
+			APIResponse.push(response["data"]);
 			return APIResponse;
 		} catch (error) {
 			console.log(error);
@@ -55,12 +55,12 @@ const Form = (props) => {
 			<div className={styles.black}>Get Your free Quote!</div>
 			<div
 				style={{
-					width: '100%',
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'space-evenly',
-					height: '80%',
-					alignItems: 'center'
+					width: "100%",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-evenly",
+					height: "80%",
+					alignItems: "center"
 				}}
 			>
 				<div className={styles.space}>
@@ -93,7 +93,7 @@ const Form = (props) => {
 					<input className={styles.inputSingle} placeholder="Comments" type="text" />
 				</div>
 			</div>
-			<div style={{ height: '25%', display:"flex" }} className={styles.padding}>
+			<div style={{ height: "25%", display:"flex" }} className={styles.padding}>
 				    <ReCAPTCHA style={{marginBottom:"10px", display:"flex", justifyContent:"center"}} className="recaptcha" sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"} ref={captchaRef} />
 			</div>
 			<button
