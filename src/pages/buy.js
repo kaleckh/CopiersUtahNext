@@ -70,7 +70,7 @@ const Home = (props) => {
 						/>
 					</div>
 				) : (
-					<div className={styles.title}>Awesome, we will be contacting you shortly!</div>
+					<h1 className={styles.title}>Awesome, we will be contacting you shortly!</h1>
 				)}
 			</div>
 

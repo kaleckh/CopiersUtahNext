@@ -26,7 +26,7 @@ export default function Home() {
 					<Image src="/static/logo.png" alt="the copiers utah logo" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
-						<div className={styles.infoBig}>Copiers Utah</div>
+						<h1 className={styles.infoBig}>Copiers Utah</h1>
 						<div className={styles.mediumColumn}>
 							<div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
 							<div className={styles.infoSmall}>info@copiersutah.com</div>
@@ -82,7 +82,7 @@ export default function Home() {
 						<div className={styles.row}>
 							<div
 								onClick={() => {
-									router.push('/it');
+									router.push('/It');
 								}}
 								className={styles.shade}
 							>
@@ -110,7 +110,7 @@ export default function Home() {
 				<div className={styles.line} />
 				<div className={styles.needSpace}>
 					<div className={styles.middle}>
-						<div className={styles.reviewBig}>Recent Google Reviews...</div>
+						<h1 className={styles.reviewBig}>Recent Google Reviews...</h1>
 					</div>
 					<div className={styles.reviewRow}>
 						<div className={styles.paragraphContainer}>

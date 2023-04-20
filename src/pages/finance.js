@@ -59,7 +59,7 @@ const Finance = () => {
 			<Header />
 			<div id="quote" className={styles.secondSection}>
 				<div className={styles.eighty}>
-					<div className={styles.title}>Copiers Utah offers short and long term copier rentals.</div>
+					<h1 className={styles.title}>Copiers Utah offers short and long term copier rentals.</h1>
 					<div className={styles.row}>
 						<div className={styles.column}>
 							<div className={styles.woman} />
@@ -77,7 +77,7 @@ const Finance = () => {
 							<div className={styles.center}>
 								{quoteToggle ? (
 									<div style={{ display: 'contents' }}>
-										<div className={styles.titleBig}>Financing Made Easy</div>
+										<h2 className={styles.titleBig}>Financing Made Easy</h2>
 										<div className={styles.paragraph}>
 											We know how it can be stressful finding a printer. That"s why we"ve made it
 											easier than ever to find your next one and get you all your information on
@@ -110,25 +110,25 @@ const Finance = () => {
 			</div>
 
 			<div className={styles.thirdSection}>
-				<div className={styles.title} style={{ fontWeight: '600' }}>
+				<h2 className={styles.title} style={{ fontWeight: '600' }}>
 					Why Choose Copiers Utah?
-				</div>
+				</h2>
 				<div className={styles.optionContainer}>
 					<div className={styles.optionsContainer}>
-						<div className={styles.smallTitle}>Rent To Own</div>
+						<h3 className={styles.smallTitle}>Rent To Own</h3>
 						<div className={styles.info}>
 							As you make your rental payments, you"ll be one step closer to owning your copier outright.
 						</div>
 					</div>
 					<div className={styles.optionsContainer}>
-						<div className={styles.smallTitle}>Easy Leases</div>
+						<h3 className={styles.smallTitle}>Easy Leases</h3>
 						<div className={styles.info}>
 							Our leases are designed to fit your budget and your business needs, with fliexible terms and
 							no hidden fees!
 						</div>
 					</div>
 					<div className={styles.optionsContainer}>
-						<div className={styles.smallTitle}>Hastle Free</div>
+						<h3 className={styles.smallTitle}>Hastle Free</h3>
 						<div className={styles.info}>
 							We handle everything! You can focus on your business while we handle the printer needs
 						</div>

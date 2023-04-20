@@ -61,31 +61,31 @@ const It = (props) => {
 			</div>
 			<Header />
 			<div className={styles.secondSection}>
-				<div className={styles.titleBig}>
+				<h1 className={styles.titleBig}>
 					What we do, <div className={styles.bold}>For You</div>
-				</div>
+				</h1>
 				<div className={styles.row}>
 					<div className={styles.sideRowLeft}>
 						<div>
-							<div className={styles.title}>Ransomware Protection</div>
+							<h2 className={styles.title}>Ransomware Protection</h2>
 							<div className={styles.paragraph}>
 								Ransomware evolves, anti-ransomware utilities will evolve as well.
 							</div>
 						</div>
 						<div>
-							<div className={styles.title}>Backup And Restore</div>
+							<h2 className={styles.title}>Backup And Restore</h2>
 							<div className={styles.paragraph}>
 								Allowing users to create backups & restore from backups created earlier.
 							</div>
 						</div>
 						<div>
-							<div className={styles.title}>Full Printer Support</div>
+							<h2 className={styles.title}>Full Printer Support</h2>
 							<div className={styles.paragraph}>
 								Download drivers, run diagnostic tools & troubleshoot your printer
 							</div>
 						</div>
 						<div>
-							<div className={styles.title}>Network Efficiency</div>
+							<h2 className={styles.title}>Network Efficiency</h2>
 							<div className={styles.paragraph}>
 								Concept of efficiency can be applied to both local & global scales in a network
 							</div>
@@ -120,23 +120,23 @@ const It = (props) => {
 					)}
 					<div className={styles.sideRowRight}>
 						<div>
-							<div className={styles.title}>Secure Collabration and cloud support </div>
+							<h2 className={styles.title}>Secure Collabration and cloud support </h2>
 							<div className={styles.paragraph}>
 								Secure Collaboration can provide secure, fully managed cloud services
 							</div>
 						</div>
 						<div>
-							<div className={styles.title}>Fix Broken Hardware </div>
+							<h2 className={styles.title}>Fix Broken Hardware </h2>
 							<div className={styles.paragraph}>
 								Replacing hardware that is out of service & installing new hardware
 							</div>
 						</div>
 						<div>
-							<div className={styles.title}>Secure And Fast Setup</div>
+							<h2 className={styles.title}>Secure And Fast Setup</h2>
 							<div className={styles.paragraph}>Stay secure with optional verification setup</div>
 						</div>
 						<div>
-							<div className={styles.title}>Software And App Support</div>
+							<h2 className={styles.title}>Software And App Support</h2>
 							<div className={styles.paragraph}>
 								Application support specialist can provide technical support to clients
 							</div>

@@ -103,7 +103,7 @@ const Fix = () => {
 			) : (
 				<div className={styles.secondSection}>
 					<div className={styles.container}>
-						<div className={styles.black}>Schedule A Maintanance Call!</div>
+						<h1 className={styles.black}>Schedule A Maintanance Call!</h1>
 						<div style={{ width: '97%', display: 'flex' }}>
 							<div className={styles.number}>1</div>
 							<input

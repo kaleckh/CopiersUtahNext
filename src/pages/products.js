@@ -57,14 +57,14 @@ const Products = () => {
 					justifyContent: "center"
 				}}
 			>
-				<div className={styles.color}>Our Products</div>
+				<h1 className={styles.color}>Our Products</h1>
 				<div className={styles.centerLine}>
 					<div className={styles.line} />
 				</div>
 				<div className={styles.row}>
-					<div className={styles.title}>Lexmark</div>
-					<div className={styles.title}>Konica Minolta</div>
-					<div className={styles.title}>Epson</div>
+					<h2 className={styles.title}>Lexmark</h2>
+					<h2 className={styles.title}>Konica Minolta</h2>
+					<h2 className={styles.title}>Epson</h2>
 				</div>
 				<div className={styles.copierRow}>
 					<div
