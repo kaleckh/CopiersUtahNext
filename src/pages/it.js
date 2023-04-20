@@ -8,7 +8,7 @@ import Form from './Form';
 import styles from '../styles/it.module.css';
 
 import Footer from './Footer';
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const It = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
@@ -32,6 +32,39 @@ const It = (props) => {
 					content="Copiers Utah provides comprehensive IT services and support. Fill out our easy form to get a personalized quote and get the IT help you need."
 				/>
 				<meta name="keywords" content="IT services, IT support, IT help, IT quote, copiers Utah" />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'ProfessionalService',
+							name: 'Copiers Utah',
+							description: 'Copiers Utah provides comprehensive IT services and support.',
+							telephone: '(801) 261-0510',
+							email: 'info@copiersutah.com',
+							address: {
+								'@type': 'PostalAddress',
+								streetAddress: 'Your Street Address',
+								addressLocality: 'Your City',
+								addressRegion: 'Your State',
+								postalCode: 'Your Postal Code',
+								addressCountry: 'USA'
+							},
+							image: 'https://your-domain.com/static/logo.jpg',
+							url: 'https://your-domain.com',
+							areaServed: 'Utah',
+							priceRange: '$$',
+							founder: {
+								'@type': 'Person',
+								name: "Founder's Name"
+							},
+							sameAs: [
+								'https://www.facebook.com/your-facebook-page',
+								'https://www.linkedin.com/company/your-linkedin-page'
+							]
+						})
+					}}
+				/>
 			</Head>
 			<div>
 				<TawkMessengerReact
@@ -43,12 +76,7 @@ const It = (props) => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image
-						src="/static/logo.jpg"
-						alt="a lady with icons around her head for it form"
-						width={150}
-						height={100}
-					/>
+					<Image src="/static/logo.jpg" alt="IT services provided by Copiers Utah" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

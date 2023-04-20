@@ -9,7 +9,7 @@ import Head from 'next/head';
 import styles from '../styles/shortTerm.module.css';
 
 import Footer from './Footer';
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const Home = () => {
 	const tawkMessengerRef = useRef();
@@ -33,6 +33,38 @@ const Home = () => {
 				<meta
 					name="keywords"
 					content="short-term copier rentals, copier rental, short-term rental, copiers Utah"
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Service',
+							name: 'Short-Term Copier Rentals',
+							description:
+								'Flexible short-term copier rentals with advanced features and affordable prices.',
+							provider: {
+								'@type': 'Corporation',
+								name: 'Copiers Utah',
+								telephone: '(801) 261-0510',
+								email: 'info@copiersutah.com',
+								address: {
+									'@type': 'PostalAddress',
+									streetAddress: 'Your Street Address',
+									addressLocality: 'Your City',
+									addressRegion: 'Your State',
+									postalCode: 'Your Postal Code',
+									addressCountry: 'USA'
+								}
+							},
+							areaServed: {
+								'@type': 'AdministrativeArea',
+								name: 'Utah'
+							},
+							serviceType: 'Copier Rental',
+							url: 'https://your-domain.com/short-term-rental'
+						})
+					}}
 				/>
 			</Head>
 			<div>

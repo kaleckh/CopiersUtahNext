@@ -9,7 +9,7 @@ import Head from 'next/head';
 import styles from '../styles/buy.module.css';
 
 import Footer from './Footer';
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const Home = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
@@ -33,6 +33,42 @@ const Home = (props) => {
 				<meta
 					name="keywords"
 					content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah"
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Product',
+							name: 'New and Refurbished Copiers',
+							description: 'High-quality copiers for your office, including new and refurbished options.',
+							brand: 'Copiers Utah',
+							url: 'https://your-domain.com/home',
+							image: 'https://your-domain.com/static/logo.jpg',
+							offers: {
+								'@type': 'AggregateOffer',
+								priceCurrency: 'USD',
+								availability: 'https://schema.org/InStock',
+								lowPrice: 'Your Lowest Price',
+								highPrice: 'Your Highest Price',
+								offerCount: 'Number of Copiers Available',
+								seller: {
+									'@type': 'LocalBusiness',
+									name: 'Copiers Utah',
+									telephone: '(801) 261-0510',
+									email: 'info@copiersutah.com',
+									address: {
+										'@type': 'PostalAddress',
+										streetAddress: 'Your Street Address',
+										addressLocality: 'Your City',
+										addressRegion: 'Your State',
+										postalCode: 'Your Postal Code',
+										addressCountry: 'USA'
+									}
+								}
+							}
+						})
+					}}
 				/>
 			</Head>
 

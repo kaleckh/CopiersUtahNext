@@ -34,6 +34,39 @@ const Finance = () => {
 					name="keywords"
 					content="copier financing, copier buying, office copiers, copier quote, copiers Utah"
 				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'Product',
+							name: 'Financing and Buying Copiers',
+							description: 'Copiers Utah offers a range of financing options for buying copiers.',
+							brand: 'Copiers Utah',
+							url: 'https://your-domain.com/finance',
+							image: 'https://your-domain.com/static/logo.jpg',
+							offers: {
+								'@type': 'Offer',
+								priceCurrency: 'USD',
+								availability: 'https://schema.org/InStock',
+								seller: {
+									'@type': 'LocalBusiness',
+									name: 'Copiers Utah',
+									telephone: '(801) 261-0510',
+									email: 'info@copiersutah.com',
+									address: {
+										'@type': 'PostalAddress',
+										streetAddress: 'Your Street Address',
+										addressLocality: 'Your City',
+										addressRegion: 'Your State',
+										postalCode: 'Your Postal Code',
+										addressCountry: 'USA'
+									}
+								}
+							}
+						})
+					}}
+				/>
 			</Head>
 			<div>
 				<TawkMessengerReact

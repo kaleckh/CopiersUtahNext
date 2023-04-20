@@ -7,7 +7,7 @@ import { Quote } from '../SVG/Quote';
 
 import Footer from './Footer';
 import { useRouter } from 'next/router';
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 export default function Home() {
 	console.log(process.env.RECAPTCHA_SITE_KEY, 'this is key');
@@ -19,6 +19,44 @@ export default function Home() {
 				<meta
 					name="description"
 					content="Copiers Utah offers high-quality copiers for sale and rent. Choose from a range of office copy machines with advanced features and affordable prices. Contact us today to learn more."
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'LocalBusiness',
+							name: 'Copiers Utah',
+							description: 'Copiers Utah offers high-quality copiers for sale and rent.',
+							telephone: '(801) 261-0510',
+							email: 'info@copiersutah.com',
+							address: {
+								'@type': 'PostalAddress',
+								streetAddress: 'Your Street Address',
+								addressLocality: 'Your City',
+								addressRegion: 'Your State',
+								postalCode: 'Your Postal Code',
+								addressCountry: 'USA'
+							},
+							image: 'https://your-domain.com/static/logo.png',
+							url: 'https://your-domain.com',
+							areaServed: 'Utah',
+							priceRange: '$$',
+							founder: {
+								'@type': 'Person',
+								name: "Founder's Name"
+							},
+							sameAs: [
+								'https://www.facebook.com/your-facebook-page',
+								'https://www.linkedin.com/company/your-linkedin-page'
+							],
+							aggregateRating: {
+								'@type': 'AggregateRating',
+								ratingValue: '4.5',
+								reviewCount: '50'
+							}
+						})
+					}}
 				/>
 			</Head>
 			<div className={styles.logoSpaceContainer}>
