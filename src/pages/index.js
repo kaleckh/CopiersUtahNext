@@ -1,22 +1,25 @@
-import Head from "next/head";
-import Image from "next/image";
-import Header from "./Header";
-import { Inter } from "next/font/google";
-import styles from "@/styles/HomePage.module.css";
-import { Quote } from "../SVG/Quote";
+import Head from 'next/head';
+import Image from 'next/image';
+import Header from './Header';
+import { Inter } from 'next/font/google';
+import styles from '@/styles/HomePage.module.css';
+import { Quote } from '../SVG/Quote';
 
-import Footer from "./Footer";
-import { useRouter } from "next/router";
+import Footer from './Footer';
+import { useRouter } from 'next/router';
 // import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
-	console.log(process.env.RECAPTCHA_SITE_KEY, "this is key");
+	console.log(process.env.RECAPTCHA_SITE_KEY, 'this is key');
 	const router = useRouter();
 	return (
 		<div className={styles.main}>
 			<Head>
-				<title />
-				<meta />
+				<title>Copiers for Sale and Rent | Office Copy Machines | Copiers Utah</title>
+				<meta
+					name="description"
+					content="Copiers Utah offers high-quality copiers for sale and rent. Choose from a range of office copy machines with advanced features and affordable prices. Contact us today to learn more."
+				/>
 			</Head>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
@@ -36,10 +39,10 @@ export default function Home() {
 				<div className={styles.flex}>
 					<div
 						onClick={() => {
-							router.push("/buy");
+							router.push('/buy');
 						}}
 						className={styles.shadeBig}
-						style={{ height: "75%", marginTop: "24px" }}
+						style={{ height: '75%', marginTop: '24px' }}
 					>
 						<div className={styles.parent}>
 							<div className={styles.woman} />
@@ -53,7 +56,7 @@ export default function Home() {
 						<div className={styles.row}>
 							<div
 								onClick={() => {
-									router.push("/fix");
+									router.push('/fix');
 								}}
 								className={styles.shade}
 							>
@@ -65,7 +68,7 @@ export default function Home() {
 							</div>
 							<div
 								onClick={() => {
-									router.push("/toner");
+									router.push('/toner');
 								}}
 								className={styles.shade}
 							>
@@ -79,7 +82,7 @@ export default function Home() {
 						<div className={styles.row}>
 							<div
 								onClick={() => {
-									router.push("/it");
+									router.push('/it');
 								}}
 								className={styles.shade}
 							>
@@ -91,7 +94,7 @@ export default function Home() {
 							</div>
 							<div
 								onClick={() => {
-									router.push("/shortTerm");
+									router.push('/shortTerm');
 								}}
 								className={styles.shade}
 							>

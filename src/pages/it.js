@@ -1,43 +1,56 @@
-import { useState, useRef } from "react"
-import Header from "./Header";
-import Image from "next/image";
-import Form from "./Form";
+import { useState, useRef } from 'react';
+import Header from './Header';
+import Head from 'next/head';
+import Image from 'next/image';
+import Form from './Form';
 // import Logo from "../Photos/logo.png";
 
+import styles from '../styles/it.module.css';
 
-import styles from "../styles/it.module.css";
-
-import Footer from "./Footer";
+import Footer from './Footer';
 // import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
 	const [ buttonToggle, setButtonToggle ] = useState(true);
-	
+
 	const tawkMessengerRef = useRef();
 
 	const handleMinimize = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log("onLoad works!");
+		console.log('onLoad works!');
 	};
-console.log(process.env.RECAPTCHA_SITE_KEY)
+	console.log(process.env.RECAPTCHA_SITE_KEY);
 	return (
 		<div className={styles.main}>
+			<Head>
+				<title>IT Services and Support | Get a Quote Today | Copiers Utah</title>
+				<meta
+					name="description"
+					content="Copiers Utah provides comprehensive IT services and support. Fill out our easy form to get a personalized quote and get the IT help you need."
+				/>
+				<meta name="keywords" content="IT services, IT support, IT help, IT quote, copiers Utah" />
+			</Head>
 			<div>
-				{/* <TawkMessengerReact
+				<TawkMessengerReact
 					onLoad={onLoad}
 					propertyId="5abd4931d7591465c7090c65"
 					widgetId="default"
 					useRef={tawkMessengerRef}
-				/> */}
+				/>
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-				<Image src="/static/logo.jpg" alt="a lady with icons around her head for it form" width={150} height={100} />
+					<Image
+						src="/static/logo.jpg"
+						alt="a lady with icons around her head for it form"
+						width={150}
+						height={100}
+					/>
 					<div className={styles.columnContainer}>
-						<div></div>
+						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
 						<div className={styles.mediumColumn}>
 							<div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
@@ -79,15 +92,31 @@ console.log(process.env.RECAPTCHA_SITE_KEY)
 						</div>
 					</div>
 					{quoteToggle ? (
-						<div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+						<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 							<div className={styles.itSupport} />
-							<button onClick={() => {setQuoteToggle(!quoteToggle)}} className={styles.button}>Request a Quote!</button>
+							<button
+								onClick={() => {
+									setQuoteToggle(!quoteToggle);
+								}}
+								className={styles.button}
+							>
+								Request a Quote!
+							</button>
 						</div>
 					) : (
-            <div>
-              {buttonToggle? <><Form quote={() => {setButtonToggle(!buttonToggle)}}/></> : <div className={styles.title}>Awesome, you"re next in line!</div>}
-            </div>
-
+						<div>
+							{buttonToggle ? (
+								<div>
+									<Form
+										quote={() => {
+											setButtonToggle(!buttonToggle);
+										}}
+									/>
+								</div>
+							) : (
+								<div className={styles.title}>Awesome, you're next in line!</div>
+							)}
+						</div>
 					)}
 					<div className={styles.sideRowRight}>
 						<div>

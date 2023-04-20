@@ -1,18 +1,19 @@
-import React, { useRef, useState } from "react";
-import Header from "./Header";
-import Axios from "axios";
-import Image from "next/image";
+import React, { useRef, useState } from 'react';
+import Header from './Header';
+import Head from 'next/head';
+import Axios from 'axios';
+import Image from 'next/image';
 // import Logo from "../Photos/logo.png";
-import styles from "../styles/Fix.module.css";
-import Footer from "./Footer";
+import styles from '../styles/Fix.module.css';
+import Footer from './Footer';
 // import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Fix = () => {
 	const tawkMessengerRef = useRef();
 	const [ toggle, setToggle ] = useState(false);
-	const [ SuccessMsg, setSuccessMsg ] = useState("");
-	const [ ErrorMsg, setErrorMsg ] = useState("");
+	const [ SuccessMsg, setSuccessMsg ] = useState('');
+	const [ ErrorMsg, setErrorMsg ] = useState('');
 	const [ valid_token, setValidToken ] = useState([]);
 	const [ token, setToken ] = useState();
 	const captchaRef = useRef(null);
@@ -31,11 +32,11 @@ const Fix = () => {
 			setValidToken(valid_token);
 
 			if (valid_token[0].success === true) {
-				console.log("verified");
-				setSuccessMsg("Hurray!! you have submitted the form");
+				console.log('verified');
+				setSuccessMsg('Hurray!! you have submitted the form');
 			} else {
-				console.log("not verified");
-				setErrorMsg(" Sorry!! Verify you are not a bot");
+				console.log('not verified');
+				setErrorMsg(' Sorry!! Verify you are not a bot');
 			}
 		}
 	};
@@ -48,7 +49,7 @@ const Fix = () => {
 				Secret_Key: SECRET_KEY
 			});
 
-			APIResponse.push(response["data"]);
+			APIResponse.push(response['data']);
 			return APIResponse;
 		} catch (error) {
 			console.log(error);
@@ -59,18 +60,29 @@ const Fix = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log("onLoad works!");
+		console.log('onLoad works!');
 	};
 
 	return (
 		<div className={styles.main}>
+			<Head>
+				<title>Copier Machine Repair Services | Get a Quote Today | Copiers Utah</title>
+				<meta
+					name="description"
+					content="Copiers Utah provides reliable and affordable copier machine repair services. Fill out our easy form to get a personalized quote and get your copier back up and running in no time."
+				/>
+				<meta
+					name="keywords"
+					content="copier repair, copier service, copier maintenance, copier technician, get a quote, copiers Utah"
+				/>
+			</Head>
 			<div>
-				{/* <TawkMessengerReact
+				<TawkMessengerReact
 					onLoad={onLoad}
 					propertyId="5abd4931d7591465c7090c65"
 					widgetId="default"
 					useRef={tawkMessengerRef}
-				/> */}
+				/>
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
@@ -92,10 +104,10 @@ const Fix = () => {
 				<div className={styles.secondSection}>
 					<div className={styles.container}>
 						<div className={styles.black}>Schedule A Maintanance Call!</div>
-						<div style={{ width: "97%", display: "flex" }}>
+						<div style={{ width: '97%', display: 'flex' }}>
 							<div className={styles.number}>1</div>
 							<input
-								style={{ width: "82%", color: "black" }}
+								style={{ width: '82%', color: 'black' }}
 								className={styles.inputSingle}
 								placeholder="First Name"
 								type="text"
@@ -127,7 +139,7 @@ const Fix = () => {
 							<option value="2010">Evening</option>
 						</select>
 						<input
-							style={{ color: "black" }}
+							style={{ color: 'black' }}
 							className={styles.inputSingle}
 							type="text"
 							name=""
@@ -135,14 +147,14 @@ const Fix = () => {
 							placeholder="What type of service?"
 						/>
 						<ReCAPTCHA
-							style={{ display: "flex", justifyContent: "center" }}
+							style={{ display: 'flex', justifyContent: 'center' }}
 							className="recaptcha"
-							sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+							sitekey={'6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi'}
 							ref={captchaRef}
 						/>
 						<button
 							onClick={() => {
-								debugger
+								debugger;
 								setToggle(!toggle);
 							}}
 							className={styles.button}

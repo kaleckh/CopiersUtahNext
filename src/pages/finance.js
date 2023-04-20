@@ -1,11 +1,12 @@
-import React, { useState, useRef } from "react";
-import Header from "./Header";
-import Image from "next/image";
-import Form from "./Form";
+import React, { useState, useRef } from 'react';
+import Header from './Header';
+import Image from 'next/image';
+import Head from 'next/head';
+import Form from './Form';
 // import Logo from "./logo.png";
-import styles from "../styles/Finance.module.css";
-import Footer from "./Footer";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import styles from '../styles/Finance.module.css';
+import Footer from './Footer';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const Finance = () => {
 	const [ toggle, setToggle ] = useState(false);
@@ -17,12 +18,23 @@ const Finance = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log("onLoad works!");
+		console.log('onLoad works!');
 	};
 
-	console.log(process.env.REACT_APP_RECAPTCHA_SITE_KEY, "this is the env without quotes");
+	console.log(process.env.REACT_APP_RECAPTCHA_SITE_KEY, 'this is the env without quotes');
 	return (
 		<div className={styles.main}>
+			<Head>
+				<title>Financing and Buying Copiers | Get a Quote Today | Copiers Utah</title>
+				<meta
+					name="description"
+					content="Copiers Utah offers a range of financing options for buying copiers. Fill out our easy form to get a personalized quote and learn more about our financing options."
+				/>
+				<meta
+					name="keywords"
+					content="copier financing, copier buying, office copiers, copier quote, copiers Utah"
+				/>
+			</Head>
 			<div>
 				<TawkMessengerReact
 					onLoad={onLoad}
@@ -33,9 +45,9 @@ const Finance = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-				<Image src="/static/logo.jpg" alt="man using a copier" width={150} height={100} />
+					<Image src="/static/logo.jpg" alt="man using a copier" width={150} height={100} />
 					<div className={styles.columnContainer}>
-						<div></div>
+						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
 						<div className={styles.mediumColumn}>
 							<div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
@@ -64,7 +76,7 @@ const Finance = () => {
 						) : (
 							<div className={styles.center}>
 								{quoteToggle ? (
-									<div style={{display:"contents"}}>
+									<div style={{ display: 'contents' }}>
 										<div className={styles.titleBig}>Financing Made Easy</div>
 										<div className={styles.paragraph}>
 											We know how it can be stressful finding a printer. That"s why we"ve made it
@@ -81,7 +93,10 @@ const Finance = () => {
 										</button>
 									</div>
 								) : (
-									<div className={styles.title} style={{ width: "140%", fontWeight: "300", fontSize:"37px" }}>
+									<div
+										className={styles.title}
+										style={{ width: '140%', fontWeight: '300', fontSize: '37px' }}
+									>
 										Awesome, we will be contacting you shortly!
 									</div>
 								)}
@@ -95,7 +110,7 @@ const Finance = () => {
 			</div>
 
 			<div className={styles.thirdSection}>
-				<div className={styles.title} style={{ fontWeight: "600" }}>
+				<div className={styles.title} style={{ fontWeight: '600' }}>
 					Why Choose Copiers Utah?
 				</div>
 				<div className={styles.optionContainer}>

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Header from "./Header";
+import Head from 'next/head';
 import Image from "next/image";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
@@ -19,13 +20,18 @@ const Products = () => {
 	};
 	return (
 		<div className={styles.main}>
+			<Head>
+	<title>Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers Utah</title>
+	<meta name="description" content="Copiers Utah offers a range of high-quality copiers for sale, including Konica Minolta, Epson, and Lexmark models. Explore our selection and find the perfect copier for your office."/>
+	<meta name="keywords" content="copiers for sale, office copiers, Konica Minolta copiers, Epson copiers, Lexmark copiers, copiers Utah"/>
+</Head>
 			<div>
-				{/* <TawkMessengerReact
+				<TawkMessengerReact
 					onLoad={onLoad}
 					propertyId="5abd4931d7591465c7090c65"
 					widgetId="default"
 					useRef={tawkMessengerRef}
-				/> */}
+				/>
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>

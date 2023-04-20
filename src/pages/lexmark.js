@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
-import Header from "./Header";
-import Form from "./Form";
-import Footer from "./Footer";
-import Image from "next/image";
+import React, { useRef } from 'react';
+import Header from './Header';
+import Form from './Form';
+import Footer from './Footer';
+import Image from 'next/image';
 // import Logo from "../Photos/logo.png";
-import styles from "../styles/lexmark.module.css";
-import { useRouter } from "next/router";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useState } from "react";
+import styles from '../styles/lexmark.module.css';
+import { useRouter } from 'next/router';
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import { useState } from 'react';
 const Lexmark = () => {
 	const router = useRouter();
 	const tawkMessengerRef = useRef();
@@ -17,10 +17,21 @@ const Lexmark = () => {
 		tawkMessengerRef.current.minimize();
 	};
 	const onLoad = () => {
-		console.log("onLoad works!");
+		console.log('onLoad works!');
 	};
 	return (
 		<div className={styles.main}>
+			<Head>
+				<title>New and Used Lexmark Copiers | High-Quality and Affordable | Copiers Utah</title>
+				<meta
+					name="description"
+					content="Copiers Utah offers high-quality and affordable Lexmark copiers, both new and used. Learn more about Lexmark copiers and how they can benefit your office. Fill out our quote form to receive a customized quote."
+				/>
+				<meta
+					name="keywords"
+					content="Lexmark copiers, used Lexmark copiers, new Lexmark copiers, office copiers, copiers Utah, affordable copiers"
+				/>
+			</Head>
 			<div>
 				<TawkMessengerReact
 					onLoad={onLoad}
@@ -31,9 +42,9 @@ const Lexmark = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-				<Image src="/static/logo.jpg" alt="Lexmark printer" width={150} height={100} />
+					<Image src="/static/logo.jpg" alt="Lexmark printer" width={150} height={100} />
 					<div className={styles.columnContainer}>
-						<div></div>
+						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
 						<div className={styles.mediumColumn}>
 							<div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
@@ -47,15 +58,29 @@ const Lexmark = () => {
 
 			<div
 				style={{
-					height: "100vh",
-					display: "flex",
-					alignItems: "center",
-					flexDirection: "column",
-					justifyContent: "center"
+					height: '100vh',
+					display: 'flex',
+					alignItems: 'center',
+					flexDirection: 'column',
+					justifyContent: 'center'
 				}}
 			>
 				<div className={styles.backContainer}>
-					<div onClick={() => {router.push("/products")}} style={{ padding:"5px", fontSize:"25px", fontWeight:"400", cursor:"pointer",  borderRadius:"100%"}}> {`X`}</div>
+					<div
+						onClick={() => {
+							router.push('/products');
+						}}
+						style={{
+							padding: '5px',
+							fontSize: '25px',
+							fontWeight: '400',
+							cursor: 'pointer',
+							borderRadius: '100%'
+						}}
+					>
+						{' '}
+						{`X`}
+					</div>
 				</div>
 				<div className={styles.lineColumn}>
 					<div className={styles.color}>Lexmark</div>
@@ -107,10 +132,10 @@ const Lexmark = () => {
 									Other Features
 								</div>
 							</div>
-							<div className={styles.line} style={{ backgroundColor: "black", width: "100%" }} />
+							<div className={styles.line} style={{ backgroundColor: 'black', width: '100%' }} />
 							<div>
 								{gray ? (
-									<div className={styles.paragraph} style={{ textAlign: "center" }}>
+									<div className={styles.paragraph} style={{ textAlign: 'center' }}>
 										The bizhub 227 provides productivity features to speed your output economically,
 										including 22 ppm printing, color scanning, powerful finishing options for
 										right-size scalability and enhanced control panel which now features a new
