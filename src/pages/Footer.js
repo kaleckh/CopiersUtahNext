@@ -1,5 +1,6 @@
 
 import styles from "../styles/Footer.module.css";
+import Socials from './Socials'
 
 
 // import Logo from "../media/logo.svg"
@@ -16,6 +17,7 @@ export default function Footer(props) {
         <div className={styles.footerTags}>PHONE: (801)261-0510</div>
         <div className={styles.footerTags}>FAX: (801)261-1967</div>
         <div className={styles.footerTags}>E-MAIL: info@copiersutah.com
+        <Socials/>
         </div>
       </div>
       <div className={styles.exploreContainer}>

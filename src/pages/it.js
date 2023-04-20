@@ -10,7 +10,7 @@ import styles from '../styles/it.module.css';
 import Footer from './Footer';
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
-const Home = (props) => {
+const it = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
 	const [ buttonToggle, setButtonToggle ] = useState(true);
 
@@ -150,4 +150,4 @@ const Home = (props) => {
 	);
 };
 
-export default Home;
+export default it;
