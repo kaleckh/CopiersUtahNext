@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import { useRouter } from "next/router";
 // import Logo from "../Photos/logo.png";
 import styles from "../styles/product.module.css";
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Products = () => {
 	const router = useRouter();
 

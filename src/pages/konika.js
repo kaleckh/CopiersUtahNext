@@ -6,7 +6,7 @@ import Footer from './Footer';
 import { useRouter } from 'next/router';
 // import Logo from "../Photos/logo.png";
 import styles from '../styles/konika.module.css';
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { useState } from 'react';
 const Products = () => {
 	const tawkMessengerRef = useRef();

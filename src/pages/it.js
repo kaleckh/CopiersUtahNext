@@ -8,7 +8,7 @@ import Form from './Form';
 import styles from '../styles/it.module.css';
 
 import Footer from './Footer';
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import styles from '../styles/shortTerm.module.css';
 
 import Footer from './Footer';
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = () => {
 	const tawkMessengerRef = useRef();

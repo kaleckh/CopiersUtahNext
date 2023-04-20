@@ -7,7 +7,7 @@ import { Quote } from '../SVG/Quote';
 
 import Footer from './Footer';
 import { useRouter } from 'next/router';
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
 	console.log(process.env.RECAPTCHA_SITE_KEY, 'this is key');

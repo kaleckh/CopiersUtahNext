@@ -6,7 +6,7 @@ import Image from 'next/image';
 // import Logo from "../Photos/logo.png";
 import styles from '../styles/Fix.module.css';
 import Footer from './Footer';
-// import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const Fix = () => {
