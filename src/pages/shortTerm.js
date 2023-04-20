@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import Header from './Header';
 import Form from './Form';
 import Image from 'next/image';
+import Head from 'next/head';
 // import Logo from "../Photos/logo.png";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";

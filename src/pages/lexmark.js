@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Header from './Header';
+import Head from 'next/head';
 import Form from './Form';
 import Footer from './Footer';
 import Image from 'next/image';

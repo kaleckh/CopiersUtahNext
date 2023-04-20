@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Header from './Header';
+import Head from 'next/head';
 import Form from './Form';
 import Image from 'next/image';
 import Footer from './Footer';
@@ -22,12 +23,12 @@ const Products = () => {
 	return (
 		<div className={styles.main}>
 			<div>
-				{/* <TawkMessengerReact
+				<TawkMessengerReact
 					onLoad={onLoad}
 					propertyId="5abd4931d7591465c7090c65"
 					widgetId="default"
 					useRef={tawkMessengerRef}
-				/> */}
+				/>
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<Head>
