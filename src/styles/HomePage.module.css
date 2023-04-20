@@ -170,7 +170,7 @@
 }
 
 .toner {
-    background-image: url("/static/toner.jpg");
+    background-image: url("/static/toner-min.jpg");
     height: 30vh;
     width: 20vw;
     background-size: cover;

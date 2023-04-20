@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Header from './Header';
 import { Inter } from 'next/font/google';
-import styles from '@/styles/HomePage.module.css';
+import styles from '../styles/HomePage.module.css';
 import { Quote } from '../SVG/Quote';
 
 import Footer from './Footer';
