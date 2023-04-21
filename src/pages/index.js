@@ -176,8 +176,7 @@ export default function Home() {
 							<div className={styles.smallRow}>
 								<Quote />
 								<div className={styles.titleSmall}>
-									This company is the best to do work with. They are very friendly and very helpful. I
-									will be recommending them to everyone. I will never go anywhere els
+									This company is the best to do work with. They are very friendly and very helpful. 
 								</div>
 							</div>
 							<div className={styles.smallParagraph}>2 Months Ago</div>
