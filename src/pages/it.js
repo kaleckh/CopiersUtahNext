@@ -3,6 +3,7 @@ import Header from './Header';
 import Head from 'next/head';
 import Image from 'next/image';
 import Form from './Form';
+import ReCAPTCHA from 'react-google-recaptcha';
 // import Logo from "../Photos/logo.png";
 
 import styles from '../styles/it.module.css';
@@ -13,7 +14,7 @@ import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 const It = (props) => {
 	const [ quoteToggle, setQuoteToggle ] = useState(true);
 	const [ buttonToggle, setButtonToggle ] = useState(true);
-
+	const captchaRef = useRef(null);
 	const tawkMessengerRef = useRef();
 
 	const handleMinimize = () => {
@@ -56,7 +57,7 @@ const It = (props) => {
 							priceRange: '$$',
 							founder: {
 								'@type': 'Person',
-								name: "Paul Mooney"
+								name: 'Paul Mooney'
 							},
 							sameAs: [
 								'https://www.facebook.com/your-facebook-page',
@@ -89,9 +90,49 @@ const It = (props) => {
 			</div>
 			<Header />
 			<div className={styles.secondSection}>
-				<h1 className={styles.titleBig}>
-					What we do, <div className={styles.bold}>For You</div>
-				</h1>
+				<div className={styles.smallScreen}>
+					<h1 className={styles.titleBig}>
+						What we do, <div className={styles.bold}>For You</div>
+					</h1>
+					<div className={styles.nothing}>
+						<div className={styles.space}>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Ransomware Protection</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Backup And Restore</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Full Printer Support</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Network Efficiency</div>
+							</div>
+						</div>
+						<div className={styles.space}>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Cloud Support</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Fix Broken Hardware</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Secure And Fast Setup</div>
+							</div>
+							<div className={styles.flexRow}>
+								<Image src="/static/checkmark.png" width={15} height={15} />
+								<div>Software And App Support</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div className={styles.row}>
 					<div className={styles.sideRowLeft}>
 						<div>
@@ -135,11 +176,73 @@ const It = (props) => {
 						<div>
 							{buttonToggle ? (
 								<div>
-									<Form
-										quote={() => {
-											setButtonToggle(!buttonToggle);
-										}}
-									/>
+									<div className={styles.container}>
+										<div className={styles.black}>Get Your free Quote!</div>
+										<div
+											style={{
+												width: '100%',
+												display: 'flex',
+												flexDirection: 'column',
+												justifyContent: 'space-evenly',
+												height: '80%',
+												alignItems: 'center'
+											}}
+										>
+											<div className={styles.space}>
+												<div className={styles.number}>1</div>
+												<input
+													className={styles.inputSingle}
+													placeholder="Name"
+													type="text"
+													name=""
+													id=""
+													required={true}
+												/>
+											</div>
+											<div className={styles.space}>
+												<div className={styles.number}>2</div>
+												<input
+													className={styles.inputSingle}
+													type="tel"
+													name="telphone"
+													placeholder="Phone Number"
+													pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+													maxLength="12"
+													title="Ten digits code"
+													required
+												/>
+											</div>
+
+											<div className={styles.space}>
+												<div className={styles.number}>3</div>
+												<input
+													className={styles.inputSingle}
+													placeholder="Comments"
+													type="text"
+												/>
+											</div>
+										</div>
+										<div style={{ height: '25%', display: 'flex' }} className={styles.padding}>
+											    <ReCAPTCHA
+												style={{
+													marginBottom: '10px',
+													display: 'flex',
+													justifyContent: 'center'
+												}}
+												className={styles.recaptcha}
+												sitekey={'6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi'}
+												ref={captchaRef}
+											/>
+										</div>
+										<button
+											onClick={() => {
+												setButtonToggle(!buttonToggle)
+											}}
+											className={styles.button}
+										>
+											Get My Quote
+										</button>
+									</div>
 								</div>
 							) : (
 								<div className={styles.title}>Awesome, you're next in line!</div>
