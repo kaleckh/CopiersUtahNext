@@ -3,7 +3,6 @@ import Header from './Header';
 import Head from 'next/head';
 import Axios from 'axios';
 import Image from 'next/image';
-// import Logo from "../Photos/logo.png";
 import styles from '../styles/Fix.module.css';
 import Footer from './Footer';
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -86,7 +85,7 @@ const Fix = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="man with tools" width={150} height={100} />
+					<Image src="/static/logo.png" alt="man with tools" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

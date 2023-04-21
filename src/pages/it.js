@@ -51,7 +51,7 @@ const It = (props) => {
 								postalCode: '84070',
 								addressCountry: 'USA'
 							},
-							image: 'https://copiersutah.com/static/logo.jpg',
+							image: 'https://copiersutah.com/static/logo.png',
 							url: 'https://copiersutah.com',
 							areaServed: 'Utah',
 							priceRange: '$$',
@@ -77,7 +77,7 @@ const It = (props) => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="IT services provided by Copiers Utah" width={150} height={100} />
+					<Image src="/static/logo.png" alt="IT services provided by Copiers Utah" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

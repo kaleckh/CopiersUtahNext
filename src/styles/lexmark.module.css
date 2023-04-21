@@ -246,7 +246,8 @@
 .lexmark {
     background-image: url("/static/Lexmark.jpg");
     height: 40vh;
-    width: 30/vw;
+    width: 30vw;
+    background-position: center;
     background-size: contain;
     border-radius: 15px;
     background-repeat: no-repeat;

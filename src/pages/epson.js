@@ -5,7 +5,7 @@ import Form from './Form';
 import Image from 'next/image';
 import Footer from './Footer';
 import { useRouter } from 'next/router';
-// import Logo from "../Photos/logo.png";
+
 import styles from '../styles/epson.module.css';
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import { useState } from 'react';
@@ -43,7 +43,7 @@ const Products = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="epson printer" width={150} height={100} />
+					<Image src="/static/logo.png" alt="epson printer" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

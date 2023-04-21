@@ -3,7 +3,7 @@ import Header from './Header';
 import Image from 'next/image';
 import Form from './Form';
 import Head from 'next/head';
-// import Logo from "../Photos/logo.png";
+
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
 import styles from '../styles/buy.module.css';
@@ -44,7 +44,7 @@ const Home = (props) => {
 							description: 'High-quality copiers for your office, including new and refurbished options.',
 							brand: 'Copiers Utah',
 							url: 'https://copiersutah.com/home',
-							image: 'https://copiersutah.com/static/logo.jpg',
+							image: 'https://copiersutah.com/static/logo.png',
 							offers: {
 								'@type': 'AggregateOffer',
 								priceCurrency: 'USD',
@@ -82,7 +82,7 @@ const Home = (props) => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="lady using a copier" width={150} height={100} />
+					<Image src="/static/logo.png" alt="lady using a copier" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

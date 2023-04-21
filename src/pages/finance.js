@@ -3,7 +3,7 @@ import Header from './Header';
 import Image from 'next/image';
 import Head from 'next/head';
 import Form from './Form';
-// import Logo from "./logo.png";
+
 import styles from '../styles/Finance.module.css';
 import Footer from './Footer';
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
@@ -44,7 +44,7 @@ const Finance = () => {
 							description: 'Copiers Utah offers a range of financing options for buying copiers.',
 							brand: 'Copiers Utah',
 							url: 'https://copiersutah.com/finance',
-							image: 'https://copiersutah.com/static/logo.jpg',
+							image: 'https://copiersutah.com/static/logo.png',
 							offers: {
 								'@type': 'Offer',
 								priceCurrency: 'USD',
@@ -78,7 +78,7 @@ const Finance = () => {
 			</div>
 			<div className={styles.logoSpaceContainer}>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="man using a copier" width={150} height={100} />
+					<Image src="/static/logo.png" alt="man using a copier" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>

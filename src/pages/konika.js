@@ -43,7 +43,7 @@ const Products = () => {
 					/>
 				</Head>
 				<div className={styles.logoSpace}>
-					<Image src="/static/logo.jpg" alt="konica printer" width={150} height={100} />
+					<Image src="/static/logo.png" alt="konica printer" width={150} height={100} />
 					<div className={styles.columnContainer}>
 						<div />
 						<div className={styles.infoBig}>Copiers Utah</div>
