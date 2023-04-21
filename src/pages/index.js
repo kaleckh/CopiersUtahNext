@@ -18,7 +18,7 @@ export default function Home() {
 				<title>Copiers for Sale and Rent | Office Copy Machines | Copiers Utah</title>
 				<meta
 					name="description"
-					content="Copiers Utah offers high-quality copiers for sale and rent. Choose from a range of office copy machines with advanced features and affordable prices. Contact us today to learn more."
+					content="Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! "
 				/>
 				<script
 					type="application/ld+json"
@@ -32,19 +32,19 @@ export default function Home() {
 							email: 'info@copiersutah.com',
 							address: {
 								'@type': 'PostalAddress',
-								streetAddress: 'Your Street Address',
-								addressLocality: 'Your City',
-								addressRegion: 'Your State',
-								postalCode: 'Your Postal Code',
+								streetAddress: '554 W 8360 S',
+								addressLocality: 'Sandy',
+								addressRegion: 'Utah',
+								postalCode: '84070',
 								addressCountry: 'USA'
 							},
-							image: 'https://your-domain.com/static/logo.png',
-							url: 'https://your-domain.com',
+							image: 'https://copiersutah.com/static/logo.png',
+							url: 'https://copiersutah.com',
 							areaServed: 'Utah',
 							priceRange: '$$',
 							founder: {
 								'@type': 'Person',
-								name: "Founder's Name"
+								name: "Paul Mooney"
 							},
 							sameAs: [
 								'https://www.facebook.com/your-facebook-page',
@@ -148,7 +148,7 @@ export default function Home() {
 				<div className={styles.line} />
 				<div className={styles.needSpace}>
 					<div className={styles.middle}>
-						<h1 className={styles.reviewBig}>Recent Google Reviews...</h1>
+						<h3 className={styles.reviewBig}>Recent Google Reviews...</h3>
 					</div>
 					<div className={styles.reviewRow}>
 						<div className={styles.paragraphContainer}>

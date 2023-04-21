@@ -44,19 +44,19 @@ const It = (props) => {
 							email: 'info@copiersutah.com',
 							address: {
 								'@type': 'PostalAddress',
-								streetAddress: 'Your Street Address',
-								addressLocality: 'Your City',
-								addressRegion: 'Your State',
-								postalCode: 'Your Postal Code',
+								streetAddress: '554 W 8360 S',
+								addressLocality: 'Sandy',
+								addressRegion: 'Utah',
+								postalCode: '84070',
 								addressCountry: 'USA'
 							},
-							image: 'https://your-domain.com/static/logo.jpg',
-							url: 'https://your-domain.com',
+							image: 'https://copiersutah.com/static/logo.jpg',
+							url: 'https://copiersutah.com',
 							areaServed: 'Utah',
 							priceRange: '$$',
 							founder: {
 								'@type': 'Person',
-								name: "Founder's Name"
+								name: "Paul Mooney"
 							},
 							sameAs: [
 								'https://www.facebook.com/your-facebook-page',

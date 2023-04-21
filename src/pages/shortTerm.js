@@ -50,10 +50,10 @@ const Home = () => {
 								email: 'info@copiersutah.com',
 								address: {
 									'@type': 'PostalAddress',
-									streetAddress: 'Your Street Address',
-									addressLocality: 'Your City',
-									addressRegion: 'Your State',
-									postalCode: 'Your Postal Code',
+									streetAddress: '554 W 8360 S',
+									addressLocality: 'Sandy',
+									addressRegion: 'Utah',
+									postalCode: '84070',
 									addressCountry: 'USA'
 								}
 							},
@@ -62,7 +62,7 @@ const Home = () => {
 								name: 'Utah'
 							},
 							serviceType: 'Copier Rental',
-							url: 'https://your-domain.com/short-term-rental'
+							url: 'https://copiersutah.com/short-term-rental'
 						})
 					}}
 				/>

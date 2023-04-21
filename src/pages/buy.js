@@ -43,8 +43,8 @@ const Home = (props) => {
 							name: 'New and Refurbished Copiers',
 							description: 'High-quality copiers for your office, including new and refurbished options.',
 							brand: 'Copiers Utah',
-							url: 'https://your-domain.com/home',
-							image: 'https://your-domain.com/static/logo.jpg',
+							url: 'https://copiersutah.com/home',
+							image: 'https://copiersutah.com/static/logo.jpg',
 							offers: {
 								'@type': 'AggregateOffer',
 								priceCurrency: 'USD',
@@ -59,10 +59,10 @@ const Home = (props) => {
 									email: 'info@copiersutah.com',
 									address: {
 										'@type': 'PostalAddress',
-										streetAddress: 'Your Street Address',
-										addressLocality: 'Your City',
-										addressRegion: 'Your State',
-										postalCode: 'Your Postal Code',
+										streetAddress: '554 W 8360 S',
+										addressLocality: 'Sandy',
+										addressRegion: 'Utah',
+										postalCode: '84070',
 										addressCountry: 'USA'
 									}
 								}

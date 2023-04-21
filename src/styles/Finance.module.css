@@ -482,7 +482,16 @@
 
 .inputDouble {}
 
-@media(width < 600px) {
+@media(max-width:1200px) {
+    .row {
+        width: 100%;
+    }
+    .center {
+        text-align: center;
+    }
+}
+
+@media(max-width: 700px) {
     .woman {
         display: none;
     }
@@ -492,7 +501,7 @@
     }
     .center {
         text-align: center;
-        width: 70%;
+        width: 80%;
     }
     .title {
         font-size: 29px;

@@ -483,29 +483,14 @@
 
 .inputDouble {}
 
-@media(width < 600px) {
-    .woman {
-        display: none;
+@media(max-width: 1000px) {
+    .container {
+        width: 50vw;
     }
-    .row {
-        justify-content: center;
-        width: 100%;
-    }
-    .center {
-        text-align: center;
-        width: 70%;
-    }
-    .title {
-        font-size: 29px;
-    }
-    .optionContainer {
-        height: 35%;
-    }
-    .optionsContainer {
-        height: 50%;
-        width: 30%;
-    }
-    .info {
-        width: 100%;
+}
+
+@media(max-width: 750px) {
+    .container {
+        width: 70vw;
     }
 }

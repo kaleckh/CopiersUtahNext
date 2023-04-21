@@ -43,8 +43,8 @@ const Finance = () => {
 							name: 'Financing and Buying Copiers',
 							description: 'Copiers Utah offers a range of financing options for buying copiers.',
 							brand: 'Copiers Utah',
-							url: 'https://your-domain.com/finance',
-							image: 'https://your-domain.com/static/logo.jpg',
+							url: 'https://copiersutah.com/finance',
+							image: 'https://copiersutah.com/static/logo.jpg',
 							offers: {
 								'@type': 'Offer',
 								priceCurrency: 'USD',
@@ -56,10 +56,10 @@ const Finance = () => {
 									email: 'info@copiersutah.com',
 									address: {
 										'@type': 'PostalAddress',
-										streetAddress: 'Your Street Address',
-										addressLocality: 'Your City',
-										addressRegion: 'Your State',
-										postalCode: 'Your Postal Code',
+										streetAddress: '554 W 8360 S',
+										addressLocality: 'Sandy',
+										addressRegion: 'Utah',
+										postalCode: '84070',
 										addressCountry: 'USA'
 									}
 								}
