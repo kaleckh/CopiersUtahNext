@@ -11,13 +11,16 @@
   "dependencies": {
     "@tawk.to/tawk-messenger-react": "^2.0.1",
     "axios": "^1.3.5",
+    "dotenv": "^16.0.3",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "mdb-react-ui-kit": "^6.0.0",
     "next": "13.3.0",
+    "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-google-recaptcha": "^2.1.0",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.0",
+    "xoauth2": "^1.2.0"
   }
 }
