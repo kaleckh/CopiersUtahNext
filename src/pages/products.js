@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
 import Head from 'next/head';
 import Image from "next/image";
@@ -8,6 +8,10 @@ import { useRouter } from "next/router";
 import styles from "../styles/product.module.css";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Products = () => {
+	const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [message, setMessage] = useState("this is the test message");
 	const router = useRouter();
 
 	const tawkMessengerRef = useRef();
@@ -18,6 +22,33 @@ const Products = () => {
 	const onLoad = () => {
 		console.log("onLoad works!");
 	};
+	const sendEmail = (e) => {
+		e.preventDefault();
+		console.log("Sending");
+		let data = {
+		  name,
+		  email,
+		  message,
+		  number,
+		};
+		fetch("/api/contact", {
+		  method: "POST",
+		  headers: {
+			Accept: "application/json, text/plain, */*",
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(data),
+		}).then((res) => {
+		  console.log("Response received");
+		  if (res.status === 200) {
+			console.log("Response succeeded!");
+			// setSubmitted(true);
+			// setName("");
+			// setEmail("");
+			// setBody("");
+		  }
+		});
+	  };
 	return (
 		<div className={styles.main}>
 			<Head>

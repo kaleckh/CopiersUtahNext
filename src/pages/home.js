@@ -1,3 +1,4 @@
+import React, { useState} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from './Header';
@@ -10,8 +11,39 @@ import { useRouter } from 'next/router';
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 export default function Home() {
+	const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [message, setMessage] = useState("this is the test message");
 	console.log(process.env.RECAPTCHA_SITE_KEY, 'this is key');
 	const router = useRouter();
+	const sendEmail = (e) => {
+		e.preventDefault();
+		console.log("Sending");
+		let data = {
+		  name,
+		  email,
+		  message,
+		  number,
+		};
+		fetch("/api/contact", {
+		  method: "POST",
+		  headers: {
+			Accept: "application/json, text/plain, */*",
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(data),
+		}).then((res) => {
+		  console.log("Response received");
+		  if (res.status === 200) {
+			console.log("Response succeeded!");
+			// setSubmitted(true);
+			// setName("");
+			// setEmail("");
+			// setBody("");
+		  }
+		});
+	  };
 	return (
 		<div className={styles.main}>
 			<Head>

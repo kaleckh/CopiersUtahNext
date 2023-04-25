@@ -1,118 +1,243 @@
-import React, { useRef, useState } from 'react';
-import Header from './Header';
-import Image from 'next/image';
-import Form from './Form';
-import Head from 'next/head';
-
+import React, { useEffect, useRef, useState } from "react";
+import Header from "./Header";
+import Image from "next/image";
+import Form from "./Form";
+import Head from "next/head";
+import ReCAPTCHA from "react-google-recaptcha";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
-import styles from '../styles/buy.module.css';
+import styles from "../styles/buy.module.css";
 
-import Footer from './Footer';
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import Footer from "./Footer";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const Home = (props) => {
-	const [ quoteToggle, setQuoteToggle ] = useState(true);
+  const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+  const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+  const [quoteToggle, setQuoteToggle] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [message, setMessage] = useState("this is the test message");
+  const tawkMessengerRef = useRef();
+  const captchaRef = useRef(null);
 
-	const tawkMessengerRef = useRef();
+  const callback = (name, message, number) => {
+    setName(name);
+    setMessage(message);
+    setNumber(number);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Sending");
+    let data = {
+      name,
+      email,
+      message,
+      number,
+    };
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log("Response received");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        // setSubmitted(true);
+        // setName("");
+        // setEmail("");
+        // setBody("");
+      }
+    });
+  };
 
-	const handleMinimize = () => {
-		tawkMessengerRef.current.minimize();
-	};
-	const onLoad = () => {
-		console.log('onLoad works!');
-	};
-	return (
-		<div className={styles.main}>
-			<Head>
-				<title>Get a Quote for High-Quality New and Refurbished Copiers | Copiers Utah</title>
-				<meta
-					name="description"
-					content="Looking for a high-quality copier for your office? Copiers Utah offers a range of advanced copy machines for sale, including new and refurbished options. Fill out our easy form to get a personalized quote today."
-				/>
-				<meta
-					name="keywords"
-					content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah"
-				/>
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							'@context': 'https://schema.org',
-							'@type': 'Product',
-							name: 'New and Refurbished Copiers',
-							description: 'High-quality copiers for your office, including new and refurbished options.',
-							brand: 'Copiers Utah',
-							url: 'https://copiersutah.com/home',
-							image: 'https://copiersutah.com/static/logo.png',
-							offers: {
-								'@type': 'AggregateOffer',
-								priceCurrency: 'USD',
-								availability: 'https://schema.org/InStock',
-								lowPrice: 'Your Lowest Price',
-								highPrice: 'Your Highest Price',
-								offerCount: 'Number of Copiers Available',
-								seller: {
-									'@type': 'LocalBusiness',
-									name: 'Copiers Utah',
-									telephone: '(801) 261-0510',
-									email: 'info@copiersutah.com',
-									address: {
-										'@type': 'PostalAddress',
-										streetAddress: '554 W 8360 S',
-										addressLocality: 'Sandy',
-										addressRegion: 'Utah',
-										postalCode: '84070',
-										addressCountry: 'USA'
-									}
-								}
-							}
-						})
-					}}
-				/>
-			</Head>
+  const handleMinimize = () => {
+    tawkMessengerRef.current.minimize();
+  };
+  const onLoad = () => {
+    console.log("onLoad works!");
+  };
+  return (
+    <div className={styles.main}>
+      <Head>
+        <title>
+          Get a Quote for High-Quality New and Refurbished Copiers | Copiers
+          Utah
+        </title>
+        <meta
+          name="description"
+          content="Looking for a high-quality copier for your office? Copiers Utah offers a range of advanced copy machines for sale, including new and refurbished options. Fill out our easy form to get a personalized quote today."
+        />
+        <meta
+          name="keywords"
+          content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "New and Refurbished Copiers",
+              description:
+                "High-quality copiers for your office, including new and refurbished options.",
+              brand: "Copiers Utah",
+              url: "https://copiersutah.com/home",
+              image: "https://copiersutah.com/static/logo.png",
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                lowPrice: "Your Lowest Price",
+                highPrice: "Your Highest Price",
+                offerCount: "Number of Copiers Available",
+                seller: {
+                  "@type": "LocalBusiness",
+                  name: "Copiers Utah",
+                  telephone: "(801) 261-0510",
+                  email: "info@copiersutah.com",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "554 W 8360 S",
+                    addressLocality: "Sandy",
+                    addressRegion: "Utah",
+                    postalCode: "84070",
+                    addressCountry: "USA",
+                  },
+                },
+              },
+            }),
+          }}
+        />
+      </Head>
 
-			<div>
-				<TawkMessengerReact
-					onLoad={onLoad}
-					propertyId="5abd4931d7591465c7090c65"
-					widgetId="default"
-					useRef={tawkMessengerRef}
-				/>
-			</div>
-			<div className={styles.logoSpaceContainer}>
-				<div className={styles.logoSpace}>
-					<Image src="/static/logo.png" alt="lady using a copier" width={150} height={100} />
-					<div className={styles.columnContainer}>
-						<div />
-						<div className={styles.infoBig}>Copiers Utah</div>
-						<div className={styles.mediumColumn}>
-							<div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
-							<div className={styles.infoSmall}>info@copiersutah.com</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<Header />
-			<div className={styles.secondSection}>
-				<div className={styles.woman} />
-				{quoteToggle ? (
-					<div>
-						<Form
-							quote={() => {
-								setQuoteToggle(!quoteToggle);
-							}}
-							title={'Get A Quote'}
-						/>
-					</div>
-				) : (
-					<h1 className={styles.title}>Awesome, we will be contacting you shortly!</h1>
-				)}
-			</div>
+      <div>
+        <TawkMessengerReact
+          onLoad={onLoad}
+          propertyId="5abd4931d7591465c7090c65"
+          widgetId="default"
+          useRef={tawkMessengerRef}
+        />
+      </div>
+      <div className={styles.logoSpaceContainer}>
+        <div className={styles.logoSpace}>
+          <Image
+            src="/static/logo.png"
+            alt="lady using a copier"
+            width={150}
+            height={100}
+          />
+          <div className={styles.columnContainer}>
+            <div />
+            <div className={styles.infoBig}>Copiers Utah</div>
+            <div className={styles.mediumColumn}>
+              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
+              <div className={styles.infoSmall}>info@copiersutah.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Header />
+      <div className={styles.secondSection}>
+        <div className={styles.woman} />
+        {quoteToggle ? (
+          <div>
+            <div className={styles.container}>
+              <div className={styles.black}>Get Your free Quote!</div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-evenly",
+                  height: "80%",
+                  alignItems: "center",
+                }}
+              >
+                <div className={styles.space}>
+                  <div className={styles.number}>1</div>
+                  <input
+                    className={styles.inputSingle}
+                    placeholder="Name"
+                    type="text"
+                    name=""
+                    id=""
+                    required={true}
+                    onChange={() => {
+                      setName(event.target.value);
+                    }}
+                  />
+                </div>
+                <div className={styles.space}>
+                  <div className={styles.number}>2</div>
+                  <input
+                    className={styles.inputSingle}
+                    type="tel"
+                    name="telphone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                    maxLength="12"
+                    title="Ten digits code"
+                    onChange={() => {
+                      setNumber(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
 
-			<Footer />
-		</div>
-	);
+                <div className={styles.space}>
+                  <div className={styles.number}>3</div>
+                  <input
+                    onChange={() => {
+                      setMessage(event.target.value);
+                    }}
+                    className={styles.inputSingle}
+                    placeholder="Comments"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                style={{ height: "25%", display: "flex" }}
+                className={styles.padding}
+              >
+                    
+                <ReCAPTCHA
+                  style={{
+                    marginBottom: "10px",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                  className="recaptcha"
+                  sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                  ref={captchaRef}
+                />
+              </div>
+              <button
+                onClick={(e) => {
+                  setQuoteToggle(!quoteToggle);
+                  handleSubmit(e);
+                }}
+                className={styles.button}
+              >
+                Get My Quote
+              </button>
+            </div>
+          </div>
+        ) : (
+          <h1 className={styles.title}>
+            Awesome, we will be contacting you shortly!
+          </h1>
+        )}
+      </div>
+
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;

@@ -8,8 +8,8 @@ export default function (req, res) {
         port: 2525, 
         secure: false,
         auth: {
-            user: "kaethebae",
-            pass: "test"
+            user: process.env.USERNAME,
+            pass: process.env.PASSWORD
         },
         logger: true,
         transactionLog: true, // include SMTP traffic in the logs
@@ -18,13 +18,13 @@ export default function (req, res) {
   
 );
 
-    console.log(transporter, "transporter")
+    console.log(res, "this is the response")
   transporter.sendMail(
     {
-      from: req.body.from,
-      to: "kaleckh@gmail.com ",
-      subject: "test",
-      text: "this is the test",
+      from: "info@copiersutah.com ",
+      to: "info@copiersutah.com",
+      subject: `Quote form from ${req.body.name} My number is ${req.body.number}`,
+      text: req.body.message,
     },
     function (error, response) {
       if (error) {
@@ -34,5 +34,5 @@ export default function (req, res) {
       }
     }
   );
-  
+  res.json({kale: "hamm"})
 }

@@ -20,6 +20,35 @@ const Fix = () => {
 	const SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 	const SECRET_KEY = process.env.REACT_APP_RECAPTCHA_SECRET_KEY;
 
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+		console.log("Sending");
+		let data = {
+		  name,
+		  email,
+		  message,
+		  number,
+		};
+		fetch("/api/contact", {
+		  method: "POST",
+		  headers: {
+			Accept: "application/json, text/plain, */*",
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(data),
+		}).then((res) => {
+		  console.log("Response received");
+		  if (res.status === 200) {
+			console.log("Response succeeded!");
+			// setSubmitted(true);
+			// setName("");
+			// setEmail("");
+			// setBody("");
+		  }
+		});
+	  };
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		let token = captchaRef.current.getValue();

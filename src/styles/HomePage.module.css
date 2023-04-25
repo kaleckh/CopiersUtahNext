@@ -170,7 +170,7 @@
 }
 
 .toner {
-    background-image: url("/static/toner-min.jpg");
+    background-image: url("/static/toner-min.webp");
     height: 30vh;
     width: 20vw;
     background-size: cover;
@@ -180,7 +180,7 @@
 }
 
 .itWork {
-    background-image: url("/static/itSmall.jpg");
+    background-image: url("/static/itWork.webp");
     height: 30vh;
     width: 20vw;
     background-size: cover;
@@ -200,7 +200,7 @@
 }
 
 .woman {
-    background-image: url("/static/smilingWoman.jpg");
+    background-image: url("/static/smilingWoman.webp");
     height: 66vh;
     width: 100%;
     background-size: cover;

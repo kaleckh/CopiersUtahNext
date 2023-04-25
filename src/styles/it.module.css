@@ -150,7 +150,7 @@
 }
 
 .itWork {
-    background-image: url("/static/itWork.jpg");
+    background-image: url("/static/itWork.webp");
     height: 30vh;
     width: 20vw;
     background-size: cover;
