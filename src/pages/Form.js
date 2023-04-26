@@ -58,8 +58,6 @@ const Form = (props) => {
     }
   };
 
-
-
   return (
     <div className={styles.container}>
       <div className={styles.black}>Get Your free Quote!</div>

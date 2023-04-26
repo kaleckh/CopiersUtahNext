@@ -1,24 +1,20 @@
 export default function (req, res) {
   var nodemailer = require("nodemailer");
 
-  
-  let transporter = nodemailer.createTransport(
-    {
-        host: "mail.smtp2go.com",
-        port: 2525, 
-        secure: false,
-        auth: {
-            user: process.env.USERNAME,
-            pass: process.env.PASSWORD
-        },
-        logger: true,
-        transactionLog: true, // include SMTP traffic in the logs
-        // allowInternalNetworkInterfaces: false
+  let transporter = nodemailer.createTransport({
+    host: "mail.smtp2go.com",
+    port: 2525,
+    secure: false,
+    auth: {
+      user: process.env.USERNAME,
+      pass: process.env.PASSWORD,
     },
-  
-);
+    logger: true,
+    transactionLog: true, // include SMTP traffic in the logs
+    // allowInternalNetworkInterfaces: false
+  });
 
-    console.log(res, "this is the response")
+  console.log(res, "this is the response");
   transporter.sendMail(
     {
       from: "info@copiersutah.com ",
@@ -34,5 +30,5 @@ export default function (req, res) {
       }
     }
   );
-  res.json({kale: "hamm"})
+  res.json({ kale: "hamm" });
 }

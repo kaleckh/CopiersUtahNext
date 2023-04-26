@@ -201,10 +201,6 @@ const Finance = () => {
                       />
                     </div>
                   </div>
-                  <div
-                    style={{ height: "25%", display: "flex" }}
-                    className={styles.padding}
-                  />
                       
                   <ReCAPTCHA
                     style={{

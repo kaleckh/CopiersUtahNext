@@ -53,7 +53,7 @@ const Home = () => {
         // setBody("");
       }
     });
-  }
+  };
   // const navigate = useNavigate();
   const sendEmail = (e) => {
     e.preventDefault();

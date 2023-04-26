@@ -163,37 +163,77 @@ const It = (props) => {
           <div className={styles.nothing}>
             <div className={styles.space}>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Ransomware Protection</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Backup And Restore</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Full Printer Support</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Network Efficiency</div>
               </div>
             </div>
             <div className={styles.space}>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Cloud Support</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Fix Broken Hardware</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Secure And Fast Setup</div>
               </div>
               <div className={styles.flexRow}>
-                <Image src="/static/checkmark.png" width={15} height={15} alt={"a checkmark"} />
+                <Image
+                  src="/static/checkmark.png"
+                  width={15}
+                  height={15}
+                  alt={"a checkmark"}
+                />
                 <div>Software And App Support</div>
               </div>
             </div>

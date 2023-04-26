@@ -1,62 +1,62 @@
 .contactHeader {
-    background-color: transparent;
-    width: 100%;
-    display: flex;
-    color: black;
-    overflow: hidden;
-    justify-content: flex-end;
-    align-items: center;
-    height: 7.5vh;
-    object-fit: cover;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  color: black;
+  overflow: hidden;
+  justify-content: flex-end;
+  align-items: center;
+  height: 7.5vh;
+  object-fit: cover;
 }
 
 .pieceContainer {
-    height: 100%;
-    color: white;
-    display: flex;
-    border-radius: 10px;
+  height: 100%;
+  color: white;
+  display: flex;
+  border-radius: 10px;
 }
 
 .pieceContainer:hover {
-    background-color: black;
-    color: white;
-    transition: all 0.3s ease-in-out;
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 .headerContainer {
-    display: flex;
-    width: 100%;
-    height: 70%;
-    justify-content: space-evenly;
-    color: white;
-    background-color: black;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  height: 70%;
+  justify-content: space-evenly;
+  color: white;
+  background-color: black;
+  align-items: center;
 }
 
 .logo {
-    height: 25px;
-    width: 25px;
+  height: 25px;
+  width: 25px;
 }
 
 .picture {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
-    filter: brightness(60%);
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(60%);
 }
 
 .headerPieces {
-    margin: 0px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition-delay: 100ms;
-    transition-timing-function: ease-out;
-    padding: 10px;
+  margin: 0px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition-delay: 100ms;
+  transition-timing-function: ease-out;
+  padding: 10px;
 }
 
 .pic {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
 }

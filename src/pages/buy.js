@@ -14,6 +14,8 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Home = (props) => {
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
   const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+
+  const [recaptchaResponse, setRecaptchaResponse] = useState(true);
   const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -54,6 +56,10 @@ const Home = (props) => {
       }
     });
   };
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
+  };
+  console.log(recaptchaResponse, "this is the ress");
 
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize();
@@ -121,6 +127,7 @@ const Home = (props) => {
           propertyId="5abd4931d7591465c7090c65"
           widgetId="default"
           useRef={tawkMessengerRef}
+          verifyCallback={verifyCallback}
         />
       </div>
       <div className={styles.logoSpaceContainer}>
