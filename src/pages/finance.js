@@ -17,6 +17,7 @@ const Finance = () => {
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const captchaRef = useRef(null);
 
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
@@ -24,20 +25,28 @@ const Finance = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Sending");
-    let data = {
-      name,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+    
+    fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "to": [`<info@copiersutah.com>`],
+        "sender": "<info@copiersutah.com>",
+        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "text_body": `${message}`,
+        "html_body": `<h1>${message}</h1>`,
+        "template_id": "5120871",
+        "template_data": {
+          "message": message,
+          "number": number,
+          "name": name
+      }
+      })
     }).then((res) => {
-      console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -46,6 +55,9 @@ const Finance = () => {
         // setBody("");
       }
     });
+  };
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
   };
 
   const handleMinimize = () => {
@@ -211,6 +223,7 @@ const Finance = () => {
                     className="recaptcha"
                     sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
                     ref={captchaRef}
+                    onChange={verifyCallback}
                   />
                 </div>
                 <button
@@ -219,6 +232,7 @@ const Finance = () => {
                     handleSubmit(e);
                   }}
                   className={styles.button}
+                  disabled={!recaptchaResponse}
                 >
                   Get My Quote
                 </button>

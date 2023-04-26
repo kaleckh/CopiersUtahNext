@@ -39,6 +39,10 @@
   width: 200px;
   will-change: transform;
 }
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 .center {
   width: 40%;

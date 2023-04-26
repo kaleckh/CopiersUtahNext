@@ -24,22 +24,26 @@ export default function Home() {
     tawkMessengerRef.current.minimize();
   };
   const router = useRouter();
+
+
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+    
+    fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "to": [`<${email}>`],
+        "sender": "<info@copiersutah.com>",
+        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "text_body": `${message}`,
+        "html_body": `<h1>${message}</h1>`,
+        "template_id": "1551510"
+      })
     }).then((res) => {
       console.log("Response received");
       if (res.status === 200) {
@@ -51,6 +55,7 @@ export default function Home() {
       }
     });
   };
+  
   return (
     <div className={styles.main}>
       <TawkMessengerReact
@@ -248,7 +253,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className={styles.section}>
+        {/* <div className={styles.section}>
           <div className={styles.line} />
           <div>
             <div>Top Copier Company in Utah!</div>
@@ -257,7 +262,6 @@ export default function Home() {
                 style={{ height: "25%", display: "flex" }}
                 className={styles.padding}
               >
-                    
                 <ReCAPTCHA
                   style={{
                     marginBottom: "10px",
@@ -280,7 +284,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Footer />

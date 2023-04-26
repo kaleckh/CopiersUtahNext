@@ -6,19 +6,18 @@ export default function (req, res) {
     port: 2525,
     secure: false,
     auth: {
-      user: process.env.USERNAME,
-      pass: process.env.PASSWORD,
+      user: "QuoteForm",
+      pass: "AlienIT",
     },
     logger: true,
     transactionLog: true, // include SMTP traffic in the logs
     // allowInternalNetworkInterfaces: false
   });
 
-  console.log(res, "this is the response");
   transporter.sendMail(
     {
-      from: "info@copiersutah.com ",
-      to: "info@copiersutah.com",
+      from: "info@copiersutah.com",
+      to: "kaleckh@gmail.com",
       subject: `Quote form from ${req.body.name} My number is ${req.body.number}`,
       text: req.body.message,
     },

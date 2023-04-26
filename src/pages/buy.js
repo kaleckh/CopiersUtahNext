@@ -15,7 +15,7 @@ const Home = (props) => {
   const SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
   const SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
-  const [recaptchaResponse, setRecaptchaResponse] = useState(true);
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [quoteToggle, setQuoteToggle] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -29,24 +29,32 @@ const Home = (props) => {
     setMessage(message);
     setNumber(number);
   };
-  const handleSubmit = (e) => {
+
+  const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+    
+    fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "to": [`<info@copiersutah.com>`],
+        "sender": "<info@copiersutah.com>",
+        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "text_body": `${message}`,
+        "html_body": `<h1>${message}</h1>`,
+        "template_id": "5120871",
+        "template_data": {
+          "message": message,
+          "number": number,
+          "name": name
+      }
+      })
     }).then((res) => {
-      console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -56,10 +64,11 @@ const Home = (props) => {
       }
     });
   };
+  
   var verifyCallback = function (response) {
+    debugger;
     setRecaptchaResponse(response);
   };
-  console.log(recaptchaResponse, "this is the ress");
 
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize();
@@ -127,7 +136,6 @@ const Home = (props) => {
           propertyId="5abd4931d7591465c7090c65"
           widgetId="default"
           useRef={tawkMessengerRef}
-          verifyCallback={verifyCallback}
         />
       </div>
       <div className={styles.logoSpaceContainer}>
@@ -222,14 +230,16 @@ const Home = (props) => {
                   className="recaptcha"
                   sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
                   ref={captchaRef}
+                  onChange={verifyCallback}
                 />
               </div>
               <button
                 onClick={(e) => {
                   setQuoteToggle(!quoteToggle);
-                  handleSubmit(e);
+                  sendEmail(e);
                 }}
                 className={styles.button}
+                disabled={!recaptchaResponse}
               >
                 Get My Quote
               </button>

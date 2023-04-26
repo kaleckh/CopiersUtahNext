@@ -10,6 +10,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const Fix = () => {
   const tawkMessengerRef = useRef();
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [SuccessMsg, setSuccessMsg] = useState("");
   const [ErrorMsg, setErrorMsg] = useState("");
@@ -23,21 +24,28 @@ const Fix = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+    
+    fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "to": [`<info@copiersutah.com>`],
+        "sender": "<info@copiersutah.com>",
+        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "text_body": `${message}`,
+        "html_body": `<h1>${message}</h1>`,
+        "template_id": "5120871",
+        "template_data": {
+          "message": message,
+          "number": number,
+          "name": name
+      }
+      })
     }).then((res) => {
-      console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -46,6 +54,9 @@ const Fix = () => {
         // setBody("");
       }
     });
+  };
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
   };
 
   const handleSubmit = async (e) => {
@@ -189,13 +200,15 @@ const Fix = () => {
               className="recaptcha"
               sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
               ref={captchaRef}
+              onChange={verifyCallback}
             />
             <button
-              onClick={() => {
-                debugger;
+              onClick={(e) => {
+                sendEmail(e)
                 setToggle(!toggle);
               }}
               className={styles.button}
+              disabled={!recaptchaResponse}
             >
               Get quote!
             </button>

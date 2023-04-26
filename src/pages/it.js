@@ -13,6 +13,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 const It = (props) => {
   const [quoteToggle, setQuoteToggle] = useState(true);
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [buttonToggle, setButtonToggle] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,30 +29,45 @@ const It = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Sending");
-    let data = {
-      name,
-      email,
-      message,
-      number,
-    };
-    fetch("/api/contact", {
+    
+    fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "to": [`<info@copiersutah.com>`],
+        "sender": "<info@copiersutah.com>",
+        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "text_body": `${message}`,
+        "html_body": `<h1>${message}</h1>`,
+        "template_id": "5120871",
+        "template_data": {
+          "message": message,
+          "number": number,
+          "name": name
+      }
+      })
     }).then((res) => {
-      console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         console.log("Response succeeded!");
+        // setSubmitted(true);
+        // setName("");
+        // setEmail("");
+        // setBody("");
       }
     });
   };
   const onLoad = () => {
     console.log("onLoad works!");
   };
-  console.log(process.env.RECAPTCHA_SITE_KEY);
+
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
@@ -281,6 +297,7 @@ const It = (props) => {
               <div className={styles.itSupport} />
               <button
                 onClick={() => {
+                  
                   setQuoteToggle(!quoteToggle);
                 }}
                 className={styles.button}
@@ -361,6 +378,7 @@ const It = (props) => {
                         className="recaptcha"
                         sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
                         ref={captchaRef}
+                        onChange={verifyCallback}
                       />
                     </div>
                     <button
@@ -369,6 +387,7 @@ const It = (props) => {
                         handleSubmit(e);
                       }}
                       className={styles.button}
+                      disabled={!recaptchaResponse}
                     >
                       Get My Quote
                     </button>
