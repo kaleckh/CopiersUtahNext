@@ -38,7 +38,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
+  width: fit-content;
   will-change: transform;
 }
 .button:disabled {
@@ -339,7 +339,7 @@
 }
 
 .secondSection {
-  height: 146vh;
+  height: 213vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -352,17 +352,11 @@
   align-items: center;
   justify-content: space-around;
   background-color: rgb(245, 247, 248);
-  height: 55vh;
+  height: 60vh;
   width: 30vw;
   border-radius: 10px;
 }
 
-.line {
-  height: 0.1px;
-  display: none;
-  width: 100%;
-  background-color: black;
-}
 
 .number {
   background-color: #5fcf80;
@@ -379,7 +373,7 @@
 }
 
 .black {
-  font-size: 30px;
+  font-size: 25px;
   color: black;
 }
 
@@ -458,6 +452,15 @@
   display: flex;
   align-items: center;
 }
+.cartoon {
+  background-image: url("/static/copierCartoon.webp");
+  height: 65vh;
+    width: 26vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 @media (max-width: 1000px) {
   .container {
@@ -492,11 +495,84 @@
   display: flex;
   justify-content: center;
 }
+.contactHeader {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  color: black;
+  overflow: hidden;
+  justify-content: flex-end;
+  align-items: center;
+  height: 7.5vh;
+  object-fit: cover;
+}
+
+.pieceContainer {
+  height: 100%;
+  color: white;
+  display: flex;
+  border-radius: 10px;
+}
+
+.pieceContainer:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.headerContainer {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  justify-content: space-evenly;
+  color: white;
+  background-color: black;
+  align-items: center;
+}
+
+.logo {
+  height: 25px;
+  width: 25px;
+}
+
+.picture {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(60%);
+}
+
+.headerPieces {
+  margin: 0px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition-delay: 100ms;
+  transition-timing-function: ease-out;
+  padding: 10px;
+}
+
+.pic {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+
+.lineContainer{
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background-color: white;
+}
 
 .line {
   height: 1px;
-  width: 80%;
+  width: 90%;
   background-color: rgb(218, 221, 233);
+  color: black;
 }
 
 .linearImage {
@@ -525,7 +601,7 @@
 .infoBig {
   color: black;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .columnContainer {
@@ -573,6 +649,27 @@
   display: flex;
   flex-direction: column;
 }
+.thirdSectionRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.h3{
+  font-size: 17px;
+  color: black;
+  font-weight: 200;
+  text-align: center;
+  padding: 12px;
+  letter-spacing: 1.5px;
+}
+.front{
+  display: flex;
+  height: 75%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 @media (max-width: 1100px) {
   .mediumColumn {
@@ -591,7 +688,7 @@
   }
   .secondSection {
     align-items: center;
-    height: 203vh;
+    height: 213vh;
     width: 100%;
   }
   .shadeBig {

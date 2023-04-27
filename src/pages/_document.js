@@ -2,7 +2,9 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html style={{ fontFamily: "arial", scrollBehavior: "smooth" }} lang="en">
+    <Html style={{
+      fontFamily: "arial", scrollBehavior: " smooth!important"
+    }} lang="en" >
       <Head>
         <link rel="shortcut icon" href="/logo.png" />
       </Head>
@@ -10,6 +12,6 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-    </Html>
+    </Html >
   );
 }

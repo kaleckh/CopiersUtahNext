@@ -12,6 +12,7 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("this is the test message");
@@ -24,19 +25,21 @@ export default function Home() {
     tawkMessengerRef.current.minimize();
   };
   const router = useRouter();
-
+  var verifyCallback = function (response) {
+    setRecaptchaResponse(response);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    
+
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
         "to": [`<${email}>`],
         "sender": "<info@copiersutah.com>",
         "subject": `This is${name}'s quote form. Her number is ${number}`,
@@ -55,7 +58,7 @@ export default function Home() {
       }
     });
   };
-  
+
   return (
     <div className={styles.main}>
       <TawkMessengerReact
@@ -203,7 +206,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.line} />
+        <div className={styles.lineContainer}>
+          <div style={{ marginTop: "30px" }} className={styles.line}></div>
+        </div>
         <div className={styles.needSpace}>
           <div className={styles.middle}>
             <h3 className={styles.reviewBig}>Recent Google Reviews...</h3>
@@ -253,15 +258,76 @@ export default function Home() {
             </a>
           </div>
         </div>
-        {/* <div className={styles.section}>
-          <div className={styles.line} />
-          <div>
-            <div>Top Copier Company in Utah!</div>
+        <div className={styles.lineContainer}>
+          <div className={styles.line}></div>
+        </div>
+        <div id="quote" className={styles.section}>
+          <div className={styles.thirdSectionRow}>
+            <div className={styles.front}>
+              <h2 style={{ fontSize: "30px" }} className={styles.title}>We Sell New And Refurbished Copiers</h2>
+              <h3 style={{ fontSize: "20px" }} className={styles.h3}>Lets Get You A Quote!</h3>
+              <div className={styles.cartoon}></div>
+            </div>
             <div className={styles.container}>
+              <div className={styles.black}>Get Your free Quote!</div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-evenly",
+                  height: "80%",
+                  alignItems: "center",
+                }}
+              >
+                <div className={styles.space}>
+                  <div className={styles.number}>1</div>
+                  <input
+                    className={styles.inputSingle}
+                    placeholder="Name"
+                    type="text"
+                    name=""
+                    id=""
+                    required={true}
+                    onChange={() => {
+                      setName(event.target.value);
+                    }}
+                  />
+                </div>
+                <div className={styles.space}>
+                  <div className={styles.number}>2</div>
+                  <input
+                    className={styles.inputSingle}
+                    type="tel"
+                    name="telphone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                    maxLength="12"
+                    title="Ten digits code"
+                    onChange={() => {
+                      setNumber(event.target.value);
+                    }}
+                    required
+                  />
+                </div>
+
+                <div className={styles.space}>
+                  <div className={styles.number}>3</div>
+                  <input
+                    onChange={() => {
+                      setMessage(event.target.value);
+                    }}
+                    className={styles.inputSingle}
+                    placeholder="Comments"
+                    type="text"
+                  />
+                </div>
+              </div>
               <div
                 style={{ height: "25%", display: "flex" }}
                 className={styles.padding}
               >
+
                 <ReCAPTCHA
                   style={{
                     marginBottom: "10px",
@@ -271,23 +337,26 @@ export default function Home() {
                   className="recaptcha"
                   sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
                   ref={captchaRef}
+                  onChange={verifyCallback}
                 />
               </div>
               <button
-                onClick={() => {
-                  props.quote();
-                  handleClick();
+                onClick={(e) => {
+                  setQuoteToggle(!quoteToggle);
+                  sendEmail(e);
                 }}
                 className={styles.button}
+                disabled={!recaptchaResponse}
               >
                 Get My Quote
               </button>
+
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <Footer />
-    </div>
+    </div >
   );
 }

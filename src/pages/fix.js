@@ -24,14 +24,14 @@ const Fix = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    
+
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
         "to": [`<info@copiersutah.com>`],
         "sender": "<info@copiersutah.com>",
         "subject": `This is${name}'s quote form. Her number is ${number}`,
@@ -42,7 +42,7 @@ const Fix = () => {
           "message": message,
           "number": number,
           "name": name
-      }
+        }
       })
     }).then((res) => {
       console.log(res);
@@ -143,81 +143,90 @@ const Fix = () => {
         </div>
       </div>
       <Header />
-      {toggle ? (
-        <div>Awesome, your next in line</div>
-      ) : (
-        <div className={styles.secondSection}>
-          <div className={styles.container}>
-            <h1 className={styles.black}>Schedule A Maintanance Call!</h1>
-            <div style={{ width: "97%", display: "flex" }}>
-              <div className={styles.number}>1</div>
-              <input
-                style={{ width: "82%", color: "black" }}
-                className={styles.inputSingle}
-                placeholder="First Name"
-                type="text"
-                name=""
-                id=""
-                required={true}
-              />
-            </div>
-            <input
-              className={styles.inputSingle}
-              type="tel"
-              name="telphone"
-              placeholder="Phone Number"
-              pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-              maxLength="12"
-              title="Ten digits code"
-              required
-            />
-            <input
-              className={styles.inputSingle}
-              type="text"
-              placeholder="Zip Code"
-            />
-
-            <div className={styles.numberContainer}>
-              <div className={styles.number}>2</div>
-              <div className={styles.light}>Extra Information</div>
-            </div>
-            <select className={styles.selected} id="year">
-              <option value="hide">Best time to call</option>
-              <option value="2010">Morning</option>
-              <option value="2010">Afternoon</option>
-              <option value="2010">Evening</option>
-            </select>
-            <input
-              style={{ color: "black" }}
-              className={styles.inputSingle}
-              type="text"
-              name=""
-              id=""
-              placeholder="What type of service?"
-            />
-            <ReCAPTCHA
-              style={{ display: "flex", justifyContent: "center" }}
-              className="recaptcha"
-              sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-              ref={captchaRef}
-              onChange={verifyCallback}
-            />
-            <button
-              onClick={(e) => {
-                sendEmail(e)
-                setToggle(!toggle);
-              }}
-              className={styles.button}
-              disabled={!recaptchaResponse}
-            >
-              Get quote!
-            </button>
-          </div>
+      <div style={{ display: "flex" }} className={styles.row}>
+        <div>
+          <div className={styles.black}>Brands We Work On!</div>
+          <div className={styles.line}></div>
         </div>
-      )}
 
+        {toggle ? (
+          <div>
+            <div>Awesome, your next in line</div>
+          </div>
+        ) : (
+            <div>
+              <div className={styles.container}>
+                <h1 className={styles.blackLarge}>Schedule A Maintanance Call!</h1>
+                <div style={{ width: "97%", display: "flex" }}>
+                  <div className={styles.number}>1</div>
+                  <input
+                    style={{ width: "82%", color: "black" }}
+                    className={styles.inputSingle}
+                    placeholder="First Name"
+                    type="text"
+                    name=""
+                    id=""
+                    required={true}
+                  />
+                </div>
+                <input
+                  className={styles.inputSingle}
+                  type="tel"
+                  name="telphone"
+                  placeholder="Phone Number"
+                  pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                  maxLength="12"
+                  title="Ten digits code"
+                  required
+                />
+                <input
+                  className={styles.inputSingle}
+                  type="text"
+                  placeholder="Zip Code"
+                />
+
+                <div className={styles.numberContainer}>
+                  <div className={styles.number}>2</div>
+                  <div className={styles.light}>Extra Information</div>
+                </div>
+                <select className={styles.selected} id="year">
+                  <option value="hide">Best time to call</option>
+                  <option value="2010">Morning</option>
+                  <option value="2010">Afternoon</option>
+                  <option value="2010">Evening</option>
+                </select>
+                <input
+                  style={{ color: "black" }}
+                  className={styles.inputSingle}
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="What type of service?"
+                />
+                <ReCAPTCHA
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="recaptcha"
+                  sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                  ref={captchaRef}
+                  onChange={verifyCallback}
+                />
+                <button
+                  onClick={(e) => {
+                    sendEmail(e)
+                    setToggle(!toggle);
+                  }}
+                  className={styles.button}
+                  disabled={!recaptchaResponse}
+                >
+                  Get quote!
+            </button>
+              </div>
+            </div>
+          )}
+
+      </div>
       <Footer />
-    </div>
+    </div >
   );
 };
 
