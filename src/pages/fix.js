@@ -144,9 +144,24 @@ const Fix = () => {
       </div>
       <Header />
       <div style={{ display: "flex" }} className={styles.row}>
-        <div>
-          <div className={styles.black}>Brands We Work On!</div>
+        <div style={{ width: "50%", height: "77%", display: "flex", justifyContent: "space-evenly", flexDirection: "column" }}>
+          <div style={{ display: "flex", justifyContent: "center" }} className={styles.black}>Some Of The Brands We Work with!</div>
           <div className={styles.line}></div>
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
+          <div className={styles.epson}></div>
+            <div className={styles.Konika}></div>
+            <div className={styles.lexmark}></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
+            <div className={styles.kycotera}></div>
+            <div className={styles.xerox}></div>
+            <div className={styles.hp}></div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
+            <div className={styles.ricoh}></div>
+            <div className={styles.sharp}></div>
+            <div className={styles.canon}></div>
+          </div>
         </div>
 
         {toggle ? (
@@ -154,7 +169,7 @@ const Fix = () => {
             <div>Awesome, your next in line</div>
           </div>
         ) : (
-            <div>
+            <div style={{ width: "35%" }}>
               <div className={styles.container}>
                 <h1 className={styles.blackLarge}>Schedule A Maintanance Call!</h1>
                 <div style={{ width: "97%", display: "flex" }}>
@@ -169,40 +184,40 @@ const Fix = () => {
                     required={true}
                   />
                 </div>
-                <input
-                  className={styles.inputSingle}
-                  type="tel"
-                  name="telphone"
-                  placeholder="Phone Number"
-                  pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                  maxLength="12"
-                  title="Ten digits code"
-                  required
-                />
-                <input
-                  className={styles.inputSingle}
-                  type="text"
-                  placeholder="Zip Code"
-                />
-
-                <div className={styles.numberContainer}>
+                <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>2</div>
-                  <div className={styles.light}>Extra Information</div>
+                  <input
+                    className={styles.inputSingle}
+                    type="tel"
+                    name="telphone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                    maxLength="12"
+                    title="Ten digits code"
+                    required
+                  />
                 </div>
-                <select className={styles.selected} id="year">
-                  <option value="hide">Best time to call</option>
-                  <option value="2010">Morning</option>
-                  <option value="2010">Afternoon</option>
-                  <option value="2010">Evening</option>
-                </select>
-                <input
-                  style={{ color: "black" }}
-                  className={styles.inputSingle}
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="What type of service?"
-                />
+                <div style={{ width: "97%", display: "flex" }}>
+                  <div className={styles.number}>3</div>
+                  <input
+                    className={styles.inputSingle}
+                    type="text"
+                    placeholder="Zip Code"
+                  />
+                </div>
+                <div style={{ width: "97%", display: "flex" }}>
+                  <div className={styles.number}>4</div>
+                  <input
+                    style={{ color: "black" }}
+                    className={styles.inputSingle}
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="What type of service?"
+                  />
+                </div>
+
+
                 <ReCAPTCHA
                   style={{ display: "flex", justifyContent: "center" }}
                   className="recaptcha"

@@ -442,10 +442,99 @@
 .black {
   font-size: 35px;
   color: black;
+  text-align: center;
 }
 .blackLarge {
   font-size: 25px;
   color: black;
+}
+.epson {
+  background-image: url("/static/Epson.png");
+  height: 8vh;
+  width: 10vw;
+  margin-top: 25px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.Konika {
+  background-image: url("/static/Konika.png");
+  height: 15vh;
+  width: 13vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.lexmark {
+  background-image: url("/static/Lexmark.png");
+  height: 15vh;
+  width: 13vw;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.kycotera {
+  background-image: url("/static/Kycotera.png");
+  height: 5vh;
+  width: 14vw;
+  margin-top: 20px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.xerox {
+  background-image: url("/static/xerox.jpeg");
+  height: 7vh;
+  width: 14vw;
+  margin-top: 20px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.hp {
+  background-image: url("/static/hp.jpeg");
+  height: 11vh;
+  width: 10vw;
+  
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.sharp {
+  background-image: url("/static/sharp.png");
+  height: 5vh;
+  width: 14vw;
+  margin-top: 30px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.ricoh {
+  background-image: url("/static/ricoh.png");
+  height: 5vh;
+  width: 14vw;
+  margin-top: 30px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.canon {
+  background-image: url("/static/canon.png");
+  height: 7vh;
+  width: 14vw;
+  margin-top: 20px;
+  background-size: cover;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .line {
   height: 1px;
