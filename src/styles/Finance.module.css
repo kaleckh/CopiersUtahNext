@@ -385,7 +385,7 @@
 }
 
 .inputSingle {
-  width: 100%;
+  width: 80%;
   outline: none;
   background-color: transparent;
   border: none;
@@ -639,12 +639,10 @@
 .space {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.inputSingle {
-  width: 60%;
-}
+
 
 .selected {
   width: 60%;

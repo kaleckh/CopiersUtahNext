@@ -1,14 +1,14 @@
 import styles from "../styles/Footer.module.css";
 import Socials from "./Socials";
-
-// import Logo from "../media/logo.svg"
+import Image from "next/image";
+import { useRouter } from "next/router";
 export default function Footer(props) {
-  //   const navigate = useNavigate();
 
+  const router = useRouter();
   return (
     <div className={styles.footer}>
-      <div className={styles.exploreContainer}>
-        <h2 className={styles.footerTitle}>Contact Us</h2>
+      <div className={styles.exploreContainerGood}>
+        <h3 className={styles.footerTitle}>Contact Us</h3>
         <div className={styles.footerTags}>Copiers Utah</div>
         <div className={styles.footerTags}>554 W 8360 S</div>
         <div className={styles.footerTags}>Sandy, UT 84070</div>
@@ -20,10 +20,10 @@ export default function Footer(props) {
         </div>
       </div>
       <div className={styles.exploreContainer}>
-        <h2 className={styles.footerTitle}>Services</h2>
+        <h3 className={styles.footerTitle}>Services</h3>
         <div
           onClick={() => {
-            navigate("/");
+            router.push("/shortTerm");
           }}
           className={styles.footerTags}
         >
@@ -31,7 +31,7 @@ export default function Footer(props) {
         </div>
         <div
           onClick={() => {
-            navigate("/about");
+            router.push("/fix");
           }}
           className={styles.footerTags}
         >
@@ -39,7 +39,7 @@ export default function Footer(props) {
         </div>
         <div
           onClick={() => {
-            navigate("/diy");
+            router.push("/finance");
           }}
           className={styles.footerTags}
         >
@@ -47,47 +47,15 @@ export default function Footer(props) {
         </div>
         <div
           onClick={() => {
-            navigate("/solarcalculator");
+            router.push("/products");
           }}
           className={styles.footerTags}
         >
           Product Lines
         </div>
       </div>
-      <div className={styles.exploreContainer}>
-        <h2 className={styles.footerTitle}>Services</h2>
-        <div
-          onClick={() => {
-            navigate("/");
-          }}
-          className={styles.footerTags}
-        >
-          Rentals
-        </div>
-        <div
-          onClick={() => {
-            navigate("/about");
-          }}
-          className={styles.footerTags}
-        >
-          Maintenance
-        </div>
-        <div
-          onClick={() => {
-            navigate("/diy");
-          }}
-          className={styles.footerTags}
-        >
-          Financing
-        </div>
-        <div
-          onClick={() => {
-            navigate("/solarcalculator");
-          }}
-          className={styles.footerTags}
-        >
-          Product Lines
-        </div>
+      <div className={styles.exploreContainerGood}>
+        <Image src={'/static/logo.png'} width={200} height={150} />
       </div>
     </div>
   );

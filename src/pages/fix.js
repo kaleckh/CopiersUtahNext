@@ -115,6 +115,35 @@ const Fix = () => {
           name="keywords"
           content="copier repair, copier service, copier maintenance, copier technician, get a quote, copiers Utah"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Copiers Utah",
+      "image": "https://www.example.com/static/logo.png",
+      "telephone": "(801) 261 - 0510",
+      "email": "info@copiersutah.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Main St.",
+        "addressLocality": "Salt Lake City",
+        "addressRegion": "UT",
+        "postalCode": "84101",
+        "addressCountry": "US"
+      },
+      "url": "https://www.copiersutah.com/",
+      "sameAs": [
+        "https://www.facebook.com/copiersutah",
+        "https://twitter.com/copiersutah",
+        "https://www.linkedin.com/company/copiers-utah"
+      ]
+    }
+  `}}
+        />
+
       </Head>
       <div>
         <TawkMessengerReact
@@ -145,19 +174,22 @@ const Fix = () => {
       <Header />
       <div style={{ display: "flex" }} className={styles.row}>
         <div style={{ width: "50%", height: "77%", display: "flex", justifyContent: "space-evenly", flexDirection: "column" }}>
-          <div style={{ display: "flex", justifyContent: "center" }} className={styles.black}>Some Of The Brands We Work with!</div>
+          <div>
+            <div style={{ display: "flex", justifyContent: "center" }} className={styles.black}>We work with all brands, including! </div>
+            <div className={styles.smallBlack}>But not limited to</div>
+          </div>
           <div className={styles.line}></div>
-          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
-          <div className={styles.epson}></div>
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>
+            <div className={styles.epson}></div>
             <div className={styles.Konika}></div>
             <div className={styles.lexmark}></div>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>
             <div className={styles.kycotera}></div>
             <div className={styles.xerox}></div>
             <div className={styles.hp}></div>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>/
+          <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%" }}>
             <div className={styles.ricoh}></div>
             <div className={styles.sharp}></div>
             <div className={styles.canon}></div>

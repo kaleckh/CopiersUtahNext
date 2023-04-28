@@ -25,14 +25,14 @@ const Finance = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Sending");
-    
+
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
         "to": [`<info@copiersutah.com>`],
         "sender": "<info@copiersutah.com>",
         "subject": `This is${name}'s quote form. Her number is ${number}`,
@@ -43,7 +43,7 @@ const Finance = () => {
           "message": message,
           "number": number,
           "name": name
-      }
+        }
       })
     }).then((res) => {
       console.log(res);
@@ -213,7 +213,7 @@ const Finance = () => {
                       />
                     </div>
                   </div>
-                      
+
                   <ReCAPTCHA
                     style={{
                       marginBottom: "10px",
@@ -225,51 +225,52 @@ const Finance = () => {
                     ref={captchaRef}
                     onChange={verifyCallback}
                   />
+                  <button
+                    onClick={(e) => {
+                      setQuoteToggle(!quoteToggle);
+                      handleSubmit(e);
+                    }}
+                    className={styles.button}
+                    disabled={!recaptchaResponse}
+                  >
+                    Get My Quote
+                  </button>
                 </div>
-                <button
-                  onClick={(e) => {
-                    setQuoteToggle(!quoteToggle);
-                    handleSubmit(e);
-                  }}
-                  className={styles.button}
-                  disabled={!recaptchaResponse}
-                >
-                  Get My Quote
-                </button>
+
               </div>
             ) : (
-              <div className={styles.center}>
-                {quoteToggle ? (
-                  <div style={{ display: "contents" }}>
-                    <h2 className={styles.titleBig}>Financing Made Easy</h2>
-                    <div className={styles.paragraph}>
-                      We know how it can be stressful finding a printer. That"s
-                      why we"ve made it easier than ever to find your next one
-                      and get you all your information on it
+                <div className={styles.center}>
+                  {quoteToggle ? (
+                    <div style={{ display: "contents" }}>
+                      <h2 className={styles.titleBig}>Financing Made Easy</h2>
+                      <div className={styles.paragraph}>
+                        We know how it can be stressful finding a printer. That"s
+                        why we"ve made it easier than ever to find your next one
+                        and get you all your information on it
                     </div>
-                    <button
-                      onClick={() => {
-                        setToggle(!toggle);
-                      }}
-                      className={styles.button}
-                    >
-                      Get Your Terms
+                      <button
+                        onClick={() => {
+                          setToggle(!toggle);
+                        }}
+                        className={styles.button}
+                      >
+                        Get Your Terms
                     </button>
-                  </div>
-                ) : (
-                  <div
-                    className={styles.title}
-                    style={{
-                      width: "140%",
-                      fontWeight: "300",
-                      fontSize: "37px",
-                    }}
-                  >
-                    Awesome, we will be contacting you shortly!
-                  </div>
-                )}
-              </div>
-            )}
+                    </div>
+                  ) : (
+                      <div
+                        className={styles.title}
+                        style={{
+                          width: "140%",
+                          fontWeight: "300",
+                          fontSize: "37px",
+                        }}
+                      >
+                        Awesome, we will be contacting you shortly!
+                      </div>
+                    )}
+                </div>
+              )}
           </div>
         </div>
       </div>

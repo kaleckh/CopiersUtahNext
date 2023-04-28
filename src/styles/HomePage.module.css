@@ -473,9 +473,7 @@
     width: 45vw;
     font-size: 27px;
   }
-  .woman {
-    display: none;
-  }
+
 }
 
 @media (max-width: 600px) {
@@ -483,9 +481,7 @@
     width: 80vw;
     font-size: 27px;
   }
-  .woman {
-    display: none;
-  }
+
 }
 
 .section {
@@ -688,7 +684,7 @@
   }
   .secondSection {
     align-items: center;
-    height: 213vh;
+    height: 297vh;
     width: 100%;
   }
   .shadeBig {
@@ -720,14 +716,32 @@
   }
 }
 
+@media (max-width: 950px) {
+  .cartoon{
+    height: 46vh;
+    width: 41vw;
+  }
+  .front{
+    height: 63%;
+  }
+  .container{
+    margin: 10px;
+    width: 50vw;
+  }
+}
+
 @media (max-width: 600px) {
   .columnContainer {
     flex-direction: column;
     align-items: flex-end;
     text-align: end;
   }
+  
   .logoSpace {
     width: 80%;
+  }
+  .container{
+    width: 70vw;
   }
 }
 
@@ -768,6 +782,25 @@
   }
   .middle {
     height: 55%;
+  }
+  .thirdSectionRow{
+    flex-direction: column;
+  }
+  .cartoon{
+    width: 49vw;
+    height: 36vh;
+  }
+  .title{
+    font-size: 27px;
+  }
+  .secondSection{
+    height: 315vh;
+  }
+  .section{
+    height: 125vh;
+  }
+  .front{
+    height: 47%;
   }
 }
 

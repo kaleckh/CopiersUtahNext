@@ -40,15 +40,20 @@ export default function Home() {
       },
       body: JSON.stringify({
         "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        "to": [`<${email}>`],
+        "to": [`<info@copiersutah.com>`],
         "sender": "<info@copiersutah.com>",
-        "subject": `This is${name}'s quote form. Her number is ${number}`,
+        "subject": `This is${name}'s quote form. Their number is ${number}`,
         "text_body": `${message}`,
         "html_body": `<h1>${message}</h1>`,
-        "template_id": "1551510"
+        "template_id": "5120871",
+        "template_data": {
+          "message": message,
+          "number": number,
+          "name": name
+        }
       })
     }).then((res) => {
-      console.log("Response received");
+      console.log(res);
       if (res.status === 200) {
         console.log("Response succeeded!");
         // setSubmitted(true);
@@ -181,7 +186,7 @@ export default function Home() {
             <div className={styles.row}>
               <div
                 onClick={() => {
-                  router.push("/It");
+                  router.push("/it");
                 }}
                 className={styles.shade}
               >
