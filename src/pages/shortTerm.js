@@ -15,6 +15,8 @@ import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 const Home = () => {
   const tawkMessengerRef = useRef();
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
+  const [nameRes, setNameRes] = useState(false);
+  const [messageRes, setMessageRes] = useState(false);
   const [quote, setQuote] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -66,6 +68,7 @@ const Home = () => {
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -260,7 +263,7 @@ const Home = () => {
                       setQuote(!quote);
                       handleSubmit(e);
                     }}
-                    disabled={!recaptchaResponse}
+                    disabled={!recaptchaResponse && !messageRes}
                     className={styles.button}
                   >
                     Get My Quote
