@@ -83,7 +83,7 @@ const Finance = () => {
         />
         <meta
           name="keywords"
-          content="copier financing, copier buying, office copiers, copier quote, copiers Utah"
+          content="copier financing, copier buying, office copiers, copier quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
         />
         <script
           type="application/ld+json"

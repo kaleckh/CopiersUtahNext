@@ -33,14 +33,14 @@ const Home = (props) => {
   const sendEmail = (e) => {
     e.preventDefault();
     console.log("Sending");
-    
+
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        "api_key":"api-DC44EBDEE45411ED847EF23C91C88F4E",
+        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
         "to": [`<info@copiersutah.com>`],
         "sender": "<info@copiersutah.com>",
         "subject": `This is${name}'s quote form. Her number is ${number}`,
@@ -51,7 +51,7 @@ const Home = (props) => {
           "message": message,
           "number": number,
           "name": name
-      }
+        }
       })
     }).then((res) => {
       console.log(res);
@@ -64,7 +64,7 @@ const Home = (props) => {
       }
     });
   };
-  
+
   var verifyCallback = function (response) {
     debugger;
     setRecaptchaResponse(response);
@@ -89,7 +89,7 @@ const Home = (props) => {
         />
         <meta
           name="keywords"
-          content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah"
+          content="office copiers, copiers for sale, refurbished copiers, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
         />
         <script
           type="application/ld+json"
@@ -220,7 +220,7 @@ const Home = (props) => {
                 style={{ height: "25%", display: "flex" }}
                 className={styles.padding}
               >
-                    
+
                 <ReCAPTCHA
                   style={{
                     marginBottom: "10px",
@@ -246,10 +246,10 @@ const Home = (props) => {
             </div>
           </div>
         ) : (
-          <h1 className={styles.title}>
-            Awesome, we will be contacting you shortly!
-          </h1>
-        )}
+            <h1 className={styles.title}>
+              Awesome, we will be contacting you shortly!
+            </h1>
+          )}
       </div>
 
       <Footer />

@@ -75,10 +75,14 @@ export default function Home() {
       <Head>
         <title>
           Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
-        </title>
+  </title>
         <meta
           name="description"
           content="Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! "
+        />
+        <meta
+          name="keywords"
+          content="copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
         />
         <script
           type="application/ld+json"
@@ -120,6 +124,7 @@ export default function Home() {
           }}
         />
       </Head>
+
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
