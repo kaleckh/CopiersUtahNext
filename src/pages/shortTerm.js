@@ -103,7 +103,7 @@ const Home = () => {
         />
         <meta
           name="keywords"
-          content="short-term copier rentals, copier rental, short-term rental, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
+          content="short-term copier rentals, copier rental, short-term rental, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
         />
         <script
           type="application/ld+json"

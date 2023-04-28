@@ -82,7 +82,7 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
+          content="copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
         />
         <script
           type="application/ld+json"

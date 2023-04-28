@@ -113,7 +113,7 @@ const Fix = () => {
         />
         <meta
           name="keywords"
-          content="copier repair, copier service, copier maintenance, copier technician, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine"
+          content="copier repair, copier service, copier maintenance, copier technician, get a quote, copiers Utah, copiers for sale, copier rentals, office copy machines, affordable copiers, copiers shop, copiers near me, copier sales, rent a copier machine, used copiers, used copiers near me, used copiers for sale, used copiers for rent, used copiers utah"
         />
         <script
           type="application/ld+json"
