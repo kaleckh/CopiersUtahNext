@@ -20,7 +20,7 @@ const Home = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
-  const [message, setMessage] = useState("this is the test message");
+  const [message, setMessage] = useState("");
   const tawkMessengerRef = useRef();
   const captchaRef = useRef(null);
 
@@ -49,6 +49,7 @@ const Home = (props) => {
         "template_id": "5120871",
         "template_data": {
           "message": message,
+          "from": "buy a copier",
           "number": number,
           "name": name
         }

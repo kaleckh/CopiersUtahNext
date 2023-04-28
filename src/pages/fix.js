@@ -13,6 +13,10 @@ const Fix = () => {
   const [recaptchaResponse, setRecaptchaResponse] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [SuccessMsg, setSuccessMsg] = useState("");
+  const [message, setMessage] = useState("");
+  const [number, setNumber] = useState("");
+  const [name, setName] = useState("");
+  const [zipCode, setZipCode] = useState("");
   const [ErrorMsg, setErrorMsg] = useState("");
   const [valid_token, setValidToken] = useState([]);
   const [token, setToken] = useState();
@@ -41,6 +45,8 @@ const Fix = () => {
         "template_data": {
           "message": message,
           "number": number,
+          "zip": zipCode,
+          "from": "Fix a machine page",
           "name": name
         }
       })
@@ -207,6 +213,7 @@ const Fix = () => {
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>1</div>
                   <input
+                    onChange={() => { setName(event.target.value) }}
                     style={{ width: "82%", color: "black" }}
                     className={styles.inputSingle}
                     placeholder="First Name"
@@ -219,6 +226,7 @@ const Fix = () => {
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>2</div>
                   <input
+                    onChange={() => { setNumber(event.target.value) }}
                     className={styles.inputSingle}
                     type="tel"
                     name="telphone"
@@ -232,6 +240,7 @@ const Fix = () => {
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>3</div>
                   <input
+                    onChange={() => { setZipCode(event.target.value) }}
                     className={styles.inputSingle}
                     type="text"
                     placeholder="Zip Code"
@@ -240,6 +249,7 @@ const Fix = () => {
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>4</div>
                   <input
+                    onChange={() => { setMessage(event.target.value) }}
                     style={{ color: "black" }}
                     className={styles.inputSingle}
                     type="text"

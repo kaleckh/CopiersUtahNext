@@ -42,6 +42,7 @@ const Finance = () => {
         "template_data": {
           "message": message,
           "number": number,
+          "from": "Financing page",
           "name": name
         }
       })
