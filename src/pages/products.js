@@ -102,7 +102,7 @@ const Products = () => {
           justifyContent: "center",
         }}
       >
-        <h1 className={styles.color}>Our Products</h1>
+        <h1 className={styles.color}>Our Top Products</h1>
         <div className={styles.centerLine}>
           <div className={styles.line} />
         </div>

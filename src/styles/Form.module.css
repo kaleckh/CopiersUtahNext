@@ -88,9 +88,10 @@
 
 .button {
   appearance: none;
-  background-color: #000000;
-  border: 2px solid #1a1a1a;
+  background-color: rgb(254,190,104);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
+  border: none;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
