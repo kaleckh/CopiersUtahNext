@@ -44,12 +44,24 @@
 .button:disabled {
   opacity: 0.5;
 }
+.phoneNumber{
+  background-color: transparent;
+  outline: none;
+  color: rgb(117,117,117);
+  border: none;
+  border-bottom: 1px black solid;
+  width: 100%;
+  font-size: 20px;
+}
+.phoneNumber:focus{
+  border: none;
+}
 
-.center {
+.center { 
   display: flex;
   height: 100%;
   width: 100%;
-  font-size: 25px;
+  font-size: 31px;
   font-weight: 400;
   justify-content: center;
   align-items: flex-end;

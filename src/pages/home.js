@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "./Header";
+import { PatternFormat } from 'react-number-format';
 import { Inter } from "next/font/google";
 import styles from "../styles/HomePage.module.css";
 import { Quote } from "../SVG/Quote";
@@ -306,19 +307,7 @@ export default function Home() {
                 </div>
                 <div className={styles.space}>
                   <div className={styles.number}>2</div>
-                  <input
-                    className={styles.inputSingle}
-                    type="tel"
-                    name="telphone"
-                    placeholder="Phone Number"
-                    pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                    maxLength="12"
-                    title="Ten digits code"
-                    onChange={() => {
-                      setNumber(event.target.value);
-                    }}
-                    required
-                  />
+                  <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
                 </div>
 
                 <div className={styles.space}>

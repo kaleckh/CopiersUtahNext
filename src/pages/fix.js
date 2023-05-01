@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import Head from "next/head";
 import Axios from "axios";
+import { PatternFormat } from 'react-number-format';
 import Image from "next/image";
 import styles from "../styles/Fix.module.css";
 import Footer from "./Footer";
@@ -225,17 +226,7 @@ const Fix = () => {
                 </div>
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>2</div>
-                  <input
-                    onChange={() => { setNumber(event.target.value) }}
-                    className={styles.inputSingle}
-                    type="tel"
-                    name="telphone"
-                    placeholder="Phone Number"
-                    pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                    maxLength="12"
-                    title="Ten digits code"
-                    required
-                  />
+                  <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
                 </div>
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>3</div>

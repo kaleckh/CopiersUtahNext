@@ -641,7 +641,18 @@
   width: 100%;
   justify-content: center;
 }
-
+.phoneNumber{
+  background-color: transparent;
+  outline: none;
+  color: rgb(117,117,117);
+  border: none;
+  border-bottom: 1px black solid;
+  width: 80%;
+  font-size: 20px;
+}
+.phoneNumber:focus{
+  border: none;
+}
 
 
 .selected {

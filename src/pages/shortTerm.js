@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import Form from "./Form";
+import { PatternFormat } from 'react-number-format';
 import Image from "next/image";
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -214,19 +215,7 @@ const Home = () => {
                     </div>
                     <div className={styles.space}>
                       <div className={styles.number}>2</div>
-                      <input
-                        className={styles.inputSingle}
-                        type="tel"
-                        name="telphone"
-                        placeholder="Phone Number"
-                        pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                        maxLength="12"
-                        title="Ten digits code"
-                        onChange={() => {
-                          setNumber(event.target.value);
-                        }}
-                        required
-                      />
+                      <PatternFormat format="+1 (###) #### ###" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
                     </div>
 
                     <div className={styles.space}>

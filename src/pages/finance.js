@@ -3,7 +3,7 @@ import Header from "./Header";
 import Image from "next/image";
 import Head from "next/head";
 import Form from "./Form";
-
+import { PatternFormat } from 'react-number-format';
 import styles from "../styles/Finance.module.css";
 import Footer from "./Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -68,10 +68,7 @@ const Finance = () => {
     console.log("onLoad works!");
   };
 
-  console.log(
-    process.env.REACT_APP_RECAPTCHA_SITE_KEY,
-    "this is the env without quotes"
-  );
+  console.log(number, "this is number");
   return (
     <div className={styles.main}>
       <Head>
@@ -187,19 +184,7 @@ const Finance = () => {
                     </div>
                     <div className={styles.space}>
                       <div className={styles.number}>2</div>
-                      <input
-                        className={styles.inputSingle}
-                        type="tel"
-                        name="telphone"
-                        placeholder="Phone Number"
-                        pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                        maxLength="12"
-                        title="Ten digits code"
-                        onChange={() => {
-                          setNumber(event.target.value);
-                        }}
-                        required
-                      />
+                      <PatternFormat format="+1 (###) #### ###" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
                     </div>
 
                     <div className={styles.space}>
@@ -265,6 +250,7 @@ const Finance = () => {
                           width: "140%",
                           fontWeight: "300",
                           fontSize: "37px",
+
                         }}
                       >
                         Awesome, we will be contacting you shortly!

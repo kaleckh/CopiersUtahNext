@@ -168,6 +168,18 @@
   border-radius: 15px;
   background-repeat: no-repeat;
 }
+.phoneNumber{
+  background-color: transparent;
+  outline: none;
+  color: rgb(117,117,117);
+  border: none;
+  border-bottom: 1px black solid;
+  width: 100%;
+  font-size: 20px;
+}
+.phoneNumber:focus{
+  border: none;
+}
 
 .woman {
   background-image: url("/static/copier.jpg");
@@ -176,6 +188,7 @@
   background-size: cover;
   border-radius: 15px;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .shade {
