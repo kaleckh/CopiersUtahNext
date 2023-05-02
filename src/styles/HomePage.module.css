@@ -352,7 +352,7 @@
 }
 
 .secondSection {
-  height: 213vh;
+  height: 225vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -753,10 +753,11 @@
   }
   
   .logoSpace {
-    width: 80%;
+    width: 95%;
+    justify-content: space-around;
   }
   .container{
-    width: 70vw;
+    width: 85vw;
   }
 }
 
@@ -765,16 +766,16 @@
     width: 100%;
   }
   .toner {
-    width: 40vw;
+    width: 45vw;
   }
   .construction {
-    width: 40vw;
+    width: 45vw;
   }
   .itWork {
-    width: 40vw;
+    width: 45vw;
   }
   .repair {
-    width: 40vw;
+    width: 45vw;
   }
   .somethingContainer {
     width: 87%;
@@ -789,7 +790,7 @@
     font-size: 17px;
   }
   .reviewBig {
-    font-size: 30px;
+    font-size: 20px;
   }
   .titleSmall {
     line-height: 21px;
@@ -802,11 +803,11 @@
     flex-direction: column;
   }
   .cartoon{
-    width: 49vw;
-    height: 36vh;
+    width: 63vw;
+    height: 39vh;
   }
   .title{
-    font-size: 27px;
+    font-size: 19px;
   }
   .secondSection{
     height: 315vh;
@@ -814,9 +815,16 @@
   .section{
     height: 125vh;
   }
+  .middle{
+    height: 15%;
+  }
   .front{
     height: 47%;
   }
+  .infoBig{
+    font-size: 25px;
+  }
+  
 }
 
 @media (max-width: 510px) {

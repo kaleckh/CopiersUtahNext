@@ -476,7 +476,14 @@
     align-items: flex-end;
   }
   .logoSpace {
-    width: 80%;
+    width: 95%;
+    justify-content: space-around;
+  }
+  .infoBig{
+    font-size: 25px;
+  }
+  .infoMedium {
+    font-size: 17px;
   }
 }
 

@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   justify-content: space-around;
-  height: 30vh;
+  height: 25vh;
   background-color: black;
   color: white;
   align-items: center;
@@ -43,5 +43,11 @@
 @media(max-width: 650px) {
   .exploreContainer{
     display: none;
+  }
+  .footerTags{
+    font-size: 13px;
+  }
+  .footerTitle{
+    font-size: 25px;
   }
 }

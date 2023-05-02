@@ -74,6 +74,9 @@ export default function Home() {
         useRef={tawkMessengerRef}
       />
       <Head>
+      
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKD6REH5QG"></script>
+
         <title>
           Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
   </title>

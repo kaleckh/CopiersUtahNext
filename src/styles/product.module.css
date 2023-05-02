@@ -278,6 +278,18 @@
     align-items: flex-end;
   }
   .logoSpace {
-    width: 80%;
+    width: 95%;
+    justify-content: space-around;
   }
+  .infoMedium {
+    font-size: 17px;
+    text-align: end;
+  }
+  .infoBig{
+    font-size: 25px;
+  }
+  .color{
+    font-size: 30px;
+  }
+  
 }

@@ -172,17 +172,17 @@ const Fix = () => {
             <div />
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
+              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
             </div>
           </div>
         </div>
       </div>
       <Header />
       <div style={{ display: "flex" }} className={styles.row}>
-        <div style={{ width: "50%", height: "77%", display: "flex", justifyContent: "space-evenly", flexDirection: "column" }}>
+        <div className={styles.mainSpace}>
           <div>
-            <div style={{ display: "flex", justifyContent: "center" }} className={styles.black}>We work with all brands, including! </div>
+            <div style={{ width: "100%", display: "flex", justifyContent: "center" }} className={styles.black}>We work with all brands, including! </div>
             <div className={styles.smallBlack}>But not limited to</div>
           </div>
           <div className={styles.line}></div>
@@ -208,7 +208,7 @@ const Fix = () => {
             <div>Awesome, your next in line</div>
           </div>
         ) : (
-            <div style={{ width: "35%" }}>
+            <div style={{ width: "fit-content" }}>
               <div className={styles.container}>
                 <h1 className={styles.blackLarge}>Schedule A Maintanance Call!</h1>
                 <div style={{ width: "97%", display: "flex" }}>
@@ -226,7 +226,7 @@ const Fix = () => {
                 </div>
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>2</div>
-                  <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
+                  <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />
                 </div>
                 <div style={{ width: "97%", display: "flex" }}>
                   <div className={styles.number}>3</div>

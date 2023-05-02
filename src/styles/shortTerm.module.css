@@ -454,6 +454,7 @@
   .container {
     width: 50vw;
   }
+  
 }
 
 @media (max-width: 700px) {
@@ -468,7 +469,7 @@
 
 @media (max-width: 600px) {
   .container {
-    width: 80vw;
+    width: 95vw;
     font-size: 27px;
   }
   .woman {
@@ -480,6 +481,17 @@
   }
   .logoSpace {
     width: 80%;
+  }
+  .infoBig{
+    font-size: 25px;
+  }
+  .infoMedium {
+    font-size: 17px;
+    text-align: end;
+  }
+  .logoSpace {
+    width: 95%;
+    justify-content: space-around;
   }
 }
 
@@ -501,6 +513,6 @@
     justify-content: center;
   }
   .container {
-    width: 80vw;
+    width: 95vw;
   }
 }

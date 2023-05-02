@@ -681,6 +681,33 @@
     align-items: flex-end;
   }
   .logoSpace {
-    width: 80%;
+    width: 95%;
+    justify-content: space-around;
   }
+  .infoMedium {
+    font-size: 17px;
+    text-align: end;
+  }
+  .infoBig{
+    font-size: 25px;
+  }
+  .thirdSection{
+    height: 66vh;
+  }
+  .optionContainer{
+    height: 62%;
+  }
+  .row{
+    height: 130%;
+  }
+  .center{
+    height: 100%;
+  }
+  .title{
+    display: none;
+  }
+  .container{
+    width: 95vw;
+  }
+
 }

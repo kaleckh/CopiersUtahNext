@@ -8,8 +8,8 @@ export const Quote = () => {
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="30px"
-      height="30PX"
+      width="20px"
+      height="20PX"
       viewBox="0 0 351.128 351.128"
       xmlSpace="preserve"
     >

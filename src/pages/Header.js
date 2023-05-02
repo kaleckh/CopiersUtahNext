@@ -37,7 +37,7 @@ export default function Header(props) {
         <div className={styles.pieceContainer}>
           <div
             onClick={() => {
-              router.push("/contact");
+              router.push("/buy");
             }}
             className={styles.headerPieces}
           >
