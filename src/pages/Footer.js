@@ -1,6 +1,7 @@
 import styles from "../styles/Footer.module.css";
 import Socials from "./Socials";
 import Image from "next/image";
+import Link from 'next/link'
 import { useRouter } from "next/router";
 export default function Footer(props) {
 
@@ -21,38 +22,30 @@ export default function Footer(props) {
       </div>
       <div className={styles.exploreContainer}>
         <h3 className={styles.footerTitle}>Services</h3>
-        <div
-          onClick={() => {
-            router.push("/shortTerm");
-          }}
-          className={styles.footerTags}
-        >
-          Rentals
-        </div>
-        <div
-          onClick={() => {
-            router.push("/fix");
-          }}
-          className={styles.footerTags}
-        >
-          Maintenance
-        </div>
-        <div
-          onClick={() => {
-            router.push("/finance");
-          }}
-          className={styles.footerTags}
-        >
-          Financing
-        </div>
-        <div
-          onClick={() => {
-            router.push("/products");
-          }}
-          className={styles.footerTags}
-        >
-          Product Lines
-        </div>
+        <Link href="https://copiersutah.com/shortTerm">
+          <div
+            className={styles.headerPieces}>
+            Rentals
+          </div>
+        </Link>
+        <Link href="https://copiersutah.com/fix">
+          <div
+            className={styles.headerPieces}>
+            Maintanance
+          </div>
+        </Link>
+        <Link href="https://copiersutah.com/finance">
+          <div
+            className={styles.headerPieces}>
+            Financing
+          </div>
+        </Link>
+        <Link href="https://copiersutah.com/products">
+          <div
+            className={styles.headerPieces}>
+            Products
+          </div>
+        </Link>
       </div>
       <div className={styles.exploreContainerGood}>
         <Image src={'/static/logo.png'} width={200} height={150} />

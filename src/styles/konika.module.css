@@ -475,22 +475,70 @@
   }
 }
 
-@media (width < 1050px) {
-  .keyPointTitle {
-    font-size: 16px;
+@media(max-width:900px) {
+  .Overview{
+    color: black;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    margin-top: 16px;
+    padding: 0px;
   }
-  .row {
+  .paragraphSmall{
+    font-size: 15px;
+  }
+  .rowBottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+  .bottomContainer{
+    width: 120%;
+  }
+  .section{
     width: 90%;
+  }
+  .thirty{
+    width: 45%;
   }
 }
 
-@media (width < 750px) {
+@media (max-width: 750px) {
   .konika {
     height: 36vh;
   }
+  .epson{
+    height: 14vh;
+    width: 26vw;
+  }
+  .row{
+    width: 100%;
+  }
+  .bulletContainer{
+    padding: 8px;
+  }
 }
 
-@media (width < 550px) {
+@media (max-width: 600px) {
+  .columnContainer {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+  }
+  
+  .logoSpace {
+    width: 95%;
+    justify-content: space-around;
+  }
+  .container{
+    width: 73vw;
+  }
+}
+
+@media (max-width:  550px) {
   .focusTitle {
     font-size: 23px;
   }

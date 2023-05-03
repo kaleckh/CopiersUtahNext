@@ -1,5 +1,6 @@
 import styles from "../styles/Header.module.css";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 export default function Header(props) {
   const router = useRouter();
 
@@ -7,42 +8,36 @@ export default function Header(props) {
     <header className={styles.contactHeader}>
       <div className={styles.headerContainer}>
         <div className={styles.pieceContainer}>
-          <div
-            className={styles.headerPieces}
-            onClick={() => {
-              router.push("/home");
-            }}
-          >
-            Home
+          <Link href="https://copiersutah.com/home">
+            <div
+              className={styles.headerPieces}>
+              Home
           </div>
+          </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <div
-            className={styles.headerPieces}
-            onClick={() => {
-              router.push("/products");
-            }}
-          >
-            Product Line
+          <Link href="https://copiersutah.com/products">
+            <div
+              className={styles.headerPieces}>
+              Product Line
           </div>
+          </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <div
-            className={styles.headerPieces}
-            onClick={() => router.push("/finance")}
-          >
-            Financing
+          <Link href="https://copiersutah.com/finance">
+            <div
+              className={styles.headerPieces}>
+              Financing
           </div>
+          </Link>
         </div>
         <div className={styles.pieceContainer}>
-          <div
-            onClick={() => {
-              router.push("/buy");
-            }}
-            className={styles.headerPieces}
-          >
-            Contact Us
+          <Link href="https://copiersutah.com/buy">
+            <div
+              className={styles.headerPieces}>
+              Contact Us
           </div>
+          </Link>
         </div>
       </div>
     </header>

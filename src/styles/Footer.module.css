@@ -50,4 +50,7 @@
   .footerTitle{
     font-size: 25px;
   }
+  .footer{
+    height: 31vh;
+  }
 }

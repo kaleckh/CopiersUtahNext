@@ -5,7 +5,7 @@ import Form from "./Form";
 import Footer from "./Footer";
 import Image from "next/image";
 import { PatternFormat } from 'react-number-format';
-import styles from "../styles/lexmark.module.css";
+import styles from "../styles/konika.module.css";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";

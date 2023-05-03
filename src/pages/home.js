@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "./Header";
 import { PatternFormat } from 'react-number-format';
-import { Inter } from "next/font/google";
+import Link from 'next/link'
 import styles from "../styles/HomePage.module.css";
 import { Quote } from "../SVG/Quote";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -74,12 +74,10 @@ export default function Home() {
         useRef={tawkMessengerRef}
       />
       <Head>
-      
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKD6REH5QG"></script>
 
-        <title>
-          Copiers for Sale and Rent | Office Copy Machines | Copiers Utah
-  </title>
+
+
+        <title>Copiers for Sale and Rent | Office Copy Machines | Copiers Utah </title>
         <meta
           name="description"
           content="Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! "
@@ -150,21 +148,17 @@ export default function Home() {
       <Header />
       <div className={styles.secondSection}>
         <div className={styles.flex}>
-          <div
-            onClick={() => {
-              router.push("/buy");
-            }}
-            className={styles.shadeBig}
-            style={{ height: "75%", marginTop: "24px" }}
-          >
-            <div className={styles.parent}>
-              <div className={styles.woman} />
-
-              <div className={styles.overlay}>
-                <div className={styles.centerLarge}>Buy Or Lease A Copier</div>
+          <div className={styles.shadeBig} style={{ height: "75%", marginTop: "24px" }}>
+            <Link href="https://copiersutah.com/buy">
+              <div className={styles.parent}>
+                <div className={styles.woman} />
+                <div className={styles.overlay}>
+                  <div className={styles.centerLarge}>Buy Or Lease A Copier</div>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
+
           <div className={styles.somethingContainer}>
             <div className={styles.row}>
               <div
@@ -173,11 +167,13 @@ export default function Home() {
                 }}
                 className={styles.shade}
               >
-                <div className={styles.parent}>
-                  <div className={styles.repair} />
+                <Link href="https://copiersutah.com/fix">
+                  <div className={styles.parent}>
+                    <div className={styles.repair} />
 
-                  <div className={styles.center}>Copier Repair</div>
-                </div>
+                    <div className={styles.center}>Copier Repair</div>
+                  </div>
+                </Link>
               </div>
               <div
                 onClick={() => {
@@ -193,29 +189,23 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.row}>
-              <div
-                onClick={() => {
-                  router.push("/it");
-                }}
-                className={styles.shade}
-              >
-                <div className={styles.parent}>
-                  <div className={styles.itWork} />
-                  <div className={styles.overlay} />
-                  <div className={styles.center}>IT Work</div>
-                </div>
+              <div className={styles.shade}>
+                <Link href="https://copiersutah.com/it">
+                  <div className={styles.parent}>
+                    <div className={styles.itWork} />
+                    <div className={styles.overlay} />
+                    <div className={styles.center}>IT Work</div>
+                  </div>
+                </Link>
               </div>
-              <div
-                onClick={() => {
-                  router.push("/shortTerm");
-                }}
-                className={styles.shade}
-              >
-                <div className={styles.parent}>
-                  <div className={styles.construction} />
-                  <div className={styles.overlay} />
-                  <div className={styles.center}>Short Term Rental</div>
-                </div>
+              <div className={styles.shade}>
+                <Link href="https://copiersutah.com/shortTerm">
+                  <div className={styles.parent}>
+                    <div className={styles.construction} />
+                    <div className={styles.overlay} />
+                    <div className={styles.center}>Short Term Rental</div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
