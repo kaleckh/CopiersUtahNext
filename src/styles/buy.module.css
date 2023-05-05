@@ -14,7 +14,7 @@
 
 .button {
   appearance: none;
-  background-color: rgb(254,190,104);
+  background-color: rgb(254, 190, 104);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   border: none;
@@ -408,21 +408,20 @@
   border-bottom: 1px black solid;
 }
 
-
 .button:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
-.phoneNumber{
+.phoneNumber {
   background-color: transparent;
   outline: none;
-  color: rgb(117,117,117);
+  color: rgb(117, 117, 117);
   border: none;
   border-bottom: 1px black solid;
   width: 100%;
   font-size: 20px;
 }
-.phoneNumber:focus{
+.phoneNumber:focus {
   border: none;
 }
 .button:hover {
@@ -479,7 +478,7 @@
     width: 95%;
     justify-content: space-around;
   }
-  .infoBig{
+  .infoBig {
     font-size: 25px;
   }
   .infoMedium {

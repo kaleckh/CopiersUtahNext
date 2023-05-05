@@ -29,7 +29,7 @@
   height: 70%;
   justify-content: space-evenly;
   color: white;
-  background-color: rgb(34,48,62);
+  background-color: rgb(34, 48, 62);
   align-items: center;
 }
 
@@ -61,8 +61,8 @@
   width: 100%;
 }
 
-@media(max-width:600px) {
-  .headerPieces{
+@media (max-width: 600px) {
+  .headerPieces {
     font-size: 12px;
   }
 }

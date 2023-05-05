@@ -4,7 +4,7 @@ import Head from "next/head";
 import Form from "./Form";
 import Footer from "./Footer";
 import Image from "next/image";
-import { PatternFormat } from 'react-number-format';
+import { PatternFormat } from "react-number-format";
 import styles from "../styles/konika.module.css";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -55,7 +55,7 @@ const Konica = () => {
         <div className={styles.logoSpace}>
           <Image
             src="/static/logo.png"
-            alt="Lexmark printer"
+            alt="new and used konica printer"
             width={150}
             height={100}
           />
@@ -117,154 +117,208 @@ const Konica = () => {
           {quote ? (
             <Form />
           ) : (
-              <div className={styles.column}>
-
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
+            <div className={styles.column}>
+              <div className={styles.aboutRow}>
+                <div
+                  onClick={() => {
+                    setGray(true);
+                  }}
+                  className={
+                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                  }
+                >
+                  About
                 </div>
 
-                  <div
-                    onClick={() => {
-                      setGray(false);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
-                    }
-                  >
-                    Other Features
-                </div>
-
-                </div>
-                <div style={{ width: "100%" }} className={styles.line}></div>
-                <div>
-                  {gray ? (
-                    <div
-                      className={styles.Overview}
-                      style={{ textAlign: "center" }}
-                    >Konica Minolta copiers are high-performance multifunction devices that can print, scan, copy and fax documents. They are designed to meet the demands of modern workplaces, offering fast processing speeds, high-quality output, and advanced security features. With customizable workflows and eco-friendly options, Konica Minolta copiers are a reliable and efficient choice for any office environment. </div>
-                  ) : (
-                      <div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Konica Minolta copiers have multifunction capabilities, allowing them to print, scan, copy, and fax documents.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Customizable workflows are available to improve productivity with Konica Minolta copiers.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Konica Minolta is committed to sustainability and offers eco-friendly features.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Advanced security features are included to protect sensitive data on Konica Minolta copiers.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Konica Minolta copiers produce high-quality color or black-and-white documents.
-                      </div>
-                        </div>
-                      </div>
-                    )}
+                <div
+                  onClick={() => {
+                    setGray(false);
+                  }}
+                  className={
+                    gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
+                  }
+                >
+                  Other Features
                 </div>
               </div>
-            )}
+              <div style={{ width: "100%" }} className={styles.line}></div>
+              <div>
+                {gray ? (
+                  <div
+                    className={styles.Overview}
+                    style={{ textAlign: "center" }}
+                  >
+                    Konica Minolta copiers are high-performance multifunction
+                    devices that can print, scan, copy and fax documents. They
+                    are designed to meet the demands of modern workplaces,
+                    offering fast processing speeds, high-quality output, and
+                    advanced security features. With customizable workflows and
+                    eco-friendly options, Konica Minolta copiers are a reliable
+                    and efficient choice for any office environment.{" "}
+                  </div>
+                ) : (
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta copiers have multifunction capabilities,
+                        allowing them to print, scan, copy, and fax documents.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Customizable workflows are available to improve
+                        productivity with Konica Minolta copiers.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta is committed to sustainability and offers
+                        eco-friendly features.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Advanced security features are included to protect
+                        sensitive data on Konica Minolta copiers.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Konica Minolta copiers produce high-quality color or
+                        black-and-white documents.
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
         <div className={styles.section}>
           <div>
-            <div onClick={() => { setGrayBottom(true) }} className={grayBottom ? styles.specsContainerDark : styles.specsContainer}>General Specs</div>
-            <div onClick={() => { setGrayBottom(false) }} className={grayBottom ? styles.specsContainer : styles.specsContainerDark} > Pricing</div>
+            <div
+              onClick={() => {
+                setGrayBottom(true);
+              }}
+              className={
+                grayBottom ? styles.specsContainerDark : styles.specsContainer
+              }
+            >
+              General Specs
+            </div>
+            <div
+              onClick={() => {
+                setGrayBottom(false);
+              }}
+              className={
+                grayBottom ? styles.specsContainer : styles.specsContainerDark
+              }
+            >
+              {" "}
+              Pricing
+            </div>
           </div>
           <div className={styles.bottomContainer}>
-            {grayBottom ? <><div style={{ textAlign: "center", margin: "30px", fontSize: "25px" }} className={styles.black}>Additional Information</div>
-              <div className={styles.spaceEven}>
-
-
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>SPEED B/W</div>
+            {grayBottom ? (
+              <>
+                <div
+                  style={{
+                    textAlign: "center",
+                    margin: "30px",
+                    fontSize: "25px",
+                  }}
+                  className={styles.black}
+                >
+                  Additional Information
+                </div>
+                <div className={styles.spaceEven}>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>SPEED B/W</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>45 Pages Per Minute</div>
+                    </div>
                   </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>45 Pages Per Minute</div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>SPEED COLOR</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>45 Pages Per Minute</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>RESOLUTION</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>600/600 - 2400/1200</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>PAPER CAPACITY</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>500 - 2000 Sheets</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>VOLUME</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>
+                        {" "}
+                        200,000 impressions Copies Per Month
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>COLOR CAPABILITY</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>Black and White Copier</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>PROPERTIES</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>
+                        Copier-Printer-Fax-Scan
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>SPEED COLOR</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>45 Pages Per Minute</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>RESOLUTION</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>600/600 - 2400/1200</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>PAPER CAPACITY</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>500 - 2000 Sheets</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>VOLUME</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>	200,000 impressions Copies Per Month</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>COLOR CAPABILITY</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>Black and White Copier</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>PROPERTIES</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>Copier-Printer-Fax-Scan</div>
-                  </div>
-                </div>
-
-              </div></> :
-              <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
+              </>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
                 <div className={styles.container}>
-                  <div className={styles.titleSmall}>Call us at (801) 261 - 0510</div>
+                  <div className={styles.titleSmall}>
+                    Call us at (801) 261 - 0510
+                  </div>
                   <div className={styles.infoSmall}>or</div>
                   <div className={styles.titleMed}>Get Your free Quote!</div>
                   <div
@@ -293,7 +347,15 @@ const Konica = () => {
                     </div>
                     <div className={styles.space}>
                       <div className={styles.number}>2</div>
-                      <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />
+                      <PatternFormat
+                        format="+1 (###) ### ####"
+                        allowEmptyFormatting
+                        mask="_"
+                        className={styles.phoneNumber}
+                        onChange={(event) => {
+                          setNumber(event.target.value);
+                        }}
+                      />
                     </div>
 
                     <div className={styles.space}>
@@ -312,7 +374,6 @@ const Konica = () => {
                     style={{ height: "25%", display: "flex" }}
                     className={styles.padding}
                   >
-
                     <ReCAPTCHA
                       style={{
                         marginBottom: "10px",
@@ -334,10 +395,10 @@ const Konica = () => {
                     disabled={!recaptchaResponse}
                   >
                     Get My Quote
-              </button>
-
-                </div></div>}
-
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

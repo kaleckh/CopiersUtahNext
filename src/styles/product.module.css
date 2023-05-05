@@ -26,7 +26,7 @@
 
 .button {
   appearance: none;
-  background-color: rgb(254,190,104);
+  background-color: rgb(254, 190, 104);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   box-sizing: border-box;
@@ -285,11 +285,10 @@
     font-size: 17px;
     text-align: end;
   }
-  .infoBig{
+  .infoBig {
     font-size: 25px;
   }
-  .color{
+  .color {
     font-size: 30px;
   }
-  
 }

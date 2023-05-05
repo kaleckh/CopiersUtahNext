@@ -1,10 +1,9 @@
 import styles from "../styles/Footer.module.css";
 import Socials from "./Socials";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import { useRouter } from "next/router";
 export default function Footer(props) {
-
   const router = useRouter();
   return (
     <div className={styles.footer}>
@@ -21,34 +20,39 @@ export default function Footer(props) {
         </div>
       </div>
       <div className={styles.exploreContainer}>
-        <h3 className={styles.footerTitle}>Services</h3>
+        <div className={styles.footerTitle}>Services</div>
         <Link href="https://copiersutah.com/shortTerm">
-          <div
-            className={styles.headerPieces}>
-            Rentals
-          </div>
+          <h4 className={styles.h4}>Buy a Used Copier</h4>
+        </Link>
+        <Link href="https://copiersutah.com/shortTerm">
+          <h4 className={styles.h4}>Copier Rentals</h4>
         </Link>
         <Link href="https://copiersutah.com/fix">
-          <div
-            className={styles.headerPieces}>
-            Maintanance
-          </div>
+          <h4 className={styles.h4}>Copier Maintanance</h4>
         </Link>
         <Link href="https://copiersutah.com/finance">
-          <div
-            className={styles.headerPieces}>
-            Financing
-          </div>
+          <div className={styles.headerPieces}>Finance a Copier</div>
         </Link>
         <Link href="https://copiersutah.com/products">
-          <div
-            className={styles.headerPieces}>
-            Products
+          <div className={styles.headerPieces}>
+            Our top New and Used Copiers
           </div>
         </Link>
       </div>
+      <div className={styles.exploreContainer}>
+        <div className={styles.footerTitle}>Why choose Copiers Utah</div>
+        <li>Wide range of new copiers for sale in Utah</li>
+        <li>New and used copiers available</li>
+        <li>Top brands and models to fit any budget and business needs</li>
+        <li>
+          Thoroughly tested and serviced used copiers in excellent condition
+        </li>
+        <li>Competitive pricing for quality equipment</li>
+        <li>Trustworthy and reliable source for all your copier needs</li>
+        <li>Copier leasing available for all models</li>
+      </div>
       <div className={styles.exploreContainerGood}>
-        <Image src={'/static/logo.png'} width={200} height={150} />
+        <Image src={"/static/logo.png"} width={200} height={150} />
       </div>
     </div>
   );

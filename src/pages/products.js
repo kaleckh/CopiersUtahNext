@@ -52,6 +52,8 @@ const Products = () => {
   return (
     <div className={styles.main}>
       <Head>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://copiersutah.com/products/" />
         <title>
           Top Copiers for Sale | Konica Minolta, Epson, and Lexmark | Copiers
           Utah

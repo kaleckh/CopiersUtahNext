@@ -3,7 +3,7 @@ import Header from "./Header";
 import Image from "next/image";
 import Head from "next/head";
 import Form from "./Form";
-import { PatternFormat } from 'react-number-format';
+import { PatternFormat } from "react-number-format";
 import styles from "../styles/Finance.module.css";
 import Footer from "./Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
@@ -29,23 +29,23 @@ const Finance = () => {
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        "to": [`<info@copiersutah.com>`],
-        "sender": "<info@copiersutah.com>",
-        "subject": `This is${name}'s quote form. Her number is ${number}`,
-        "text_body": `${message}`,
-        "html_body": `<h1>${message}</h1>`,
-        "template_id": "5120871",
-        "template_data": {
-          "message": message,
-          "number": number,
-          "from": "Financing page",
-          "name": name
-        }
-      })
+        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+        to: [`<info@copiersutah.com>`],
+        sender: "<info@copiersutah.com>",
+        subject: `This is${name}'s quote form. Her number is ${number}`,
+        text_body: `${message}`,
+        html_body: `<h1>${message}</h1>`,
+        template_id: "5120871",
+        template_data: {
+          message: message,
+          number: number,
+          from: "Financing page",
+          name: name,
+        },
+      }),
     }).then((res) => {
       console.log(res);
       if (res.status === 200) {
@@ -72,6 +72,7 @@ const Finance = () => {
   return (
     <div className={styles.main}>
       <Head>
+        <link rel="canonical" href="https://copiersutah.com/finance/" />
         <title>
           Financing and Buying Copiers | Get a Quote Today | Copiers Utah
         </title>
@@ -130,7 +131,7 @@ const Finance = () => {
         <div className={styles.logoSpace}>
           <Image
             src="/static/logo.png"
-            alt="man using a copier"
+            alt="copier leasing"
             width={150}
             height={100}
           />
@@ -184,7 +185,16 @@ const Finance = () => {
                     </div>
                     <div className={styles.space}>
                       <div className={styles.number}>2</div>
-                      <PatternFormat format="+1 (###) #### ###" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
+                      <PatternFormat
+                        format="+1 (###) #### ###"
+                        allowEmptyFormatting
+                        mask="_"
+                        className={styles.phoneNumber}
+                        onChange={(event) => {
+                          setNumber(event.target.value);
+                        }}
+                      />
+                      ;
                     </div>
 
                     <div className={styles.space}>
@@ -222,42 +232,40 @@ const Finance = () => {
                     Get My Quote
                   </button>
                 </div>
-
               </div>
             ) : (
-                <div className={styles.center}>
-                  {quoteToggle ? (
-                    <div style={{ display: "contents" }}>
-                      <h2 className={styles.titleBig}>Financing Made Easy</h2>
-                      <div className={styles.paragraph}>
-                        We know how it can be stressful finding a printer. That"s
-                        why we"ve made it easier than ever to find your next one
-                        and get you all your information on it
+              <div className={styles.center}>
+                {quoteToggle ? (
+                  <div style={{ display: "contents" }}>
+                    <h2 className={styles.titleBig}>Financing Made Easy</h2>
+                    <div className={styles.paragraph}>
+                      We know how it can be stressful finding a printer. That"s
+                      why we"ve made it easier than ever to find your next one
+                      and get you all your information on it
                     </div>
-                      <button
-                        onClick={() => {
-                          setToggle(!toggle);
-                        }}
-                        className={styles.button}
-                      >
-                        Get Your Terms
+                    <button
+                      onClick={() => {
+                        setToggle(!toggle);
+                      }}
+                      className={styles.button}
+                    >
+                      Get Your Terms
                     </button>
-                    </div>
-                  ) : (
-                      <div
-                        className={styles.title}
-                        style={{
-                          width: "140%",
-                          fontWeight: "300",
-                          fontSize: "37px",
-
-                        }}
-                      >
-                        Awesome, we will be contacting you shortly!
-                      </div>
-                    )}
-                </div>
-              )}
+                  </div>
+                ) : (
+                  <div
+                    className={styles.title}
+                    style={{
+                      width: "140%",
+                      fontWeight: "300",
+                      fontSize: "37px",
+                    }}
+                  >
+                    Awesome, we will be contacting you shortly!
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -292,7 +300,7 @@ const Finance = () => {
             </div>
           </div>
         </div>
-        <a href="#quote">
+        <a href="#quote" title="finance a copier quote">
           <button
             onClick={() => {
               setToggle(!toggle);

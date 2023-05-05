@@ -48,7 +48,7 @@
 .button {
   appearance: none;
   border: none;
-  background-color: rgb(254,190,104);
+  background-color: rgb(254, 190, 104);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   border: none;
@@ -241,13 +241,13 @@
   object-fit: contain;
 }
 
-.specsContainer{
+.specsContainer {
   padding: 10px;
   cursor: pointer;
-  border: 1px rgb(219,221,233) solid;
+  border: 1px rgb(219, 221, 233) solid;
 }
-.specsContainer:hover{
-  background-color:rgb(245,245,245);
+.specsContainer:hover {
+  background-color: rgb(245, 245, 245);
   transition: all ease-in 0.3s;
 }
 .number {
@@ -263,16 +263,16 @@
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   border-radius: 100%;
 }
-.phoneNumber{
+.phoneNumber {
   background-color: transparent;
   outline: none;
-  color: rgb(117,117,117);
+  color: rgb(117, 117, 117);
   border: none;
   border-bottom: 1px black solid;
   width: 100%;
   font-size: 20px;
 }
-.phoneNumber:focus{
+.phoneNumber:focus {
   border: none;
 }
 
@@ -284,19 +284,19 @@
   color: black;
   border-bottom: 1px black solid;
 }
-.specsContainerDark{
+.specsContainerDark {
   cursor: pointer;
   padding: 10px;
-  border: 1px rgb(219,221,233)  solid;
-  background-color: rgb(245,245,245);
+  border: 1px rgb(219, 221, 233) solid;
+  background-color: rgb(245, 245, 245);
 }
 
-.bottomContainer{
-  border: 1px rgb(219,221,233) solid;
+.bottomContainer {
+  border: 1px rgb(219, 221, 233) solid;
   height: 120%;
   width: 80%;
 }
-.thirty{
+.thirty {
   width: 30%;
 }
 
@@ -314,8 +314,8 @@
   height: 30%;
   width: 77%;
 }
-.section div{
-  color: rgb(85,85,85);
+.section div {
+  color: rgb(85, 85, 85);
 }
 
 .aboutRow {
@@ -339,7 +339,7 @@
   height: 350px;
   background-color: white;
 }
-.spaceEven{
+.spaceEven {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -350,7 +350,7 @@
   height: 53vh;
   background-color: gray;
 }
-.section{
+.section {
   height: 50vh;
   display: flex;
   justify-content: flex-end;
@@ -377,7 +377,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.black{
+.black {
   color: black;
 }
 
@@ -475,8 +475,8 @@
   }
 }
 
-@media(max-width:900px) {
-  .Overview{
+@media (max-width: 900px) {
+  .Overview {
     color: black;
     font-size: 15px;
     font-weight: 200;
@@ -485,23 +485,23 @@
     margin-top: 16px;
     padding: 0px;
   }
-  .paragraphSmall{
+  .paragraphSmall {
     font-size: 15px;
   }
-  .rowBottom{
+  .rowBottom {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 30%;
     width: 100%;
-}
-  .bottomContainer{
+  }
+  .bottomContainer {
     width: 120%;
   }
-  .section{
+  .section {
     width: 90%;
   }
-  .thirty{
+  .thirty {
     width: 45%;
   }
 }
@@ -510,14 +510,14 @@
   .konika {
     height: 36vh;
   }
-  .epson{
+  .epson {
     height: 14vh;
     width: 26vw;
   }
-  .row{
+  .row {
     width: 100%;
   }
-  .bulletContainer{
+  .bulletContainer {
     padding: 8px;
   }
 }
@@ -528,17 +528,17 @@
     align-items: flex-end;
     text-align: end;
   }
-  
+
   .logoSpace {
     width: 95%;
     justify-content: space-around;
   }
-  .container{
+  .container {
     width: 73vw;
   }
 }
 
-@media (max-width:  550px) {
+@media (max-width: 550px) {
   .focusTitle {
     font-size: 23px;
   }

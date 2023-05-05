@@ -4,7 +4,7 @@ import Head from "next/head";
 import Form from "./Form";
 import Footer from "./Footer";
 import Image from "next/image";
-import { PatternFormat } from 'react-number-format';
+import { PatternFormat } from "react-number-format";
 import styles from "../styles/epson.module.css";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -117,154 +117,203 @@ const Epson = () => {
           {quote ? (
             <Form />
           ) : (
-              <div className={styles.column}>
-
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
+            <div className={styles.column}>
+              <div className={styles.aboutRow}>
+                <div
+                  onClick={() => {
+                    setGray(true);
+                  }}
+                  className={
+                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                  }
+                >
+                  About
                 </div>
 
-                  <div
-                    onClick={() => {
-                      setGray(false);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
-                    }
-                  >
-                    Other Features
-                </div>
-
-                </div>
-                <div style={{ width: "100%" }} className={styles.line}></div>
-                <div>
-                  {gray ? (
-                    <div
-                      className={styles.Overview}
-                      style={{ textAlign: "center" }}
-                    >Epson copiers are versatile and high-quality multifunction devices that offer printing, scanning, copying, and faxing capabilities. They are designed for both home and office use, providing excellent print speeds, exceptional image quality, and easy-to-use interfaces. With a range of models to choose from, Epson copiers are a reliable and affordable option for all document processing needs. </div>
-                  ) : (
-                      <div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Epson copiers are multifunction devices.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            They produce high-quality output.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            They have an easy-to-use interface.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            They are cost-effective.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Epson copiers utilize advanced printing technologies.
-                      </div>
-                        </div>
-                      </div>
-                    )}
+                <div
+                  onClick={() => {
+                    setGray(false);
+                  }}
+                  className={
+                    gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
+                  }
+                >
+                  Other Features
                 </div>
               </div>
-            )}
+              <div style={{ width: "100%" }} className={styles.line}></div>
+              <div>
+                {gray ? (
+                  <div
+                    className={styles.Overview}
+                    style={{ textAlign: "center" }}
+                  >
+                    Epson copiers are versatile and high-quality multifunction
+                    devices that offer printing, scanning, copying, and faxing
+                    capabilities. They are designed for both home and office
+                    use, providing excellent print speeds, exceptional image
+                    quality, and easy-to-use interfaces. With a range of models
+                    to choose from, Epson copiers are a reliable and affordable
+                    option for all document processing needs.{" "}
+                  </div>
+                ) : (
+                  <div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Epson copiers are multifunction devices.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They produce high-quality output.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They have an easy-to-use interface.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        They are cost-effective.
+                      </div>
+                    </div>
+                    <div className={styles.bulletContainer}>
+                      <div className={styles.bullet}>1s</div>
+                      <div className={styles.paragraphSmall}>
+                        Epson copiers utilize advanced printing technologies.
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
         <div className={styles.section}>
           <div>
-            <div onClick={() => { setGrayBottom(true) }} className={grayBottom ? styles.specsContainerDark : styles.specsContainer}>General Specs</div>
-            <div onClick={() => { setGrayBottom(false) }} className={grayBottom ? styles.specsContainer : styles.specsContainerDark} > Pricing</div>
+            <div
+              onClick={() => {
+                setGrayBottom(true);
+              }}
+              className={
+                grayBottom ? styles.specsContainerDark : styles.specsContainer
+              }
+            >
+              General Specs
+            </div>
+            <div
+              onClick={() => {
+                setGrayBottom(false);
+              }}
+              className={
+                grayBottom ? styles.specsContainer : styles.specsContainerDark
+              }
+            >
+              {" "}
+              Pricing
+            </div>
           </div>
           <div className={styles.bottomContainer}>
-            {grayBottom ? <><div style={{ textAlign: "center", margin: "30px", fontSize: "25px" }} className={styles.black}>Additional Information</div>
-              <div className={styles.spaceEven}>
-
-
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>SPEED B/W</div>
+            {grayBottom ? (
+              <>
+                <div
+                  style={{
+                    textAlign: "center",
+                    margin: "30px",
+                    fontSize: "25px",
+                  }}
+                  className={styles.black}
+                >
+                  Additional Information
+                </div>
+                <div className={styles.spaceEven}>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>SPEED B/W</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>45 Pages Per Minute</div>
+                    </div>
                   </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>45 Pages Per Minute</div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>SPEED COLOR</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>45 Pages Per Minute</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>RESOLUTION</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>600/600 - 2400/1200</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>PAPER CAPACITY</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>500 - 2000 Sheets</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>VOLUME</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>
+                        {" "}
+                        200,000 impressions Copies Per Month
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>COLOR CAPABILITY</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>Black and White Copier</div>
+                    </div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.rowBottom}>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>PROPERTIES</div>
+                    </div>
+                    <div className={styles.thirty}>
+                      <div className={styles.black}>
+                        Copier-Printer-Fax-Scan
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>SPEED COLOR</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>45 Pages Per Minute</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>RESOLUTION</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>600/600 - 2400/1200</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>PAPER CAPACITY</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>500 - 2000 Sheets</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>VOLUME</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>	200,000 impressions Copies Per Month</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>COLOR CAPABILITY</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>Black and White Copier</div>
-                  </div>
-                </div>
-                <div className={styles.line}></div>
-                <div className={styles.rowBottom}>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>PROPERTIES</div>
-                  </div>
-                  <div className={styles.thirty}>
-                    <div className={styles.black}>Copier-Printer-Fax-Scan</div>
-                  </div>
-                </div>
-
-              </div></> :
-              <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
+              </>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
                 <div className={styles.container}>
-                  <div className={styles.titleSmall}>Call us at (801) 261 - 0510</div>
+                  <div className={styles.titleSmall}>
+                    Call us at (801) 261 - 0510
+                  </div>
                   <div className={styles.infoSmall}>or</div>
                   <div className={styles.titleMed}>Get Your free Quote!</div>
                   <div
@@ -293,7 +342,15 @@ const Epson = () => {
                     </div>
                     <div className={styles.space}>
                       <div className={styles.number}>2</div>
-                      <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />
+                      <PatternFormat
+                        format="+1 (###) ### ####"
+                        allowEmptyFormatting
+                        mask="_"
+                        className={styles.phoneNumber}
+                        onChange={(event) => {
+                          setNumber(event.target.value);
+                        }}
+                      />
                     </div>
 
                     <div className={styles.space}>
@@ -312,7 +369,6 @@ const Epson = () => {
                     style={{ height: "25%", display: "flex" }}
                     className={styles.padding}
                   >
-
                     <ReCAPTCHA
                       style={{
                         marginBottom: "10px",
@@ -334,10 +390,10 @@ const Epson = () => {
                     disabled={!recaptchaResponse}
                   >
                     Get My Quote
-              </button>
-
-                </div></div>}
-
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

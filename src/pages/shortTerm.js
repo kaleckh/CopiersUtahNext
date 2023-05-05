@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import Form from "./Form";
-import { PatternFormat } from 'react-number-format';
+import { PatternFormat } from "react-number-format";
 import Image from "next/image";
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -38,23 +38,23 @@ const Home = () => {
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        "to": [`<info@copiersutah.com>`],
-        "sender": "<info@copiersutah.com>",
-        "subject": `This is${name}'s quote form. Her number is ${number}`,
-        "text_body": `${message}`,
-        "html_body": `<h1>${message}</h1>`,
-        "template_id": "5120871",
-        "template_data": {
-          "message": message,
-          "from": "rentals",
-          "number": number,
-          "name": name
-        }
-      })
+        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+        to: [`<info@copiersutah.com>`],
+        sender: "<info@copiersutah.com>",
+        subject: `This is${name}'s quote form. Her number is ${number}`,
+        text_body: `${message}`,
+        html_body: `<h1>${message}</h1>`,
+        template_id: "5120871",
+        template_data: {
+          message: message,
+          from: "rentals",
+          number: number,
+          name: name,
+        },
+      }),
     }).then((res) => {
       console.log(res);
       if (res.status === 200) {
@@ -69,7 +69,6 @@ const Home = () => {
   var verifyCallback = function (response) {
     setRecaptchaResponse(response);
   };
-
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -101,6 +100,8 @@ const Home = () => {
   return (
     <div className={styles.main}>
       <Head>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://copiersutah.com/shortTerm/" />
         <title>Short-Term Copier Rentals | Copiers Utah</title>
         <meta
           name="description"
@@ -171,95 +172,134 @@ const Home = () => {
       </div>
       <Header />
       <div className={styles.secondSection}>
-        <div className={styles.title}>
-          Copiers Utah offers short and long term copier rentals.
-        </div>
-        <div className={styles.row}>
-          <div className={styles.column}>
-            <div className={styles.woman} />
+        <div>
+          <div className={styles.title}>
+            Copiers Utah offers short and long term copier rentals.
           </div>
-          {quote ? (
-            <div
-              style={{ fontSize: "30px", fontWeight: "300" }}
-              className={styles.title}
-            >
-              Awesome, you"re next in line for a call!
-            </div>
-          ) : (
-              <div>
-                <div className={styles.container}>
-                  <div className={styles.black}>Get Your free Quote!</div>
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-evenly",
-                      height: "80%",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div className={styles.space}>
-                      <div className={styles.number}>1</div>
-                      <input
-                        className={styles.inputSingle}
-                        placeholder="Name"
-                        type="text"
-                        name=""
-                        id=""
-                        required={true}
-                        onChange={() => {
-                          setName(event.target.value);
-                        }}
-                      />
-                    </div>
-                    <div className={styles.space}>
-                      <div className={styles.number}>2</div>
-                      <PatternFormat format="+1 (###) #### ###" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
-                    </div>
+          <div className={styles.lineRow}>
+            <div className={styles.column}>
+              <div className={styles.woman} />
 
-                    <div className={styles.space}>
-                      <div className={styles.number}>3</div>
-                      <input
-                        onChange={() => {
-                          setMessage(event.target.value);
-                        }}
-                        className={styles.inputSingle}
-                        placeholder="Comments"
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    style={{ height: "25%", display: "flex" }}
-                    className={styles.padding}
-                  >
-
-                    <ReCAPTCHA
-                      style={{
-                        marginBottom: "10px",
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                      className="recaptcha"
-                      sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                      ref={captchaRef}
-                      onChange={verifyCallback}
-                    />
-                  </div>
-                  <button
-                    onClick={(e) => {
-                      setQuote(!quote);
-                      handleSubmit(e);
-                    }}
-                    disabled={!recaptchaResponse && !messageRes}
-                    className={styles.button}
-                  >
-                    Get My Quote
-                </button>
+              {quote ? (
+                <div
+                  style={{ fontSize: "30px", fontWeight: "300" }}
+                  className={styles.title}
+                >
+                  Awesome, you"re next in line for a call!
                 </div>
-              </div>
-            )}
+              ) : (
+                <div>
+                  <div className={styles.container}>
+                    <div className={styles.black}>Get Your free Quote!</div>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                        height: "80%",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div className={styles.space}>
+                        <div className={styles.number}>1</div>
+                        <input
+                          className={styles.inputSingle}
+                          placeholder="Name"
+                          type="text"
+                          name=""
+                          id=""
+                          required={true}
+                          onChange={() => {
+                            setName(event.target.value);
+                          }}
+                        />
+                      </div>
+                      <div className={styles.space}>
+                        <div className={styles.number}>2</div>
+                        <PatternFormat
+                          format="+1 (###) #### ###"
+                          allowEmptyFormatting
+                          mask="_"
+                          className={styles.phoneNumber}
+                          onChange={(event) => {
+                            setNumber(event.target.value);
+                          }}
+                        />
+                        ;
+                      </div>
+
+                      <div className={styles.space}>
+                        <div className={styles.number}>3</div>
+                        <input
+                          onChange={() => {
+                            setMessage(event.target.value);
+                          }}
+                          className={styles.inputSingle}
+                          placeholder="Comments"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      style={{ height: "25%", display: "flex" }}
+                      className={styles.padding}
+                    >
+                      <ReCAPTCHA
+                        style={{
+                          marginBottom: "10px",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                        className="recaptcha"
+                        sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                        ref={captchaRef}
+                        onChange={verifyCallback}
+                      />
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        setQuote(!quote);
+                        handleSubmit(e);
+                      }}
+                      disabled={!recaptchaResponse && !messageRes}
+                      className={styles.button}
+                    >
+                      Get My Quote
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.section}>
+        <div className={styles.lineRow}>
+          <div className={styles.line}></div>
+          <div className={styles.copiersTitle}>
+            Copiers Utah Rental Services
+          </div>
+          <div className={styles.line}></div>
+        </div>
+        <div style={{ padding: "20px" }} className={styles.title}>
+          We Rent Copiers For All Types Of Events!
+        </div>
+        <div
+          style={{ display: "flex", justifyContent: "center", height: "50%" }}
+        >
+          <div style={{ paddingLeft: "60px" }} className={styles.row}>
+            <div className={styles.Realcolumn}>
+              <li>Construction Trailers</li>
+              <li>Temporary Offices</li>
+              <li>Seasonal Work</li>
+            </div>
+            <div className={styles.Realcolumn}>
+              <li>Construction Trailers</li>
+              <li>Temporary Offices</li>
+              <li>Short Term Business Projects</li>
+            </div>
+          </div>
         </div>
       </div>
 

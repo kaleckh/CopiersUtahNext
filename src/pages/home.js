@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "./Header";
-import { PatternFormat } from 'react-number-format';
-import Link from 'next/link'
+import { PatternFormat } from "react-number-format";
+import Link from "next/link";
 import styles from "../styles/HomePage.module.css";
 import { Quote } from "../SVG/Quote";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -37,22 +37,22 @@ export default function Home() {
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        "to": [`<info@copiersutah.com>`],
-        "sender": "<info@copiersutah.com>",
-        "subject": `This is${name}'s quote form. Their number is ${number}`,
-        "text_body": `${message}`,
-        "html_body": `<h1>${message}</h1>`,
-        "template_id": "5120871",
-        "template_data": {
-          "message": message,
-          "number": number,
-          "name": name
-        }
-      })
+        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+        to: [`<info@copiersutah.com>`],
+        sender: "<info@copiersutah.com>",
+        subject: `This is${name}'s quote form. Their number is ${number}`,
+        text_body: `${message}`,
+        html_body: `<h1>${message}</h1>`,
+        template_id: "5120871",
+        template_data: {
+          message: message,
+          number: number,
+          name: name,
+        },
+      }),
     }).then((res) => {
       console.log(res);
       if (res.status === 200) {
@@ -74,10 +74,12 @@ export default function Home() {
         useRef={tawkMessengerRef}
       />
       <Head>
+        <meta name="robots" content="index, follow" />
 
-
-
-        <title>Copiers for Sale and Rent | Office Copy Machines | Copiers Utah </title>
+        <link rel="canonical" href="https://copiersutah.com/home/" />
+        <title>
+          Copiers for Sale and Rent | Office Copy Machines | Copiers Utah{" "}
+        </title>
         <meta
           name="description"
           content="Copiers Utah: Quality copiers for sale/rent. Pick from various office machines with advanced features & affordable prices. Contact us now! "
@@ -131,7 +133,7 @@ export default function Home() {
         <div className={styles.logoSpace}>
           <Image
             src="/static/logo.png"
-            alt="the copiers utah logo"
+            alt="used copiers"
             width={150}
             height={100}
           />
@@ -148,12 +150,20 @@ export default function Home() {
       <Header />
       <div className={styles.secondSection}>
         <div className={styles.flex}>
-          <div className={styles.shadeBig} style={{ height: "75%", marginTop: "24px" }}>
-            <Link href="https://copiersutah.com/buy">
+          <div
+            className={styles.shadeBig}
+            style={{ height: "75%", marginTop: "24px" }}
+          >
+            <Link
+              href="https://copiersutah.com/buy/"
+              title="buy new and used copiers"
+            >
               <div className={styles.parent}>
                 <div className={styles.woman} />
                 <div className={styles.overlay}>
-                  <div className={styles.centerLarge}>Buy Or Lease A Copier</div>
+                  <div className={styles.centerLarge}>
+                    Buy Or Lease A Copier
+                  </div>
                 </div>
               </div>
             </Link>
@@ -167,7 +177,10 @@ export default function Home() {
                 }}
                 className={styles.shade}
               >
-                <Link href="https://copiersutah.com/fix">
+                <Link
+                  href="https://copiersutah.com/fix/"
+                  title="copier maintenance"
+                >
                   <div className={styles.parent}>
                     <div className={styles.repair} />
 
@@ -190,7 +203,7 @@ export default function Home() {
             </div>
             <div className={styles.row}>
               <div className={styles.shade}>
-                <Link href="https://copiersutah.com/it">
+                <Link href="https://copiersutah.com/it/" title="it services">
                   <div className={styles.parent}>
                     <div className={styles.itWork} />
                     <div className={styles.overlay} />
@@ -199,7 +212,10 @@ export default function Home() {
                 </Link>
               </div>
               <div className={styles.shade}>
-                <Link href="https://copiersutah.com/shortTerm">
+                <Link
+                  href="https://copiersutah.com/shortTerm/"
+                  title="leasing and rental services"
+                >
                   <div className={styles.parent}>
                     <div className={styles.construction} />
                     <div className={styles.overlay} />
@@ -226,7 +242,7 @@ export default function Home() {
                   them to everyone
                 </div>
               </div>
-              <div className={styles.smallParagraph}>2 Months Ago</div>
+              <div className={styles.smallParagraph}>copiers near me</div>
               <div className={styles.title}>Tara Bennets</div>
             </div>
             <div className={styles.paragraphContainer}>
@@ -237,7 +253,7 @@ export default function Home() {
                   able to get me up and running within a few days.
                 </div>
               </div>
-              <div className={styles.smallParagraph}>2 Months Ago</div>
+              <div className={styles.smallParagraph}>copiers near me</div>
               <div className={styles.title}>Kyle Francis</div>
             </div>
             <div className={styles.paragraphContainer}>
@@ -248,7 +264,7 @@ export default function Home() {
                   friendly and very helpful.
                 </div>
               </div>
-              <div className={styles.smallParagraph}>2 Months Ago</div>
+              <div className={styles.smallParagraph}>copiers near me</div>
               <div className={styles.title}>Carley Ward</div>
             </div>
           </div>
@@ -268,8 +284,12 @@ export default function Home() {
         <div id="quote" className={styles.section}>
           <div className={styles.thirdSectionRow}>
             <div className={styles.front}>
-              <h2 style={{ fontSize: "30px" }} className={styles.title}>We Sell New And Refurbished Copiers</h2>
-              <h3 style={{ fontSize: "20px" }} className={styles.h3}>Lets Get You A Quote!</h3>
+              <h2 style={{ fontSize: "30px" }} className={styles.title}>
+                We Sell New And Used Copiers
+              </h2>
+              <h3 style={{ fontSize: "20px" }} className={styles.h3}>
+                Lets Get You A Quote!
+              </h3>
               <div className={styles.cartoon}></div>
             </div>
             <div className={styles.container}>
@@ -300,7 +320,16 @@ export default function Home() {
                 </div>
                 <div className={styles.space}>
                   <div className={styles.number}>2</div>
-                  <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
+                  <PatternFormat
+                    format="+1 (###) ### ####"
+                    allowEmptyFormatting
+                    mask="_"
+                    className={styles.phoneNumber}
+                    onChange={(event) => {
+                      setNumber(event.target.value);
+                    }}
+                  />
+                  ;
                 </div>
 
                 <div className={styles.space}>
@@ -319,7 +348,6 @@ export default function Home() {
                 style={{ height: "25%", display: "flex" }}
                 className={styles.padding}
               >
-
                 <ReCAPTCHA
                   style={{
                     marginBottom: "10px",
@@ -342,13 +370,52 @@ export default function Home() {
               >
                 Get My Quote
               </button>
-
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <div className={styles.copiersLine}></div>
+          <div className={styles.copiersTitle}>Copiers Utah</div>
+          <div className={styles.copiersLine}></div>
+        </div>
+        <div className={styles.fourthSection}>
+          <div className={styles.titleContainer}>
+            <div className={styles.titleMed}>WHO WE ARE</div>
+            <div className={styles.titleMed}>OUR PROMISE</div>
+            <div className={styles.titleMed}>OUR PRODUCTS</div>
+          </div>
+          <div className={styles.paragraphContainerBottom}>
+            <div className={styles.thirdParagraph}>
+              inventory includes top-quality copiers from trusted brands,
+              providing efficient printing solutions for businesses of all
+              sizes. Our knowledgeable team is dedicated to helping you find the
+              right equipment to fit your needs and budget.
+            </div>
+            <div className={styles.thirdParagraph}>
+              At copiers utah, we promise transparent pricing, high-quality
+              equipment, and exceptional service. With competitive pricing on
+              new and used copiers and a team dedicated to helping you find the
+              right equipment, you can trust us for all your copier needs in
+              Utah.
+            </div>
+            <div className={styles.thirdParagraph}>
+              We offer a variety of new and used copiers, including top-quality
+              models from trusted brands like Konica Minolta, Epson, and
+              Lexmark. Additionally, we also offer reliable copier repair
+              services for a wide range of brands beyond the ones we sell.
             </div>
           </div>
         </div>
       </div>
 
       <Footer />
-    </div >
+    </div>
   );
 }

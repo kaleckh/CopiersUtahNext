@@ -3,7 +3,7 @@ import Header from "./Header";
 import Head from "next/head";
 import Image from "next/image";
 import Form from "./Form";
-import { PatternFormat } from 'react-number-format';
+import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Logo from "../Photos/logo.png";
 
@@ -34,22 +34,22 @@ const It = (props) => {
     fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        "api_key": "api-DC44EBDEE45411ED847EF23C91C88F4E",
-        "to": [`<info@copiersutah.com>`],
-        "sender": "<info@copiersutah.com>",
-        "subject": `This is${name}'s quote form. Her number is ${number}`,
-        "text_body": `${message}`,
-        "html_body": `<h1>${message}</h1>`,
-        "template_id": "5120871",
-        "template_data": {
-          "message": message,
-          "number": number,
-          "name": name
-        }
-      })
+        api_key: "api-DC44EBDEE45411ED847EF23C91C88F4E",
+        to: [`<info@copiersutah.com>`],
+        sender: "<info@copiersutah.com>",
+        subject: `This is${name}'s quote form. Her number is ${number}`,
+        text_body: `${message}`,
+        html_body: `<h1>${message}</h1>`,
+        template_id: "5120871",
+        template_data: {
+          message: message,
+          number: number,
+          name: name,
+        },
+      }),
     }).then((res) => {
       console.log(res);
       if (res.status === 200) {
@@ -99,6 +99,8 @@ const It = (props) => {
   return (
     <div className={styles.main}>
       <Head>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://copiersutah.com/it/" />
         <title>
           IT Services and Support | Get a Quote Today | Copiers Utah
         </title>
@@ -293,13 +295,12 @@ const It = (props) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                height: "96%"
+                height: "96%",
               }}
             >
               <div className={styles.itSupport} />
               <button
                 onClick={() => {
-
                   setQuoteToggle(!quoteToggle);
                 }}
                 className={styles.button}
@@ -308,88 +309,96 @@ const It = (props) => {
               </button>
             </div>
           ) : (
-              <div>
-                {buttonToggle ? (
-                  <div>
-                    <div className={styles.container}>
-                      <div className={styles.black}>Get Your free Quote!</div>
-                      <div
-                        style={{
-                          width: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "space-evenly",
-                          height: "80%",
-                          alignItems: "center",
-                        }}
-                      >
-                        <div className={styles.space}>
-                          <div className={styles.number}>1</div>
-                          <input
-                            className={styles.inputSingle}
-                            placeholder="Name"
-                            type="text"
-                            name=""
-                            id=""
-                            required={true}
-                            onChange={() => {
-                              setName(event.target.value);
-                            }}
-                          />
-                        </div>
-                        <div className={styles.space}>
-                          <div className={styles.number}>2</div>
-                          <PatternFormat format="+1 (###) ### ####" allowEmptyFormatting mask="_" className={styles.phoneNumber} onChange={(event) => { setNumber(event.target.value) }} />;
-                        </div>
-
-                        <div className={styles.space}>
-                          <div className={styles.number}>3</div>
-                          <input
-                            onChange={() => {
-                              setMessage(event.target.value);
-                            }}
-                            className={styles.inputSingle}
-                            placeholder="Comments"
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        style={{ height: "25%", display: "flex" }}
-                        className={styles.padding}
-                      >
-
-                        <ReCAPTCHA
-                          style={{
-                            marginBottom: "10px",
-                            display: "flex",
-                            justifyContent: "center",
+            <div>
+              {buttonToggle ? (
+                <div>
+                  <div className={styles.container}>
+                    <div className={styles.black}>Get Your free Quote!</div>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                        height: "80%",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div className={styles.space}>
+                        <div className={styles.number}>1</div>
+                        <input
+                          className={styles.inputSingle}
+                          placeholder="Name"
+                          type="text"
+                          name=""
+                          id=""
+                          required={true}
+                          onChange={() => {
+                            setName(event.target.value);
                           }}
-                          className="recaptcha"
-                          sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                          ref={captchaRef}
-                          onChange={verifyCallback}
                         />
                       </div>
-                      <button
-                        onClick={(e) => {
-                          setQuoteToggle(!quoteToggle);
-                          handleSubmit(e);
+                      <div className={styles.space}>
+                        <div className={styles.number}>2</div>
+                        <PatternFormat
+                          format="+1 (###) ### ####"
+                          allowEmptyFormatting
+                          mask="_"
+                          className={styles.phoneNumber}
+                          onChange={(event) => {
+                            setNumber(event.target.value);
+                          }}
+                        />
+                        ;
+                      </div>
+
+                      <div className={styles.space}>
+                        <div className={styles.number}>3</div>
+                        <input
+                          onChange={() => {
+                            setMessage(event.target.value);
+                          }}
+                          className={styles.inputSingle}
+                          placeholder="Comments"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      style={{ height: "25%", display: "flex" }}
+                      className={styles.padding}
+                    >
+                      <ReCAPTCHA
+                        style={{
+                          marginBottom: "10px",
+                          display: "flex",
+                          justifyContent: "center",
                         }}
-                        className={styles.button}
-                        disabled={!recaptchaResponse}
-                      >
-                        Get My Quote
+                        className="recaptcha"
+                        sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                        ref={captchaRef}
+                        onChange={verifyCallback}
+                      />
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        setQuoteToggle(!quoteToggle);
+                        handleSubmit(e);
+                      }}
+                      className={styles.button}
+                      disabled={!recaptchaResponse}
+                    >
+                      Get My Quote
                     </button>
-                    </div>
                   </div>
-                ) : (
-                    <div className={styles.title}>
-                      Awesome, you're next in line!
-                    </div>
-                  )}
-              </div>
-            )}
+                </div>
+              ) : (
+                <div className={styles.title}>
+                  Awesome, you're next in line!
+                </div>
+              )}
+            </div>
+          )}
           <div className={styles.sideRowRight}>
             <div>
               <h2 className={styles.title}>
