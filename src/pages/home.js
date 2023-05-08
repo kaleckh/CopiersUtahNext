@@ -161,9 +161,7 @@ export default function Home() {
               <div className={styles.parent}>
                 <div className={styles.woman} />
                 <div className={styles.overlay}>
-                  <div className={styles.centerLarge}>
-                    Buy Or Lease A Copier
-                  </div>
+                  <h2 className={styles.centerLarge}>Buy Or Lease A Copier</h2>
                 </div>
               </div>
             </Link>
@@ -184,7 +182,7 @@ export default function Home() {
                   <div className={styles.parent}>
                     <div className={styles.repair} />
 
-                    <div className={styles.center}>Copier Repair</div>
+                    <h2 className={styles.center}>Copier Repair</h2>
                   </div>
                 </Link>
               </div>
@@ -197,7 +195,7 @@ export default function Home() {
                 <div className={styles.parent}>
                   <div className={styles.toner} />
                   <div className={styles.overlay} />
-                  <div className={styles.center}>Buy Toner</div>
+                  <h2 className={styles.center}>Buy Toner</h2>
                 </div>
               </div>
             </div>
@@ -207,7 +205,7 @@ export default function Home() {
                   <div className={styles.parent}>
                     <div className={styles.itWork} />
                     <div className={styles.overlay} />
-                    <div className={styles.center}>IT Work</div>
+                    <h2 className={styles.center}>IT Work</h2>
                   </div>
                 </Link>
               </div>
@@ -219,7 +217,7 @@ export default function Home() {
                   <div className={styles.parent}>
                     <div className={styles.construction} />
                     <div className={styles.overlay} />
-                    <div className={styles.center}>Short Term Rental</div>
+                    <h2 className={styles.center}>Short Term Rental</h2>
                   </div>
                 </Link>
               </div>

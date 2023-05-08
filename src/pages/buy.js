@@ -22,6 +22,9 @@ const Home = (props) => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [cash, setCash] = useState(true);
+  const [finance, setFinance] = useState(false);
+  const [rent, setRent] = useState(false);
   const tawkMessengerRef = useRef();
   const captchaRef = useRef(null);
 
@@ -250,6 +253,225 @@ const Home = (props) => {
             <h1 className={styles.title}>
               Awesome, we will be contacting you shortly!
             </h1>
+          )}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "10px",
+          }}
+        >
+          <div style={{ width: "80%", display: "flex", alignItems: "center" }}>
+            <div className={styles.line}></div>
+            <div className={styles.paddedBox}>Copiers Utah Payment Options</div>
+            <div className={styles.line}></div>
+          </div>
+        </div>
+        <div className={styles.thirdSection}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              height: "10%",
+              padding: "10px",
+            }}
+          >
+            <div
+              onClick={() => {
+                setFinance(true), setCash(false), setRent(false);
+              }}
+              className={finance ? `${styles.blackButton}` : `${styles.option}`}
+            >
+              Financing
+            </div>
+            <div className={styles.blackSpace}> | </div>
+            <div
+              onClick={() => {
+                setFinance(false), setCash(true), setRent(false);
+              }}
+              className={cash ? `${styles.blackButton}` : `${styles.option}`}
+            >
+              Leasing
+            </div>
+            <div className={styles.blackSpace}> | </div>
+            <div
+              onClick={() => {
+                setFinance(false), setCash(false), setRent(true);
+              }}
+              className={rent ? `${styles.blackButton}` : `${styles.option}`}
+            >
+              Rent To Own
+            </div>
+          </div>
+          {cash ? (
+            <div className={styles.eighty}>
+              <div className={styles.title}>Leasing With Copiers Utah?</div>
+              <div className={styles.paragraph}>
+                Copier leasing is a cost-effective way for businesses to access
+                the latest copier technology without making a large upfront
+                investment. Leasing copiers through our company, Copiers Utah,
+                offers several benefits to businesses, including flexible
+                leasing agreements and access to maintenance and support. Our
+                customizable leasing agreements allow businesses to choose the
+                copier equipment that best fits their needs and budget, with the
+                ability to upgrade or downgrade as needed. This flexibility
+                ensures that businesses have the copier equipment they need to
+                operate efficiently, without having to worry about the costs
+                associated with purchasing new equipment outright.
+              </div>
+              <div className={styles.paragraph}>
+                Another benefit of copier leasing is that it allows businesses
+                to focus on their core operations, rather than the hassle of
+                maintaining and repairing copier equipment. Copiers Utah offers
+                maintenance and support with all of our leasing agreements,
+                which means businesses won't have to allocate resources towards
+                equipment upkeep. This can save businesses time and money in the
+                long run, as they can focus on other aspects of their operations
+                while leaving the equipment maintenance to us. Overall, copier
+                leasing through Copiers Utah provides a cost-effective solution
+                that allows businesses to access the latest copier technology
+                and focus on their core operations without the hassle of
+                equipment maintenance.
+              </div>
+              <div
+                style={{
+                  justifyContent: "space-evenly",
+                  width: "100%",
+                  height: "30vh",
+                }}
+                className={styles.column}
+              >
+                <div className={styles.green}>Key Information</div>
+                <div className={styles.row}>
+                  <div className={styles.bulletPoints}>
+                    <li>
+                      Low initial investment and predictable monthly payment
+                    </li>
+                    <li>Potential tax benefits for businesses</li>
+                    <li>Customizable lease terms and payment plans</li>
+                  </div>
+                  <div className={styles.bulletPoints}>
+                    <li>Fixed monthly payments help businesses budget</li>
+                    <li>
+                      Option to purchase the equipment at the end of the lease
+                      term
+                    </li>
+                    <li>Access to the latest copier technology</li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {rent ? (
+            <div className={styles.eighty}>
+              <div className={styles.title}>Renting With Copiers Utah?</div>
+              <div className={styles.paragraph}>
+                If you're in Utah and in need of copiers, renting one on a
+                short-term basis could be a great option for your business
+                needs. Copier rental provides a cost-effective solution, as it
+                offers flexibility and convenience while saving you money
+                compared to purchasing a copier outright. Additionally, copier
+                rental allows you to adjust your equipment needs as your
+                business evolves, without worrying about the hassle of
+                maintaining and repairing the equipment on your own. This can be
+                especially useful for those coming to Salt Lake City, Park City,
+                Ogden, Orem, Provo, Tooele, and everywhere in-between.
+              </div>
+              <div className={styles.paragraph}>
+                {" "}
+                Renting a copier in Utah is an excellent way to optimize your
+                business's performance. You can choose to rent a copier for a
+                short period of time and return it once the job is complete, or
+                rent-to-own and eventually own the equipment after paying for it
+                over time. This way, you can benefit from the copier's features
+                and functionalities without having to purchase it outright,
+                which can be a significant financial burden for many businesses.
+                So, if you need copiers in Utah, consider copier rental as a
+                cost-effective and flexible option for your business needs.
+              </div>
+              <div
+                style={{ justifyContent: "space-evenly", width: "100%" }}
+                className={styles.column}
+              >
+                <div className={styles.green}>Key Information</div>
+                <div className={styles.row}>
+                  <div className={styles.bulletPoints}>
+                    <li>No large upfront investment required</li>
+                    <li>Low-risk option to test out new copier equipment</li>
+                    <li>Customizable rental terms and payment plans</li>
+                  </div>
+                  <div className={styles.bulletPoints}>
+                    <li>No large upfront investment required</li>
+                    <li>Low-risk option to test out new copier equipment</li>
+                    <li>
+                      Ability to own the equipment at the end of the rental term
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+          {finance ? (
+            <div className={styles.eighty}>
+              <div className={styles.title}>Financing With Copiers Utah?</div>
+              <div className={styles.paragraph}>
+                At Copiers Utah, we understand that investing in new copier
+                equipment can be a significant expense for businesses. That's
+                why we offer flexible financing options that can provide several
+                benefits to help businesses preserve their working capital and
+                acquire the latest copier technology. We believe that every
+                business deserves access to top-of-the-line copier equipment,
+                regardless of their budget.
+              </div>
+              <div className={styles.paragraph}>
+                Our financing options are customizable to meet the specific
+                needs of each business, with flexible terms and payments that
+                can be tailored to their budget and cash flow. With copier
+                financing, businesses can acquire the latest copier technology
+                without worrying about depreciation or obsolescence. Plus, they
+                can spread the cost of the equipment over a set period of time,
+                making it more manageable for their cash flow.
+              </div>
+              <div
+                style={{ justifyContent: "space-evenly", width: "100%" }}
+                className={styles.column}
+              >
+                <div className={styles.green}>Key Information</div>
+                <div className={styles.row}>
+                  <div className={styles.bulletPoints}>
+                    <li>
+                      Spread the cost of the equipment over a set period of time
+                    </li>
+                    <li>
+                      Enjoy flexible terms and payments tailored to your
+                      business needs
+                    </li>
+                    <li>
+                      Reduced financial risk compared to purchasing equipment
+                      outright
+                    </li>
+                  </div>
+                  <div className={styles.bulletPoints}>
+                    <li>
+                      Personalized support and guidance from financing experts
+                    </li>
+                    <li>No large upfront investment required</li>
+                    <li>
+                      Ability to preserve credit lines for other business needs
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <></>
           )}
         </div>
       </div>
