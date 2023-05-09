@@ -382,7 +382,7 @@
 }
 
 .epson {
-  background-image: url("/static/epson.jpg");
+  background-image: url("/static/epsonL.webp");
   height: 40vh;
   width: 20vw;
   background-size: contain;

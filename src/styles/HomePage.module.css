@@ -62,7 +62,7 @@
   display: flex;
   height: 100%;
   width: 100%;
-  font-size: 31px;
+  font-size: 40px;
   font-weight: 400;
   justify-content: center;
   align-items: flex-end;
@@ -168,7 +168,7 @@
 }
 
 .repair {
-  background-image: url("/static/repair.jpg");
+  background-image: url("/static/tech.webp");
   height: 30vh;
   width: 20vw;
   background-size: cover;
@@ -188,7 +188,7 @@
 }
 
 .itWork {
-  background-image: url("/static/itWork.webp");
+  background-image: url("/static/itWorks.webp");
   height: 30vh;
   width: 20vw;
   background-size: cover;
@@ -198,7 +198,7 @@
 }
 
 .construction {
-  background-image: url("/static/construction.webp");
+  background-image: url("/static/constructionsmall.webp");
   height: 30vh;
   width: 20vw;
   background-size: cover;
@@ -208,9 +208,10 @@
 }
 
 .woman {
-  background-image: url("/static/smilingWoman.webp");
+  background-image: url("/static/buy.webp");
   height: 66vh;
-  width: 100%;
+  margin-left: 90px;
+  width: 65%;
   background-size: cover;
   border-radius: 15px;
   background-repeat: no-repeat;
@@ -296,6 +297,8 @@
 .titleMed {
   color: black;
   font-size: 35px;
+  width: 65%;
+  text-align: center;
   letter-spacing: 1.5px;
 }
 
@@ -336,12 +339,6 @@
   font-weight: 200;
 }
 
-.titleContainer {
-  width: 28%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
 
 .row {
   display: flex;
@@ -413,6 +410,10 @@
 .black {
   font-size: 25px;
   color: black;
+}
+.bottomRow{
+  display: flex;
+  align-items: center;
 }
 
 .input {
@@ -530,6 +531,7 @@
 .fourthSection {
   height: 100vh;
   background-color: white;
+  flex-direction: column;
   width: 87vw;
   display: flex;
   justify-content: space-evenly;
@@ -538,6 +540,7 @@
 .thirdParagraph {
   font-size: 20px;
   line-height: 33px;
+  text-align: center;
   color: rgb(119, 119, 119);
 }
 .contactHeader {
@@ -729,6 +732,10 @@
   .mediumColumn {
     flex-direction: column;
   }
+  .bottomRow{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -742,8 +749,11 @@
   }
   .secondSection {
     align-items: center;
-    height: 297vh;
+    height: 400vh;
     width: 100%;
+  }
+  .copiersTitle{
+    width: 30%;
   }
   .shadeBig {
     width: fit-content;
@@ -751,6 +761,7 @@
   .woman {
     height: 55vh;
     width: 64vw;
+    margin-left: 0px;
   }
   .toner {
     width: 35vw;
@@ -853,7 +864,7 @@
     font-size: 19px;
   }
   .secondSection {
-    height: 315vh;
+    height: 430vh;
   }
   .section {
     height: 125vh;
@@ -866,6 +877,12 @@
   }
   .infoBig {
     font-size: 25px;
+  }
+  .woman{
+    margin-left: 0px;
+  }
+  .needSpace{
+    height: 45vh;
   }
 }
 

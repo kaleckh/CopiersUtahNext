@@ -165,6 +165,11 @@ const Home = (props) => {
       </div>
       <Header />
       <div className={styles.main}>
+        <div className={styles.centerContainer}>
+          <div className={styles.title}>
+            Want a copier? Fill out our quote form!
+          </div>
+        </div>
         <div className={styles.secondSection}>
           <div className={styles.woman} />
           {quoteToggle ? (
@@ -371,19 +376,18 @@ const Home = (props) => {
             <div className={styles.eighty}>
               <div className={styles.title}>Renting With Copiers Utah?</div>
               <div className={styles.paragraph}>
-                If you're in Utah and in need of copiers, renting one on a
-                short-term basis could be a great option for your business
-                needs. Copier rental provides a cost-effective solution, as it
-                offers flexibility and convenience while saving you money
-                compared to purchasing a copier outright. Additionally, copier
-                rental allows you to adjust your equipment needs as your
-                business evolves, without worrying about the hassle of
-                maintaining and repairing the equipment on your own. This can be
-                especially useful for those coming to Salt Lake City, Park City,
-                Ogden, Orem, Provo, Tooele, and everywhere in-between.
+                Are you looking for copiers for sale or rent in Utah? Copier
+                rental is a cost-effective solution for businesses in need of
+                short-term copier equipment. It offers flexibility and
+                convenience while saving you money compared to purchasing a
+                copier outright. Additionally, copier rental allows you to
+                adjust your equipment needs as your business evolves, without
+                worrying about the hassle of maintaining and repairing the
+                equipment on your own. This can be especially useful for those
+                coming to Salt Lake City, Park City, Ogden, Orem, Provo, Tooele,
+                and everywhere in-between.
               </div>
               <div className={styles.paragraph}>
-                {" "}
                 Renting a copier in Utah is an excellent way to optimize your
                 business's performance. You can choose to rent a copier for a
                 short period of time and return it once the job is complete, or
@@ -391,8 +395,6 @@ const Home = (props) => {
                 over time. This way, you can benefit from the copier's features
                 and functionalities without having to purchase it outright,
                 which can be a significant financial burden for many businesses.
-                So, if you need copiers in Utah, consider copier rental as a
-                cost-effective and flexible option for your business needs.
               </div>
               <div
                 style={{ justifyContent: "space-evenly", width: "100%" }}
@@ -422,22 +424,22 @@ const Home = (props) => {
             <div className={styles.eighty}>
               <div className={styles.title}>Financing With Copiers Utah?</div>
               <div className={styles.paragraph}>
-                At Copiers Utah, we understand that investing in new copier
-                equipment can be a significant expense for businesses. That's
-                why we offer flexible financing options that can provide several
-                benefits to help businesses preserve their working capital and
-                acquire the latest copier technology. We believe that every
-                business deserves access to top-of-the-line copier equipment,
-                regardless of their budget.
+                Looking for copiers for sale or lease, but concerned about the
+                upfront cost? At Copiers Utah, we offer copier financing options
+                that can help businesses preserve their working capital and
+                acquire the latest copier technology. Our financing options are
+                customizable to meet the specific needs of each business, with
+                flexible terms and payments that can be tailored to their budget
+                and cash flow.
               </div>
               <div className={styles.paragraph}>
-                Our financing options are customizable to meet the specific
-                needs of each business, with flexible terms and payments that
-                can be tailored to their budget and cash flow. With copier
-                financing, businesses can acquire the latest copier technology
-                without worrying about depreciation or obsolescence. Plus, they
-                can spread the cost of the equipment over a set period of time,
-                making it more manageable for their cash flow.
+                We believe that every business deserves access to
+                top-of-the-line copier equipment, regardless of their budget.
+                With our copier financing options, businesses can acquire
+                copiers for sale or lease without worrying about depreciation or
+                obsolescence. Plus, they can spread the cost of the equipment
+                over a set period of time, making it more manageable for their
+                cash flow.
               </div>
               <div
                 style={{ justifyContent: "space-evenly", width: "100%" }}

@@ -10,6 +10,7 @@ export default function Footer(props) {
       <div className={styles.exploreContainerGood}>
         <h3 className={styles.footerTitle}>Contact Us</h3>
         <div className={styles.footerTags}>Copiers Utah</div>
+        <div className={styles.footerTags}>We have Copiers For Sale</div>
         <div className={styles.footerTags}>554 W 8360 S</div>
         <div className={styles.footerTags}>Sandy, UT 84070</div>
         <div className={styles.footerTags}>PHONE: (801)261-0510</div>
@@ -22,7 +23,7 @@ export default function Footer(props) {
       <div className={styles.exploreContainer}>
         <div className={styles.footerTitle}>Services</div>
         <Link href="https://copiersutah.com/shortTerm">
-          <h4 className={styles.h4}>Buy a Used Copier</h4>
+          <h4 className={styles.h4}>Copiers for sale</h4>
         </Link>
         <Link href="https://copiersutah.com/shortTerm">
           <h4 className={styles.h4}>Copier Rentals</h4>

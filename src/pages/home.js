@@ -161,7 +161,9 @@ export default function Home() {
               <div className={styles.parent}>
                 <div className={styles.woman} />
                 <div className={styles.overlay}>
-                  <h2 className={styles.centerLarge}>Buy Or Lease A Copier</h2>
+                  <div className={styles.centerLarge}>
+                    Buy Or Lease A Copier
+                  </div>
                 </div>
               </div>
             </Link>
@@ -181,8 +183,8 @@ export default function Home() {
                 >
                   <div className={styles.parent}>
                     <div className={styles.repair} />
-
-                    <h2 className={styles.center}>Copier Repair</h2>
+                    <div className={styles.overlay} />
+                    <div className={styles.center}>Copier Repair</div>
                   </div>
                 </Link>
               </div>
@@ -195,7 +197,7 @@ export default function Home() {
                 <div className={styles.parent}>
                   <div className={styles.toner} />
                   <div className={styles.overlay} />
-                  <h2 className={styles.center}>Buy Toner</h2>
+                  <div className={styles.center}>Buy Toner</div>
                 </div>
               </div>
             </div>
@@ -205,7 +207,7 @@ export default function Home() {
                   <div className={styles.parent}>
                     <div className={styles.itWork} />
                     <div className={styles.overlay} />
-                    <h2 className={styles.center}>IT Work</h2>
+                    <div className={styles.center}>IT Work</div>
                   </div>
                 </Link>
               </div>
@@ -217,7 +219,7 @@ export default function Home() {
                   <div className={styles.parent}>
                     <div className={styles.construction} />
                     <div className={styles.overlay} />
-                    <h2 className={styles.center}>Short Term Rental</h2>
+                    <div className={styles.center}>Short Term Rental</div>
                   </div>
                 </Link>
               </div>
@@ -384,18 +386,17 @@ export default function Home() {
           <div className={styles.copiersLine}></div>
         </div>
         <div className={styles.fourthSection}>
-          <div className={styles.titleContainer}>
+          <div className={styles.bottomRow}>
             <div className={styles.titleMed}>WHO WE ARE</div>
-            <div className={styles.titleMed}>OUR PROMISE</div>
-            <div className={styles.titleMed}>OUR PRODUCTS</div>
-          </div>
-          <div className={styles.paragraphContainerBottom}>
             <div className={styles.thirdParagraph}>
               inventory includes top-quality copiers from trusted brands,
               providing efficient printing solutions for businesses of all
               sizes. Our knowledgeable team is dedicated to helping you find the
               right equipment to fit your needs and budget.
             </div>
+          </div>
+          <div className={styles.bottomRow}>
+            <div className={styles.titleMed}>OUR PROMISE</div>
             <div className={styles.thirdParagraph}>
               At copiers utah, we promise transparent pricing, high-quality
               equipment, and exceptional service. With competitive pricing on
@@ -403,6 +404,9 @@ export default function Home() {
               right equipment, you can trust us for all your copier needs in
               Utah.
             </div>
+          </div>
+          <div className={styles.bottomRow}>
+            <div className={styles.titleMed}>OUR PRODUCTS</div>
             <div className={styles.thirdParagraph}>
               We offer a variety of new and used copiers, including top-quality
               models from trusted brands like Konica Minolta, Epson, and

@@ -468,7 +468,7 @@
   color: black;
 }
 .epson {
-  background-image: url("/static/Epson.png");
+  background-image: url("/static/Epson.webp");
   height: 8vh;
   width: 10vw;
   margin-top: 25px;
@@ -516,7 +516,7 @@
   background-position: center center;
 }
 .hp {
-  background-image: url("/static/hp.jpeg");
+  background-image: url("/static/hp.webp");
   height: 11vh;
   width: 10vw;
 
@@ -546,7 +546,7 @@
   background-position: center center;
 }
 .canon {
-  background-image: url("/static/canon.png");
+  background-image: url("/static/canon.webp");
   height: 7vh;
   width: 14vw;
   margin-top: 20px;
