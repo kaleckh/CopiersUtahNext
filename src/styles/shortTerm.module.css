@@ -174,7 +174,7 @@
   border: none;
 }
 .copiersTitle {
-  width: 40%;
+  width: 100%;
   font-size: 25px;
   padding: 10px;
   text-align: center;
@@ -290,7 +290,7 @@
 }
 
 .row li {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .secondSection {

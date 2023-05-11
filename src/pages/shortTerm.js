@@ -288,7 +288,7 @@ const Home = () => {
         <div
           style={{ display: "flex", justifyContent: "center", height: "50%" }}
         >
-          <div style={{ paddingLeft: "60px" }} className={styles.row}>
+          <div className={styles.row}>
             <div className={styles.Realcolumn}>
               <li>Construction Trailers</li>
               <li>Temporary Offices</li>
@@ -304,7 +304,7 @@ const Home = () => {
       </div>
 
       <Footer />
-    </div>
+    </div >
   );
 };
 

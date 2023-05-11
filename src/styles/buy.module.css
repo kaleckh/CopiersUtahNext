@@ -321,7 +321,7 @@
   width: 100%;
 }
 .thirdSection {
-  height: 120vh;
+  height: fit-content;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -583,7 +583,7 @@
 
 @media (max-width: 600px) {
   .container {
-    width: 80vw;
+    width: 98%;
     font-size: 27px;
   }
   .woman {
@@ -592,6 +592,7 @@
   .columnContainer {
     flex-direction: column;
     align-items: flex-end;
+    height: fit-content;
   }
   .logoSpace {
     width: 95%;
@@ -612,9 +613,7 @@
   .bulletPoints li{
     font-size: 12px;
   }
-  .thirdSection{
-    height: 150vh;
-  }
+ 
   .option{
     font-size: 20px;
   }
@@ -655,10 +654,24 @@
   .woman {
     display: none;
   }
-  .thirdSection{
-    height: 185vh;
+  
+  .eighty{
+    height: fit-content;
+    width: 95%;
+  }
+  .main{
+    height:fit-content
   }
   .row{
     width: 100%;
+  }
+  .centerContainer{
+    height: 5%;
+  }
+  .container{
+    width: 98%;
+  }
+  .paragraph{
+    width: 95%;
   }
 }
