@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/static/logo.png" />
+        <link rel="shortcut icon" href="/static/logo.webp" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

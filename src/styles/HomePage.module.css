@@ -188,7 +188,7 @@
 }
 
 .itWork {
-  background-image: url("/static/itWorks.webp");
+  background-image: url("/static/itworks.webp");
   height: 30vh;
   width: 20vw;
   background-size: cover;
@@ -529,7 +529,7 @@
   justify-content: center;
 }
 .fourthSection {
-  height: 100vh;
+  height: 150vh;
   background-color: white;
   flex-direction: column;
   width: 87vw;
@@ -843,6 +843,13 @@
   .infoMedium {
     font-size: 17px;
   }
+  .centerReview{
+    align-items: flex-end;
+  }
+  .titleMed{
+    font-size: 27px;
+    padding-bottom: 10px;
+  }
   .reviewBig {
     font-size: 20px;
   }
@@ -864,7 +871,7 @@
     font-size: 19px;
   }
   .secondSection {
-    height: 430vh;
+    height: 495vh;
   }
   .section {
     height: 125vh;
@@ -882,7 +889,7 @@
     margin-left: 0px;
   }
   .needSpace{
-    height: 45vh;
+    height: 70vh;
   }
 }
 

@@ -78,7 +78,7 @@ const Products = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png	"
+            src="/static/logo.webp	"
             alt="Our copiers utah logo"
             width={150}
             height={100}

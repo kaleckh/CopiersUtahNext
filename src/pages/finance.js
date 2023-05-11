@@ -95,7 +95,7 @@ const Finance = () => {
                 "Copiers Utah offers a range of financing options for buying copiers.",
               brand: "Copiers Utah",
               url: "https://copiersutah.com/finance",
-              image: "https://copiersutah.com/static/logo.png",
+              image: "https://copiersutah.com/static/logo.webp",
               offers: {
                 "@type": "Offer",
                 priceCurrency: "USD",
@@ -130,7 +130,7 @@ const Finance = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png"
+            src="/static/logo.webp"
             alt="copier leasing"
             width={150}
             height={100}
@@ -234,38 +234,38 @@ const Finance = () => {
                 </div>
               </div>
             ) : (
-              <div className={styles.center}>
-                {quoteToggle ? (
-                  <div style={{ display: "contents" }}>
-                    <h2 className={styles.titleBig}>Financing Made Easy</h2>
-                    <div className={styles.paragraph}>
-                      We know how it can be stressful finding a printer. That"s
-                      why we"ve made it easier than ever to find your next one
-                      and get you all your information on it
+                <div className={styles.center}>
+                  {quoteToggle ? (
+                    <div style={{ display: "contents" }}>
+                      <h2 className={styles.titleBig}>Financing Made Easy</h2>
+                      <div className={styles.paragraph}>
+                        We know how it can be stressful finding a printer. That"s
+                        why we"ve made it easier than ever to find your next one
+                        and get you all your information on it
                     </div>
-                    <button
-                      onClick={() => {
-                        setToggle(!toggle);
-                      }}
-                      className={styles.button}
-                    >
-                      Get Your Terms
+                      <button
+                        onClick={() => {
+                          setToggle(!toggle);
+                        }}
+                        className={styles.button}
+                      >
+                        Get Your Terms
                     </button>
-                  </div>
-                ) : (
-                  <div
-                    className={styles.title}
-                    style={{
-                      width: "140%",
-                      fontWeight: "300",
-                      fontSize: "37px",
-                    }}
-                  >
-                    Awesome, we will be contacting you shortly!
-                  </div>
-                )}
-              </div>
-            )}
+                    </div>
+                  ) : (
+                      <div
+                        className={styles.title}
+                        style={{
+                          width: "140%",
+                          fontWeight: "300",
+                          fontSize: "37px",
+                        }}
+                      >
+                        Awesome, we will be contacting you shortly!
+                      </div>
+                    )}
+                </div>
+              )}
           </div>
         </div>
       </div>

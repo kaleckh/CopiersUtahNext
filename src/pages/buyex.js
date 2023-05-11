@@ -106,7 +106,7 @@ const Home = (props) => {
                 "High-quality copiers for your office, including new and refurbished options.",
               brand: "Copiers Utah",
               url: "https://copiersutah.com/home",
-              image: "https://copiersutah.com/static/logo.png",
+              image: "https://copiersutah.com/static/logo.webp",
               offers: {
                 "@type": "AggregateOffer",
                 priceCurrency: "USD",
@@ -145,7 +145,7 @@ const Home = (props) => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png"
+            src="/static/logo.webp"
             alt="buy a used or new business copier"
             width={150}
             height={100}
@@ -247,10 +247,10 @@ const Home = (props) => {
               </div>
             </div>
           ) : (
-            <h1 className={styles.title}>
-              Awesome, we will be contacting you shortly!
-            </h1>
-          )}
+              <h1 className={styles.title}>
+                Awesome, we will be contacting you shortly!
+              </h1>
+            )}
         </div>
       </div>
 

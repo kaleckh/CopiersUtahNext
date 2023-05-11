@@ -54,7 +54,7 @@ const Konica = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png"
+            src="/static/logo.webp"
             alt="new and used konica printer"
             width={150}
             height={100}
@@ -117,87 +117,87 @@ const Konica = () => {
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
-              <div className={styles.aboutRow}>
-                <div
-                  onClick={() => {
-                    setGray(true);
-                  }}
-                  className={
-                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                  }
-                >
-                  About
+              <div className={styles.column}>
+                <div className={styles.aboutRow}>
+                  <div
+                    onClick={() => {
+                      setGray(true);
+                    }}
+                    className={
+                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                    }
+                  >
+                    About
                 </div>
 
-                <div
-                  onClick={() => {
-                    setGray(false);
-                  }}
-                  className={
-                    gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
-                  }
-                >
-                  Other Features
+                  <div
+                    onClick={() => {
+                      setGray(false);
+                    }}
+                    className={
+                      gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
+                    }
+                  >
+                    Other Features
+                </div>
+                </div>
+                <div style={{ width: "100%" }} className={styles.line}></div>
+                <div>
+                  {gray ? (
+                    <div
+                      className={styles.Overview}
+                      style={{ textAlign: "center" }}
+                    >
+                      Konica Minolta copiers are high-performance multifunction
+                      devices that can print, scan, copy and fax documents. They
+                      are designed to meet the demands of modern workplaces,
+                      offering fast processing speeds, high-quality output, and
+                      advanced security features. With customizable workflows and
+                      eco-friendly options, Konica Minolta copiers are a reliable
+                    and efficient choice for any office environment.{" "}
+                    </div>
+                  ) : (
+                      <div>
+                        <div className={styles.bulletContainer}>
+                          <div className={styles.bullet}>1s</div>
+                          <div className={styles.paragraphSmall}>
+                            Konica Minolta copiers have multifunction capabilities,
+                            allowing them to print, scan, copy, and fax documents.
+                      </div>
+                        </div>
+                        <div className={styles.bulletContainer}>
+                          <div className={styles.bullet}>1s</div>
+                          <div className={styles.paragraphSmall}>
+                            Customizable workflows are available to improve
+                            productivity with Konica Minolta copiers.
+                      </div>
+                        </div>
+                        <div className={styles.bulletContainer}>
+                          <div className={styles.bullet}>1s</div>
+                          <div className={styles.paragraphSmall}>
+                            Konica Minolta is committed to sustainability and offers
+                            eco-friendly features.
+                      </div>
+                        </div>
+                        <div className={styles.bulletContainer}>
+                          <div className={styles.bullet}>1s</div>
+                          <div className={styles.paragraphSmall}>
+                            Advanced security features are included to protect
+                            sensitive data on Konica Minolta copiers.
+                      </div>
+                        </div>
+                        <div className={styles.bulletContainer}>
+                          <div className={styles.bullet}>1s</div>
+                          <div className={styles.paragraphSmall}>
+                            Konica Minolta copiers produce high-quality color or
+                            black-and-white documents.
+                      </div>
+                        </div>
+                      </div>
+                    )}
                 </div>
               </div>
-              <div style={{ width: "100%" }} className={styles.line}></div>
-              <div>
-                {gray ? (
-                  <div
-                    className={styles.Overview}
-                    style={{ textAlign: "center" }}
-                  >
-                    Konica Minolta copiers are high-performance multifunction
-                    devices that can print, scan, copy and fax documents. They
-                    are designed to meet the demands of modern workplaces,
-                    offering fast processing speeds, high-quality output, and
-                    advanced security features. With customizable workflows and
-                    eco-friendly options, Konica Minolta copiers are a reliable
-                    and efficient choice for any office environment.{" "}
-                  </div>
-                ) : (
-                  <div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta copiers have multifunction capabilities,
-                        allowing them to print, scan, copy, and fax documents.
-                      </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Customizable workflows are available to improve
-                        productivity with Konica Minolta copiers.
-                      </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta is committed to sustainability and offers
-                        eco-friendly features.
-                      </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Advanced security features are included to protect
-                        sensitive data on Konica Minolta copiers.
-                      </div>
-                    </div>
-                    <div className={styles.bulletContainer}>
-                      <div className={styles.bullet}>1s</div>
-                      <div className={styles.paragraphSmall}>
-                        Konica Minolta copiers produce high-quality color or
-                        black-and-white documents.
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
+            )}
         </div>
         <div className={styles.section}>
           <div>
@@ -307,98 +307,98 @@ const Konica = () => {
                 </div>
               </>
             ) : (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <div className={styles.container}>
-                  <div className={styles.titleSmall}>
-                    Call us at (801) 261 - 0510
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <div className={styles.container}>
+                    <div className={styles.titleSmall}>
+                      Call us at (801) 261 - 0510
                   </div>
-                  <div className={styles.infoSmall}>or</div>
-                  <div className={styles.titleMed}>Get Your free Quote!</div>
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-evenly",
-                      height: "80%",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div className={styles.space}>
-                      <div className={styles.number}>1</div>
-                      <input
-                        className={styles.inputSingle}
-                        placeholder="Name"
-                        type="text"
-                        name=""
-                        id=""
-                        required={true}
-                        onChange={() => {
-                          setName(event.target.value);
-                        }}
-                      />
-                    </div>
-                    <div className={styles.space}>
-                      <div className={styles.number}>2</div>
-                      <PatternFormat
-                        format="+1 (###) ### ####"
-                        allowEmptyFormatting
-                        mask="_"
-                        className={styles.phoneNumber}
-                        onChange={(event) => {
-                          setNumber(event.target.value);
-                        }}
-                      />
-                    </div>
-
-                    <div className={styles.space}>
-                      <div className={styles.number}>3</div>
-                      <input
-                        onChange={() => {
-                          setMessage(event.target.value);
-                        }}
-                        className={styles.inputSingle}
-                        placeholder="Comments"
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    style={{ height: "25%", display: "flex" }}
-                    className={styles.padding}
-                  >
-                    <ReCAPTCHA
+                    <div className={styles.infoSmall}>or</div>
+                    <div className={styles.titleMed}>Get Your free Quote!</div>
+                    <div
                       style={{
-                        marginBottom: "10px",
+                        width: "100%",
                         display: "flex",
-                        justifyContent: "center",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                        height: "80%",
+                        alignItems: "center",
                       }}
-                      className="recaptcha"
-                      sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                      ref={captchaRef}
-                      onChange={verifyCallback}
-                    />
-                  </div>
-                  <button
-                    onClick={(e) => {
-                      setQuoteToggle(!quoteToggle);
-                      sendEmail(e);
-                    }}
-                    className={styles.button}
-                    disabled={!recaptchaResponse}
-                  >
-                    Get My Quote
+                    >
+                      <div className={styles.space}>
+                        <div className={styles.number}>1</div>
+                        <input
+                          className={styles.inputSingle}
+                          placeholder="Name"
+                          type="text"
+                          name=""
+                          id=""
+                          required={true}
+                          onChange={() => {
+                            setName(event.target.value);
+                          }}
+                        />
+                      </div>
+                      <div className={styles.space}>
+                        <div className={styles.number}>2</div>
+                        <PatternFormat
+                          format="+1 (###) ### ####"
+                          allowEmptyFormatting
+                          mask="_"
+                          className={styles.phoneNumber}
+                          onChange={(event) => {
+                            setNumber(event.target.value);
+                          }}
+                        />
+                      </div>
+
+                      <div className={styles.space}>
+                        <div className={styles.number}>3</div>
+                        <input
+                          onChange={() => {
+                            setMessage(event.target.value);
+                          }}
+                          className={styles.inputSingle}
+                          placeholder="Comments"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      style={{ height: "25%", display: "flex" }}
+                      className={styles.padding}
+                    >
+                      <ReCAPTCHA
+                        style={{
+                          marginBottom: "10px",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                        className="recaptcha"
+                        sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                        ref={captchaRef}
+                        onChange={verifyCallback}
+                      />
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        setQuoteToggle(!quoteToggle);
+                        sendEmail(e);
+                      }}
+                      className={styles.button}
+                      disabled={!recaptchaResponse}
+                    >
+                      Get My Quote
                   </button>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       </div>

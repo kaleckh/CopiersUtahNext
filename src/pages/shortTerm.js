@@ -5,7 +5,7 @@ import { PatternFormat } from "react-number-format";
 import Image from "next/image";
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
-// import Logo from "../Photos/logo.png";
+// import Logo from "../Photos/logo.webp";
 // import Menu from "../Photos/menu.png";
 // import Repair from "../Photos/repair.jpg";
 import styles from "../styles/shortTerm.module.css";
@@ -155,7 +155,7 @@ const Home = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png"
+            src="/static/logo.webp"
             alt="our copiers utah logo"
             width={150}
             height={100}
@@ -188,88 +188,88 @@ const Home = () => {
                   Awesome, you"re next in line for a call!
                 </div>
               ) : (
-                <div>
-                  <div className={styles.container}>
-                    <div className={styles.black}>Get Your free Quote!</div>
-                    <div
-                      style={{
-                        width: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-evenly",
-                        height: "80%",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div className={styles.space}>
-                        <div className={styles.number}>1</div>
-                        <input
-                          className={styles.inputSingle}
-                          placeholder="Name"
-                          type="text"
-                          name=""
-                          id=""
-                          required={true}
-                          onChange={() => {
-                            setName(event.target.value);
-                          }}
-                        />
-                      </div>
-                      <div className={styles.space}>
-                        <div className={styles.number}>2</div>
-                        <PatternFormat
-                          format="+1 (###) #### ###"
-                          allowEmptyFormatting
-                          mask="_"
-                          className={styles.phoneNumber}
-                          onChange={(event) => {
-                            setNumber(event.target.value);
-                          }}
-                        />
+                  <div>
+                    <div className={styles.container}>
+                      <div className={styles.black}>Get Your free Quote!</div>
+                      <div
+                        style={{
+                          width: "100%",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-evenly",
+                          height: "80%",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div className={styles.space}>
+                          <div className={styles.number}>1</div>
+                          <input
+                            className={styles.inputSingle}
+                            placeholder="Name"
+                            type="text"
+                            name=""
+                            id=""
+                            required={true}
+                            onChange={() => {
+                              setName(event.target.value);
+                            }}
+                          />
+                        </div>
+                        <div className={styles.space}>
+                          <div className={styles.number}>2</div>
+                          <PatternFormat
+                            format="+1 (###) #### ###"
+                            allowEmptyFormatting
+                            mask="_"
+                            className={styles.phoneNumber}
+                            onChange={(event) => {
+                              setNumber(event.target.value);
+                            }}
+                          />
                         ;
                       </div>
 
-                      <div className={styles.space}>
-                        <div className={styles.number}>3</div>
-                        <input
-                          onChange={() => {
-                            setMessage(event.target.value);
+                        <div className={styles.space}>
+                          <div className={styles.number}>3</div>
+                          <input
+                            onChange={() => {
+                              setMessage(event.target.value);
+                            }}
+                            className={styles.inputSingle}
+                            placeholder="Comments"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        style={{ height: "25%", display: "flex" }}
+                        className={styles.padding}
+                      >
+                        <ReCAPTCHA
+                          style={{
+                            marginBottom: "10px",
+                            display: "flex",
+                            justifyContent: "center",
                           }}
-                          className={styles.inputSingle}
-                          placeholder="Comments"
-                          type="text"
+                          className="recaptcha"
+                          sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
+                          ref={captchaRef}
+                          onChange={verifyCallback}
                         />
                       </div>
-                    </div>
-                    <div
-                      style={{ height: "25%", display: "flex" }}
-                      className={styles.padding}
-                    >
-                      <ReCAPTCHA
-                        style={{
-                          marginBottom: "10px",
-                          display: "flex",
-                          justifyContent: "center",
+                      <button
+                        onClick={(e) => {
+                          setQuote(!quote);
+                          handleSubmit(e);
                         }}
-                        className="recaptcha"
-                        sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                        ref={captchaRef}
-                        onChange={verifyCallback}
-                      />
-                    </div>
-                    <button
-                      onClick={(e) => {
-                        setQuote(!quote);
-                        handleSubmit(e);
-                      }}
-                      disabled={!recaptchaResponse && !messageRes}
-                      className={styles.button}
-                    >
-                      Get My Quote
+                        disabled={!recaptchaResponse && !messageRes}
+                        className={styles.button}
+                      >
+                        Get My Quote
                     </button>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </div>
         </div>

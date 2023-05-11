@@ -53,7 +53,7 @@ export default function Footer(props) {
         <li>Copier leasing available for all models</li>
       </div>
       <div className={styles.exploreContainerGood}>
-        <Image src={"/static/logo.png"} width={200} height={150} />
+        <Image src={"/static/logo.webp"} width={200} height={150} />
       </div>
     </div>
   );

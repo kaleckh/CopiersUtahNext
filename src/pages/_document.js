@@ -7,11 +7,12 @@ export default function Document() {
         fontFamily: "arial",
         scrollBehavior: " smooth!important",
         color: "black",
+        backgroundColor: "white",
       }}
       lang="en"
     >
       <Head>
-        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.webp" />
       </Head>
       <body>
         <Main />

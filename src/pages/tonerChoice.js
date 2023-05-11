@@ -2,12 +2,11 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import Head from "next/head";
 import Axios from "axios";
-import { PatternFormat } from "react-number-format";
 import Image from "next/image";
-import styles from "../styles/Fix.module.css";
+import styles from "../styles/toner.module.css";
 import Footer from "./Footer";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useRouter } from "next/router";
 
 const Fix = () => {
   const tawkMessengerRef = useRef();
@@ -22,7 +21,7 @@ const Fix = () => {
   const [valid_token, setValidToken] = useState([]);
   const [token, setToken] = useState();
   const captchaRef = useRef(null);
-
+  const router = useRouter();
   const SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
   const SECRET_KEY = process.env.REACT_APP_RECAPTCHA_SECRET_KEY;
 
@@ -192,9 +191,8 @@ const Fix = () => {
               }}
               className={styles.black}
             >
-              We work with all brands, including!{" "}
+              Choose your toner brand that you need!
             </div>
-            <div className={styles.smallBlack}>But not limited to</div>
           </div>
           <div className={styles.line}></div>
           <div
@@ -204,7 +202,12 @@ const Fix = () => {
               width: "100%",
             }}
           >
-            <div className={styles.epson}></div>
+            <div
+              onClick={() => {
+                router.push("/toner");
+              }}
+              className={styles.epson}
+            ></div>
             <div className={styles.Konika}></div>
             <div className={styles.lexmark}></div>
           </div>
@@ -231,90 +234,6 @@ const Fix = () => {
             <div className={styles.canon}></div>
           </div>
         </div>
-
-        {toggle ? (
-          <div>
-            <div>Awesome, your next in line</div>
-          </div>
-        ) : (
-            <div style={{ width: "fit-content" }}>
-              <div className={styles.container}>
-                <h1 className={styles.blackLarge}>
-                  Schedule A Maintanance Call!
-              </h1>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>1</div>
-                  <input
-                    onChange={() => {
-                      setName(event.target.value);
-                    }}
-                    style={{ width: "82%", color: "black" }}
-                    className={styles.inputSingle}
-                    placeholder="First Name"
-                    type="text"
-                    name=""
-                    id=""
-                    required={true}
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>2</div>
-                  <PatternFormat
-                    format="+1 (###) ### ####"
-                    allowEmptyFormatting
-                    mask="_"
-                    className={styles.phoneNumber}
-                    onChange={(event) => {
-                      setNumber(event.target.value);
-                    }}
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>3</div>
-                  <input
-                    onChange={() => {
-                      setZipCode(event.target.value);
-                    }}
-                    className={styles.inputSingle}
-                    type="text"
-                    placeholder="Zip Code"
-                  />
-                </div>
-                <div style={{ width: "97%", display: "flex" }}>
-                  <div className={styles.number}>4</div>
-                  <input
-                    onChange={() => {
-                      setMessage(event.target.value);
-                    }}
-                    style={{ color: "black" }}
-                    className={styles.inputSingle}
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="What type of service?"
-                  />
-                </div>
-
-                <ReCAPTCHA
-                  style={{ display: "flex", justifyContent: "center" }}
-                  className="recaptcha"
-                  sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                  ref={captchaRef}
-                  onChange={verifyCallback}
-                />
-                <button
-                  onClick={(e) => {
-                    sendEmail(e);
-                    setToggle(!toggle);
-                  }}
-                  className={styles.button}
-                  disabled={!recaptchaResponse}
-                >
-                  Get quote!
-              </button>
-              </div>
-            </div>
-          )}
       </div>
       <Footer />
     </div>

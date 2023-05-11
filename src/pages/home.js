@@ -107,7 +107,7 @@ export default function Home() {
                 postalCode: "84070",
                 addressCountry: "USA",
               },
-              image: "https://copiersutah.com/static/logo.png",
+              image: "https://copiersutah.com/static/logo.webp",
               url: "https://copiersutah.com",
               areaServed: "Utah",
               priceRange: "$$",
@@ -132,7 +132,7 @@ export default function Home() {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.png"
+            src="/static/logo.webp"
             alt="used copiers"
             width={150}
             height={100}
@@ -190,7 +190,7 @@ export default function Home() {
               </div>
               <div
                 onClick={() => {
-                  router.push("/home");
+                  router.push("/buy");
                 }}
                 className={styles.shade}
               >
