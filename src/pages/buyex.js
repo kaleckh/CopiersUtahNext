@@ -84,8 +84,7 @@ const Home = (props) => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/buy/" />
         <title>
-          Get a Quote for High-Quality New and Refurbished Copiers | Copiers
-          Utah
+          Get a Quote for High-Quality New and Refurbished Copiers | Copiers Utah
         </title>
         <meta
           name="description"

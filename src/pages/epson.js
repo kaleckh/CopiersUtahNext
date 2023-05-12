@@ -31,8 +31,7 @@ const Epson = () => {
     <div className={styles.main}>
       <Head>
         <title>
-          New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
-          Utah
+          New and Used Lexmark Copiers | High-Quality and Affordable | Copiers Utah
         </title>
         <meta
           name="description"
