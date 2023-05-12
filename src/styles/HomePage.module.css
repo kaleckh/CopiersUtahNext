@@ -1,11 +1,11 @@
 .main {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   color: white;
   background-color: white;
 }
 
-.logoSpace {
+.logoSpace {  
   height: 30%;
   width: 90%;
   display: flex;
@@ -307,6 +307,7 @@
   font-size: 40px;
   letter-spacing: 1.5px;
   font-weight: 300;
+  text-align: center;
   padding: 50px;
 }
 
@@ -372,7 +373,7 @@
 }
 
 .secondSection {
-  height: 300vh;
+  height: fit-content;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -529,7 +530,7 @@
   justify-content: center;
 }
 .fourthSection {
-  height: 150vh;
+  height: 90vh;
   background-color: white;
   flex-direction: column;
   width: 87vw;
@@ -740,7 +741,7 @@
 
 @media (max-width: 1000px) {
   .main {
-    height: 200vh;
+    height: fit-content;
   }
   .flex {
     flex-direction: column;
@@ -749,7 +750,7 @@
   }
   .secondSection {
     align-items: center;
-    height: 400vh;
+    height: fit-content;
     width: 100%;
   }
   .copiersTitle{
@@ -843,6 +844,9 @@
   .infoMedium {
     font-size: 17px;
   }
+  .fourthSection{
+    height: 175vh;
+  }
   .centerReview{
     align-items: flex-end;
   }
@@ -871,7 +875,7 @@
     font-size: 19px;
   }
   .secondSection {
-    height: 495vh;
+    height: fit-content;
   }
   .section {
     height: 125vh;
