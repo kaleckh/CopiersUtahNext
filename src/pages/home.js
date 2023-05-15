@@ -127,6 +127,9 @@ export default function Home() {
             }),
           }}
         />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN2KYPVC8G"></script>
+
       </Head>
 
       <div className={styles.logoSpaceContainer}>

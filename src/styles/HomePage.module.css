@@ -530,7 +530,7 @@
   justify-content: center;
 }
 .fourthSection {
-  height: 90vh;
+  height: 500px;
   background-color: white;
   flex-direction: column;
   width: 87vw;
@@ -845,7 +845,7 @@
     font-size: 17px;
   }
   .fourthSection{
-    height: 175vh;
+    height: 1000px;
   }
   .centerReview{
     align-items: flex-end;
