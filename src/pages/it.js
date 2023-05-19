@@ -3,6 +3,7 @@ import Header from "./Header";
 import Head from "next/head";
 import Image from "next/image";
 import Form from "./Form";
+import Sliver from './Sliver'
 import { PatternFormat } from "react-number-format";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Logo from "../Photos/logo.webp";
@@ -98,6 +99,7 @@ const It = (props) => {
   };
   return (
     <div className={styles.main}>
+      <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/it/" />

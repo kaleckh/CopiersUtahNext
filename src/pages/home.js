@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "./Header";
+import Sliver from './sliver'
 import { PatternFormat } from "react-number-format";
 import Link from "next/link";
 import styles from "../styles/HomePage.module.css";
@@ -67,6 +68,7 @@ export default function Home() {
 
   return (
     <div className={styles.main}>
+      <Sliver/>
       <TawkMessengerReact
         onLoad={onLoad}
         propertyId="5abd4931d7591465c7090c65"

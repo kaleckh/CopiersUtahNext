@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import Head from "next/head";
+import Sliver from './Sliver'
 import Image from "next/image";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
@@ -51,6 +52,7 @@ const Products = () => {
   };
   return (
     <div className={styles.main}>
+      <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/products/" />
@@ -97,7 +99,7 @@ const Products = () => {
       <Header />
       <div
         style={{
-          height: "78%",
+          height: "74%",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",

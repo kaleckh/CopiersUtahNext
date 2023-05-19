@@ -1,34 +1,36 @@
-import React, { useRef } from "react";
-import Header from "./Header";
-import Head from "next/head";
-import Form from "./Form";
-import Footer from "./Footer";
-import Image from "next/image";
-import { PatternFormat } from "react-number-format";
-import styles from "../styles/lexmark.module.css";
-import { useRouter } from "next/router";
-import ReCAPTCHA from "react-google-recaptcha";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import { useState } from "react";
+import React, { useRef } from 'react'
+import Header from './Header'
+import Head from 'next/head'
+import Sliver from './Sliver'
+import Form from './Form'
+import Footer from './Footer'
+import Image from 'next/image'
+import { PatternFormat } from 'react-number-format'
+import styles from '../styles/lexmark.module.css'
+import { useRouter } from 'next/router'
+import ReCAPTCHA from 'react-google-recaptcha'
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
+import { useState } from 'react'
 const Lexmark = () => {
-  const router = useRouter();
-  const [recaptchaResponse, setRecaptchaResponse] = useState(false);
-  const tawkMessengerRef = useRef();
-  const [gray, setGray] = useState(true);
-  const [grayBottom, setGrayBottom] = useState(true);
-  const [quote, setQuote] = useState(false);
+  const router = useRouter()
+  const [recaptchaResponse, setRecaptchaResponse] = useState(false)
+  const tawkMessengerRef = useRef()
+  const [gray, setGray] = useState(true)
+  const [grayBottom, setGrayBottom] = useState(true)
+  const [quote, setQuote] = useState(false)
   const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+    tawkMessengerRef.current.minimize()
+  }
   const onLoad = () => {
-    console.log("onLoad works!");
-  };
+    console.log('onLoad works!')
+  }
   var verifyCallback = function (response) {
-    setRecaptchaResponse(response);
-  };
-  const captchaRef = useRef(null);
+    setRecaptchaResponse(response)
+  }
+  const captchaRef = useRef(null)
   return (
     <div className={styles.main}>
+      <Sliver />
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
@@ -74,40 +76,40 @@ const Lexmark = () => {
 
       <div
         style={{
-          height: "150vh",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "flex-start",
+          height: '150vh',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
         }}
       >
         <div className={styles.backContainer}>
           <div
             onClick={() => {
-              router.push("/products");
+              router.push('/products')
             }}
             style={{
-              padding: "5px",
-              fontSize: "25px",
-              fontWeight: "400",
-              cursor: "pointer",
-              borderRadius: "100%",
+              padding: '5px',
+              fontSize: '25px',
+              fontWeight: '400',
+              cursor: 'pointer',
+              borderRadius: '100%',
             }}
           >
-            {" "}
+            {' '}
             {`X`}
           </div>
         </div>
         <div className={styles.lineColumn}>
           <div className={styles.color}>Lexmark</div>
-          <div style={{ width: "150%" }} className={styles.line} />
+          <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
             <div className={styles.lexmark} />
             <button
               onClick={() => {
-                router.push("/buy");
+                router.push('/buy')
               }}
               className={styles.button}
             >
@@ -117,292 +119,109 @@ const Lexmark = () => {
           {quote ? (
             <Form />
           ) : (
-              <div className={styles.column}>
-                <div className={styles.aboutRow}>
-                  <div
-                    onClick={() => {
-                      setGray(true);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
-                    }
-                  >
-                    About
-                </div>
-
-                  <div
-                    onClick={() => {
-                      setGray(false);
-                    }}
-                    className={
-                      gray ? `${styles.focusTitle}` : `${styles.focusTitleGray}`
-                    }
-                  >
-                    Other Features
-                </div>
-                </div>
-                <div style={{ width: "100%" }} className={styles.line}></div>
-                <div>
-                  {gray ? (
-                    <div
-                      className={styles.Overview}
-                      style={{ textAlign: "center" }}
-                    >
-                      Lexmark is a well-known brand in the printer and copier
-                      industry, offering a range of products for both small
-                      businesses and larger enterprises. Their copiers are
-                      designed to provide high-quality document imaging and fast
-                      printing speeds, with a focus on efficiency and
-                    productivity.{" "}
-                    </div>
-                  ) : (
-                      <div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            The most reliable copier in the world!
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            85% marketshare in HealthCare & Pharmacies because it
-                            always works.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Simple to use color, icon driven touch screen.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Known for their fast print speeds and efficient
-                            performance.
-                      </div>
-                        </div>
-                        <div className={styles.bulletContainer}>
-                          <div className={styles.bullet}>1s</div>
-                          <div className={styles.paragraphSmall}>
-                            Security is a top priority for Lexmark, and their
-                            copiers come with advanced security features like user
-                            authentication and data encryption
-                      </div>
-                        </div>
-                      </div>
-                    )}
+            <div className={styles.column}>
+              <div className={styles.aboutRow}>
+                <div
+                  onClick={() => {
+                    setGray(true)
+                  }}
+                  className={
+                    gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
+                  }
+                >
+                  About
                 </div>
               </div>
-            )}
+              <div className={styles.line}></div>
+              <div>
+                <div>
+                  <div className={styles.bulletContainer}>
+                    <div className={styles.bullet}>1s</div>
+                    <div className={styles.paragraphSmall}>
+                      The most reliable copier in the world!
+                    </div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <div className={styles.bullet}>1s</div>
+                    <div className={styles.paragraphSmall}>
+                      85% marketshare in HealthCare & Pharmacies because it
+                      always works.
+                    </div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <div className={styles.bullet}>1s</div>
+                    <div className={styles.paragraphSmall}>
+                      Simple to use color, icon driven touch screen.
+                    </div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <div className={styles.bullet}>1s</div>
+                    <div className={styles.paragraphSmall}>
+                      Known for their fast print speeds and efficient
+                      performance.
+                    </div>
+                  </div>
+                  <div className={styles.bulletContainer}>
+                    <div className={styles.bullet}>1s</div>
+                    <div className={styles.paragraphSmall}>
+                      Security is a top priority for Lexmark, and their copiers
+                      come with advanced security features like user
+                      authentication and data encryption
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <div className={styles.section}>
-          <div>
-            <div
-              onClick={() => {
-                setGrayBottom(true);
-              }}
-              className={
-                grayBottom ? styles.specsContainerDark : styles.specsContainer
-              }
-            >
-              General Specs
+        <div className={styles.konikaBottom}>
+          <div className={styles.bottomProductContainer}>
+            <div className={styles.paragraph}>
+              Konica Minolta copiers are renowned for their exceptional
+              reliability, making them a trusted choice for businesses of all
+              sizes. With a long-standing reputation in the industry, Konica
+              Minolta has consistently delivered copiers that are built to last.
+              Their machines are designed with durability in mind, ensuring they
+              can handle high volumes of printing and copying without
+              compromising on performance.
             </div>
-            <div
-              onClick={() => {
-                setGrayBottom(false);
-              }}
-              className={
-                grayBottom ? styles.specsContainer : styles.specsContainerDark
-              }
-            >
-              {" "}
-              Pricing
+            <div className={styles.paragraph}>
+              One of the key factors that contribute to the reliability of
+              Konica Minolta copiers is their robust construction. These
+              machines are built using high-quality components and materials,
+              ensuring they can withstand the demands of daily office use. From
+              sturdy paper trays to reliable feed mechanisms, every aspect of
+              the copier is engineered to minimize downtime and maximize
+              productivity.
             </div>
-          </div>
-          <div className={styles.bottomContainer}>
-            {grayBottom ? (
-              <>
-                <div
-                  style={{
-                    textAlign: "center",
-                    margin: "30px",
-                    fontSize: "25px",
-                  }}
-                  className={styles.black}
-                >
-                  Additional Information
-                </div>
-                <div className={styles.spaceEven}>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>SPEED B/W</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>45 Pages Per Minute</div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>SPEED COLOR</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>45 Pages Per Minute</div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>RESOLUTION</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>600/600 - 2400/1200</div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>PAPER CAPACITY</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>500 - 2000 Sheets</div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>VOLUME</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>
-                        {" "}
-                        200,000 impressions Copies Per Month
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>COLOR CAPABILITY</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>Black and White Copier</div>
-                    </div>
-                  </div>
-                  <div className={styles.line}></div>
-                  <div className={styles.rowBottom}>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>PROPERTIES</div>
-                    </div>
-                    <div className={styles.thirty}>
-                      <div className={styles.black}>
-                        Copier-Printer-Fax-Scan
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </>
-            ) : (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <div className={styles.container}>
-                    <div className={styles.titleSmall}>
-                      Call us at (801) 261 - 0510
-                  </div>
-                    <div className={styles.infoSmall}>or</div>
-                    <div className={styles.titleMed}>Get Your free Quote!</div>
-                    <div
-                      style={{
-                        width: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-evenly",
-                        height: "80%",
-                        alignItems: "center",
-                      }}
-                    >
-                      <div className={styles.space}>
-                        <div className={styles.number}>1</div>
-                        <input
-                          className={styles.inputSingle}
-                          placeholder="Name"
-                          type="text"
-                          name=""
-                          id=""
-                          required={true}
-                          onChange={() => {
-                            setName(event.target.value);
-                          }}
-                        />
-                      </div>
-                      <div className={styles.space}>
-                        <div className={styles.number}>2</div>
-                        <PatternFormat
-                          format="+1 (###) ### ####"
-                          allowEmptyFormatting
-                          mask="_"
-                          className={styles.phoneNumber}
-                          onChange={(event) => {
-                            setNumber(event.target.value);
-                          }}
-                        />
-                      </div>
 
-                      <div className={styles.space}>
-                        <div className={styles.number}>3</div>
-                        <input
-                          onChange={() => {
-                            setMessage(event.target.value);
-                          }}
-                          className={styles.inputSingle}
-                          placeholder="Comments"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      style={{ height: "25%", display: "flex" }}
-                      className={styles.padding}
-                    >
-                      <ReCAPTCHA
-                        style={{
-                          marginBottom: "10px",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                        className="recaptcha"
-                        sitekey={"6LdNLYElAAAAAIMv324AxwjVLAnHHIdnIWPEYeQi"}
-                        ref={captchaRef}
-                        onChange={verifyCallback}
-                      />
-                    </div>
-                    <button
-                      onClick={(e) => {
-                        setQuoteToggle(!quoteToggle);
-                        sendEmail(e);
-                      }}
-                      className={styles.button}
-                      disabled={!recaptchaResponse}
-                    >
-                      Get My Quote
-                  </button>
-                  </div>
+            <div className={styles.row}>
+              <div className={styles.box}>
+              <Image src={'/static/desktop.webp'} height={100} width={100}/>
+                <div className={styles.titleMid}>
+                  Business Class Desktop Printers
                 </div>
-              )}
+                <button className={styles.button}>See Options</button>
+              </div>
+              <div className={styles.box}>
+                <Image src={'/static/colorCopier.webp'} height={100} width={100}/>
+                <div className={styles.titleMid}>
+                  Color Multifunction Copiers
+                </div>
+                <button className={styles.button}>See Options</button>
+              </div>
+              <div className={styles.box}>
+              <Image src={'/static/blackAndWhite.webp'} height={100} width={100}/>
+                <div className={styles.titleMid}>Black And White Copiers</div>
+                <button className={styles.button}>See Options</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Lexmark;
+export default Lexmark

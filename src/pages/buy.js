@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import Image from "next/image";
+import Sliver from './Sliver'
 import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import Head from "next/head";
@@ -83,6 +84,7 @@ const Home = (props) => {
   };
   return (
     <div className={styles.main}>
+      <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/buy/" />

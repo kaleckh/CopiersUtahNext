@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
+import Sliver from './Sliver'
 import Head from "next/head";
 import Axios from "axios";
 import { PatternFormat } from "react-number-format";
@@ -110,6 +111,7 @@ const Fix = () => {
 
   return (
     <div className={styles.main}>
+      <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/fix/" />

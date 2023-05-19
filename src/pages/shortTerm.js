@@ -3,6 +3,7 @@ import Header from "./Header";
 import Form from "./Form";
 import { PatternFormat } from "react-number-format";
 import Image from "next/image";
+import Sliver from './Sliver'
 import Head from "next/head";
 import ReCAPTCHA from "react-google-recaptcha";
 // import Logo from "../Photos/logo.webp";
@@ -99,6 +100,7 @@ const Home = () => {
   };
   return (
     <div className={styles.main}>
+      <Sliver/>
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/shortTerm/" />
