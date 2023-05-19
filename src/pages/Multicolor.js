@@ -52,7 +52,7 @@ const Multicolor = () => {
   }
   return (
     <div className={styles.main}>
-      <Sliver/>
+      <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/products/" />
@@ -114,24 +114,23 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
                   <div className={styles.numberContainer}>Model Number:</div>
                   <div>123456</div>
                 </div>
+                <div>*</div>
                 <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
+                   New And Refurbished Available
                 </div>
               </div>
             </div>
           </div>
           <div className={styles.box}>
             <div className={styles.titleBlackSmall}>Konika Minolta C758</div>
-            <Image src="/static/c758.webp" width={200} height={200}></Image>
+            <Image src="/static/c758.webp" width={200} height={170}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -140,8 +139,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -166,8 +164,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -192,8 +189,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -218,8 +214,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -244,8 +239,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -270,8 +264,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -286,8 +279,8 @@ const Multicolor = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark XC4140</div>
+            <Image src="/static/xc4140.webp" width={150} height={150}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -296,8 +289,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -312,8 +304,8 @@ const Multicolor = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark XC6152</div>
+            <Image src="/static/xc6152.webp" width={150} height={150}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -322,60 +314,7 @@ const Multicolor = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Options</button>  
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>

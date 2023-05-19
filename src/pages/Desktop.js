@@ -51,8 +51,8 @@ const Desktop = () => {
     })
   }
   return (
-      <div className={styles.main}>
-        <Sliver/>
+    <div className={styles.main}>
+      <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/products/" />
@@ -104,8 +104,8 @@ const Desktop = () => {
         </div>
         <div className={styles.grid}>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark C6160</div>
+            <Image src="/static/c6160.webp" width={175} height={175}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -114,8 +114,7 @@ const Desktop = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -130,8 +129,8 @@ const Desktop = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark C4342</div>
+            <Image src="/static/c4342.webp" width={170} height={170}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -140,8 +139,7 @@ const Desktop = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -156,8 +154,8 @@ const Desktop = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark C4150</div>
+            <Image src="/static/C4150.webp" width={150} height={150}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -166,8 +164,31 @@ const Desktop = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
+              </div>
+              <div className={styles.fifty}>
+                <div className={styles.rowNumber}>
+                  <div className={styles.numberContainer}>Model Number:</div>
+                  <div>123456</div>
+                </div>
+                <div className={styles.rowNumber}>
+                  <div>Refurbished Versions Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.box}>
+            <div className={styles.titleBlackSmall}>Lexmark XC4342</div>
+            <Image src="/static/XC4342.webp" width={200} height={200}></Image>
+            <div className={styles.somethingContainer}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -182,8 +203,8 @@ const Desktop = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark M5255</div>
+            <Image src="/static/M5255.webp" width={200} height={200}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -192,8 +213,7 @@ const Desktop = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
@@ -208,8 +228,8 @@ const Desktop = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <div className={styles.titleBlackSmall}>Lexmark M3250</div>
+            <Image src="/static/M3250.webp" width={200} height={200}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{
@@ -218,164 +238,7 @@ const Desktop = () => {
                   alignItems: 'center',
                 }}
               >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <div style={{ fontSize: '30px' }}>$</div>
-                <div className={styles.price}>30.99</div>
+                <button className={styles.button}>See Details</button>
               </div>
               <div className={styles.fifty}>
                 <div className={styles.rowNumber}>
