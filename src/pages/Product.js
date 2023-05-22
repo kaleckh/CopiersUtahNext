@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import Header from './Header'
 import Head from 'next/head'
 import Sliver from './Sliver'
@@ -18,6 +18,9 @@ const Lexmark = () => {
   const [gray, setGray] = useState(true)
   const [grayBottom, setGrayBottom] = useState(true)
   const [quote, setQuote] = useState(false)
+  const [model, setModel] = useState()
+  const [image, setImage] = useState()
+  const [type, setType] = useState()
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize()
   }
@@ -28,6 +31,14 @@ const Lexmark = () => {
     setRecaptchaResponse(response)
   }
   const captchaRef = useRef(null)
+  useEffect(() => {
+    const storedModel = localStorage.getItem("Model");
+    const photo = localStorage.getItem("Image");
+    const back = localStorage.getItem("type");
+    setModel(storedModel);
+    setImage(photo)
+    setType(back)
+  }, []);
   return (
     <div className={styles.main}>
       <Sliver />
@@ -56,7 +67,7 @@ const Lexmark = () => {
       <div className={styles.logoSpaceContainer}>
         <div className={styles.logoSpace}>
           <Image
-            src="/static/logo.webp"
+            src={`/static/logo.webp`}
             alt="Lexmark used and new printer"
             width={150}
             height={100}
@@ -65,7 +76,7 @@ const Lexmark = () => {
             <div />
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
+              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
             </div>
           </div>
@@ -86,7 +97,7 @@ const Lexmark = () => {
         <div className={styles.backContainer}>
           <div
             onClick={() => {
-              router.push('/products')
+              router.push(`/${type}`)
             }}
             style={{
               padding: '5px',
@@ -97,17 +108,18 @@ const Lexmark = () => {
             }}
           >
             {' '}
-            {`X`}
+            X
           </div>
         </div>
         <div className={styles.lineColumn}>
-          <div className={styles.color}>Copier Name</div>
+          <div className={styles.color}>{}</div>
           <div style={{ width: '150%' }} className={styles.line} />
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <div className={styles.lexmark} />
+            <Image src={`/static/${image}`} width={300} height={250}/>
             <button
+              style={{width:"100%"}}
               onClick={() => {
                 router.push('/buy')
               }}
@@ -119,7 +131,8 @@ const Lexmark = () => {
           {quote ? (
             <Form />
           ) : (
-            <div className={styles.column}>
+              <div className={styles.column}>
+                <div className={styles.title}>{model}</div>
               <div className={styles.aboutRow}>
                 <div
                   onClick={() => {
@@ -174,7 +187,7 @@ const Lexmark = () => {
             </div>
           )}
         </div>
-        <div className={styles.konikaBottom}>
+        <div style={{height:"40%"}} className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
             <div className={styles.paragraph}>
               Konica Minolta copiers are renowned for their exceptional
@@ -185,15 +198,7 @@ const Lexmark = () => {
               can handle high volumes of printing and copying without
               compromising on performance.
             </div>
-            <div className={styles.paragraph}>
-              One of the key factors that contribute to the reliability of
-              Konica Minolta copiers is their robust construction. These
-              machines are built using high-quality components and materials,
-              ensuring they can withstand the demands of daily office use. From
-              sturdy paper trays to reliable feed mechanisms, every aspect of
-              the copier is engineered to minimize downtime and maximize
-              productivity.
-            </div>
+          
           </div>
         </div>
       </div>

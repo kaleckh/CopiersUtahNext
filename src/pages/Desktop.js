@@ -13,6 +13,73 @@ const Desktop = () => {
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('this is the test message')
+  const [copiers, setCopiers] = useState([
+    {
+      model: 'Lexmark C6160 Desktop Printer',
+      modelNumber: '21K0300',
+      image: 'C6160.webp',
+      PagesPerMinute: '60',
+      largestPaperSize: '8.5 x 14',
+      ScanSpeed: '57',
+      FirstPageOut: '6.5 Seconds',
+      type:"Desktop"
+    },
+    {
+      model: 'Lexmark C4342 Desktop Multifunction Printer',
+      modelNumber: '47C9343',
+      image: 'C4342.webp',
+      PagesPerMinute: '42',
+      largestPaperSize: '8.5 x 14',
+      ScanSpeed: '80',
+      FirstPageOut: '6.4 Seconds',
+      type:'Desktop'
+    },
+    {
+      model: 'Lexmark C4150 Desktop Printer',
+      modelNumber: '5028-6A9',
+      image: 'C4150.webp',
+      PagesPerMinute: '50',
+      largestPaperSize: '7.3 x 10.5',
+      ScanSpeed: '50',
+      FirstPageOut: '6.5 Seconds',
+      type:"Desktop"
+    },
+    {
+      model: 'Lexmark XC4140 Desktop Multifunction Printer',
+      modelNumber: '40C9708',
+      image: 'xc4140.webp',
+      PagesPerMinute: '40',
+      largestPaperSize: '8 x 11',
+      ScanSpeed: '60',
+      FirstPageOut: '6.5 Seconds',
+      type:"Desktop"
+    },
+    {
+      model: 'Lexmark M5255 Desktop Printer',
+      modelNumber: '4064-295',
+      image: 'm5255.webp',
+      PagesPerMinute: '50',
+      largestPaperSize: '8.3 x 11.7',
+      FirstPageOut: '4.5 Seconds',
+      type:"Desktop"
+    },
+    {
+      model: 'Lexmark M3250 Desktop Multifunction Printer',
+      modelNumber: '4600-895',
+      image: 'm3250.webp',
+      PagesPerMinute: '50',
+      largestPaperSize: '8.3 x 11.7',
+      FirstPageOut: '6 Seconds',
+      type:"Desktop"
+    },
+    // {
+    //   model: 'XM1242',
+    //   PagesPerMinute: '42',
+    //   LargestPaperSize: '8.5 x 14',
+    //   ScanSpeed: '45',
+    //   FirstPageOut: '6.5 Seconds',
+    // },
+  ])
   const router = useRouter()
 
   const tawkMessengerRef = useRef()
@@ -90,7 +157,7 @@ const Desktop = () => {
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
-              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
+              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
             </div>
           </div>
         </div>
@@ -103,155 +170,63 @@ const Desktop = () => {
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark C6160</div>
-            <Image src="/static/c6160.webp" width={175} height={175}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark C4342</div>
-            <Image src="/static/c4342.webp" width={170} height={170}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark C4150</div>
-            <Image src="/static/C4150.webp" width={150} height={150}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div>Refurbished Versions Available</div>
+          {copiers.map((copier) => {
+            return (
+              <div className={styles.box}>
+                <div className={styles.titleBlackSmall}>{copier.model}</div>
+                <Image
+                  src={`/static/${copier.image}`}
+                  width={200}
+                  height={200}
+                ></Image>
+                <div className={styles.somethingContainer}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <button
+                      onClick={() => {
+                        router.push('/Product')
+                        localStorage.setItem('Image', `${copier.image}`)
+                        localStorage.setItem('Model', `${copier.model}`)
+                        localStorage.setItem(
+                          'PagesPerMinute',
+                          `${copier.PagesPerMinute}`,
+                        )
+                        localStorage.setItem(
+                          'LargestPaperSize',
+                          `${copier.largestPaperSize}`,
+                        )
+                        localStorage.setItem(
+                          'FirstPageOut',
+                          `${copier.FirstPageOut}`,
+                        )
+                        localStorage.setItem(
+                          'type',
+                          `${copier.type}`,
+                        )
+                      }}
+                      className={styles.button}
+                    >
+                      See Details
+                    </button>
+                  </div>
+                  <div className={styles.fifty}>
+                    <div className={styles.rowNumber}>
+                      <div className={styles.numberContainer}>
+                        Model Number:
+                      </div>
+                      <div>{copier.modelNumber}</div>
+                    </div>
+                    <div className={styles.rowNumber}></div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark XC4342</div>
-            <Image src="/static/XC4342.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark M5255</div>
-            <Image src="/static/M5255.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark M3250</div>
-            <Image src="/static/M3250.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
       <Footer />

@@ -65,7 +65,7 @@ const Lexmark = () => {
             <div />
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
+              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Lexmark = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <div className={styles.lexmark} />
+            <Image src={'/static/Lexmark.webp'} height={300} width={200}/>
             <button
               onClick={() => {
                 router.push('/buy')
@@ -201,19 +201,25 @@ const Lexmark = () => {
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
-                <button className={styles.button}>See Options</button>
+                <button onClick={() => {
+                  router.push('/Desktop')
+                }} className={styles.button}>See Options</button>
               </div>
               <div className={styles.box}>
                 <Image src={'/static/colorCopier.webp'} height={100} width={100}/>
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
-                <button className={styles.button}>See Options</button>
+                <button onClick={() => {
+                  router.push('/Multicolor')
+                }} className={styles.button}>See Options</button>
               </div>
               <div className={styles.box}>
               <Image src={'/static/blackAndWhite.webp'} height={100} width={100}/>
                 <div className={styles.titleMid}>Black And White Copiers</div>
-                <button className={styles.button}>See Options</button>
+                <button onClick={() => {
+                  router.push('/BlackWhite')
+                }} className={styles.button}>See Options</button>
               </div>
             </div>
           </div>

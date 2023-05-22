@@ -153,7 +153,7 @@ const Home = (props) => {
             <div />
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261 - 0510</div>
+              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
             </div>
           </div>
