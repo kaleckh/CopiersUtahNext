@@ -14,15 +14,17 @@ const Desktop = () => {
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('this is the test message')
   const [copiers, setCopiers] = useState([
-    {
+   {
       model: 'Lexmark C6160 Desktop Printer',
       modelNumber: '21K0300',
-      image: 'C6160.webp',
-      PagesPerMinute: '60', 
-      paperSize: '8.5 x 14',
-      ScanSpeed: '57',
-      timeOut: '6.5 ',
+      PagesPerMinute: '57',
+      image: 'xc6152.webp',
+      paperSize: '21.12 x 22 x 20.6 in.',
+      brand: 'lexmark',
       type: 'Desktop',
+      timeOut: '7',
+      description:
+        'The C6160 is Lexmarks highest performing desktop color printer. When you want high-speed, high-quality output in a printer that can handle everything you can throw at it. This is your printer. ',
     },
     {
       model: 'Lexmark C4342 Desktop Multifunction Printer',
@@ -33,6 +35,7 @@ const Desktop = () => {
       ScanSpeed: '80',
       timeOut: '6.4 ',
       type: 'Desktop',
+      description:"The C4342 is a medium-high volume printer. It offers top-level performance with a true business-class print engine."
     },
     {
       model: 'Lexmark C4150 Desktop Printer',
@@ -43,6 +46,7 @@ const Desktop = () => {
       ScanSpeed: '50',
       timeOut: '6.5 ',
       type: 'Desktop',
+      description:"The C4150 is proven color printer offered as a rebuild model. It is capable of handling moderate to high volumes with an incredibly reliable no-hassle performance."
     },
     {
       model: 'Lexmark XC4140 Desktop Multifunction Printer',
@@ -72,13 +76,7 @@ const Desktop = () => {
       timeOut: '6 ',
       type: 'Desktop',
     },
-    // {
-    //   model: 'XM1242',
-    //   PagesPerMinute: '42',
-    //   paperSize: '8.5 x 14',
-    //   ScanSpeed: '45',
-    //   timeOut: '6.5 Seconds',
-    // },
+ 
   ])
   const router = useRouter()
 

@@ -103,15 +103,7 @@ const Multicolor = () => {
       description:
         'The C458 is out most popular copier-printer. It is ideal for most sized offices, provides top color quality, and full functionality and speed to handel every office need.',
     },
-    // {
-    //   model: 'Lexmark C4140',
-    //   PagesPerMinute: '40',
-    //   modelNumber: '40C9708',
-    //   image: 'xc4140.webp',
-    //   paperSize: '29.9 x 21',
-    //   ScanSpeed: '60',
-    //   timeOut: '6.5 ',
-    // },
+
     {
       model: 'Lexmark XC6152',
       modelNumber: ' 7563-197',
@@ -124,6 +116,71 @@ const Multicolor = () => {
       timeOut: '6.5 ',
       description:
         'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+    },
+    {
+      model: 'Lexmark XC9325',
+      modelNumber: ' XC9325',
+      PagesPerMinute: '25',
+      image: '9325.webp',
+      paperSize: '11.69 x 17 ',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '8.5 ',
+      description:
+        'The XC9325 is a budget-friendly brand new model from Lexmark. It offers the same award-winning applications and full-featured application software in the industry.',
+    },
+    {
+      model: 'Lexmark XC9335',
+      modelNumber: '32D0600',
+      PagesPerMinute: '35',
+      image: '9335.webp',
+      paperSize: '11.69 x 17 ',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '9',
+      description:
+        'The XC9335 is a budget-friendly brand new model suited for small to medium sized offices. At 35 pages per minute, the machine handles medium volume workflows in a durable, werkstable package.',
+    },
+    {
+      model: 'Lexmark XC9445',
+      modelNumber: 'XC944',
+      PagesPerMinute: '45',
+      image: '9445.webp',
+      paperSize: '12.9 x 19.02',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '4.7',
+      description:
+        'The XC9445 is an upgraded brand new model from Lexmark. The XC9445 is a popular workhorse model suited for most office environments',
+    },
+    {
+      model: 'Lexmark XC9455',
+      modelNumber: '7580-698',
+      PagesPerMinute: '50',
+      image: '9335.webp',
+      paperSize: '11.69 x 16.54 ',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '6.1',
+      description:
+        'The XC9455 is a fast workhorse copier offering upgraded performance suited to larger volumes or highly productive workplace environments, where there is no time to waste.',
+    },
+    {
+      model: 'Lexmark XC9465',
+      modelNumber: '327580-898D0600',
+      PagesPerMinute: '50',
+      image: '9465.webp',
+      paperSize: '11.69 x 16.54',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '6.5',
+      description:
+        'The XC9335 is a budget-friendly brand new model suited for small to medium sized offices. At 35 pages per minute, the machine handles medium volume workflows in a durable, werkstable package.',
     },
   ])
   const router = useRouter()
@@ -225,7 +282,7 @@ const Multicolor = () => {
                     src={`/static/${copier.image}`}
                     width={200}
                     height={200}
-                    alt={"copiers utah"}
+                    alt={'copiers utah'}
                   ></Image>
                 </div>
                 <div className={styles.somethingContainer}>
@@ -246,6 +303,10 @@ const Multicolor = () => {
                           `${copier.PagesPerMinute}`,
                         )
                         localStorage.setItem('paperSize', `${copier.paperSize}`)
+                        localStorage.setItem(
+                          'modelNumber',
+                          `${copier.modelNumber}`,
+                        )
                         localStorage.setItem('brand', `${copier.brand}`)
                         localStorage.setItem('timeOut', `${copier.timeOut}`)
                         localStorage.setItem('type', `${copier.type}`)
