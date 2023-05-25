@@ -170,7 +170,7 @@ const Fix = () => {
             <div className={styles.titleBlackSmall}>
               Lexmark 234567 black Toner
             </div>
-            <Image src="/static/logo.webp" width={200} height={200}></Image>
+            <Image alt={"copiers utah"} src="/static/logo.webp" width={200} height={200}></Image>
             <div className={styles.somethingContainer}>
               <div
                 style={{

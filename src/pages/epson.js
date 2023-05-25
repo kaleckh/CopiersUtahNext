@@ -129,9 +129,9 @@ const Epson = () => {
                     gray ? `${styles.focusTitleGray}` : `${styles.focusTitle}`
                   }
                 >
-                    About
+                  About
                 </div>
-                  <div className={styles.line}></div>
+                <div className={styles.line}></div>
               </div>
               <div style={{ width: '100%' }} className={styles.line}></div>
               <div>
@@ -174,22 +174,27 @@ const Epson = () => {
         <div className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
             <div className={styles.paragraph}>
-              Konica Minolta copiers are renowned for their exceptional
-              reliability, making them a trusted choice for businesses of all
-              sizes. With a long-standing reputation in the industry, Konica
-              Minolta has consistently delivered copiers that are built to last.
-              Their machines are designed with durability in mind, ensuring they
-              can handle high volumes of printing and copying without
-              compromising on performance.
+              Epson copiers are known for their exceptional print quality.
+              Whether you need to print text documents or vibrant graphics,
+              Epson copiers deliver sharp, clear, and professional-looking
+              output. Their advanced inkjet technology ensures precise color
+              reproduction and high-resolution printing, making them ideal for
+              tasks such as creating marketing materials, presentations, and
+              reports. With Epson copiers, you can expect vivid and accurate
+              prints that make a lasting impression.
             </div>
             <div className={styles.paragraph}>
-              One of the key factors that contribute to the reliability of
-              Konica Minolta copiers is their robust construction. These
-              machines are built using high-quality components and materials,
-              ensuring they can withstand the demands of daily office use. From
-              sturdy paper trays to reliable feed mechanisms, every aspect of
-              the copier is engineered to minimize downtime and maximize
-              productivity.
+              Epson copiers are also renowned for their reliability and
+              durability. Epson is a trusted brand known for manufacturing
+              high-quality products, and their copiers are no exception. These
+              machines are built to withstand heavy usage and can handle large
+              printing volumes without compromising on performance. With robust
+              construction and well-engineered mechanisms, Epson copiers offer
+              long-term reliability, reducing downtime and maintenance costs.
+              This makes them a cost-effective choice for businesses that rely
+              on consistent and uninterrupted printing operations. Epson copiers
+              provide peace of mind, knowing that your printing needs will be
+              met efficiently and reliably.
             </div>
 
             <div className={styles.row}>

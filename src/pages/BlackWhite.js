@@ -178,12 +178,13 @@ const BlackWhite = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div className={styles.box}>
+              <div key={copier.modelNumber} className={styles.box}>
                 <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div>
                   <Image
                     src={`/static/${copier.image}`}
                     width={200}
+                    alt={"copiers utah"}
                     height={200}
                   ></Image>
                 </div>

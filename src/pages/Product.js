@@ -27,6 +27,8 @@ const Lexmark = () => {
   const [printSpeed, setPrintSpeed] = useState()
   const [paperSize, setpaperSize] = useState()
   const [modelNumber, setModelNumber] = useState()
+  const [lastBullet, setLastBullet] = useState()
+  const [almostLastBullet, setAlmostLastBullet] = useState()
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize()
   }
@@ -59,9 +61,18 @@ const Lexmark = () => {
       setBrandDescription(
         'Lexmark, formerly an IBM company, had produced hands down the most reliable machines ever built. Their modular construction ensures the most efficient paper path in the industry. Independent BLI testing proved their top copier models performing with only 1 jam after 1,000,000 copies tested. Their dominant 85% of the market share in pharmacuetical and medical establishments is a testament to their unrivaled reliability',
       )
-    } else if((localStorage.getItem('brand') !== 'lexmark')) {
-      debugger
-      setBrandDescription("Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.")
+      setLastBullet(
+        ' Known for their fast print speeds and efficient performance.',
+      )
+      setAlmostLastBullet("Durability and reliability: Lexmark copiers are built to withstand heavy use and are known for their reliability, reducing downtime and ensuring consistent performance.")
+    } else if (localStorage.getItem('brand') !== 'lexmark') {
+      setLastBullet(
+        'High-quality output: Konica Minolta copiers are known for delivering exceptional print quality with sharp text and vibrant images.',
+      )
+      setBrandDescription(
+        'Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.',
+      )
+      setAlmostLastBullet("Energy efficiency: Konica Minolta copiers are designed with energy-saving features, helping businesses reduce their environmental footprint and save on energy costs.")
     }
   }, [])
 
@@ -102,8 +113,8 @@ const Lexmark = () => {
             <div />
             <div className={styles.infoBig}>Copiers Utah</div>
             <div className={styles.mediumColumn}>
-              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
               <div className={styles.infoSmall}>info@copiersutah.com</div>
+              <div className={styles.infoMedium}>Ph: (801) 261-0510</div>
             </div>
           </div>
         </div>
@@ -131,7 +142,6 @@ const Lexmark = () => {
               fontWeight: '400',
               cursor: 'pointer',
               borderRadius: '100%',
-              
             }}
           >
             {' '}
@@ -208,16 +218,13 @@ const Lexmark = () => {
                   <div className={styles.bulletContainer}>
                     <div className={styles.bullet}>1s</div>
                     <div className={styles.paragraphSmall}>
-                      Known for their fast print speeds and efficient
-                      performance.
+                     {lastBullet}
                     </div>
                   </div>
                   <div className={styles.bulletContainer}>
                     <div className={styles.bullet}>1s</div>
                     <div className={styles.paragraphSmall}>
-                      Security is a top priority for Lexmark, and their copiers
-                      come with advanced security features like user
-                      authentication and data encryption
+                      {almostLastBullet}
                     </div>
                   </div>
                 </div>

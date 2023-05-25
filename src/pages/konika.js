@@ -29,7 +29,7 @@ const Konica = () => {
   const captchaRef = useRef(null)
   return (
     <div className={styles.main}>
-      <Sliver/>
+      <Sliver />
       <Head>
         <title>
           New and Used Lexmark Copiers | High-Quality and Affordable | Copiers
@@ -198,21 +198,47 @@ const Konica = () => {
 
             <div className={styles.row}>
               <div className={styles.box}>
-              <Image src={'/static/desktop.webp'} height={100} width={100}/>
+                <Image
+                  onClick={() => {
+                    router.push('/Desktop')
+                  }}
+                  P
+                  src={'/static/desktop.webp'}
+                  height={100}
+                  width={100}
+                />
                 <div className={styles.titleMid}>
                   Business Class Desktop Printers
                 </div>
                 <button className={styles.button}>See Options</button>
               </div>
-              <div className={styles.box}>
-                <Image src={'/static/colorCopier.webp'} height={100} width={100}/>
+              <div
+                onClick={() => {
+                  router.push('/Multicolor')
+                }}
+                className={styles.box}
+              >
+                <Image
+                  src={'/static/colorCopier.webp'}
+                  height={100}
+                  width={100}
+                />
                 <div className={styles.titleMid}>
                   Color Multifunction Copiers
                 </div>
                 <button className={styles.button}>See Options</button>
               </div>
-              <div className={styles.box}>
-              <Image src={'/static/blackAndWhite.webp'} height={100} width={100}/>
+              <div
+                onClick={() => {
+                  router.push('/BlackWhite')
+                }}
+                className={styles.box}
+              >
+                <Image
+                  src={'/static/blackAndWhite.webp'}
+                  height={100}
+                  width={100}
+                />
                 <div className={styles.titleMid}>Black And White Copiers</div>
                 <button className={styles.button}>See Options</button>
               </div>

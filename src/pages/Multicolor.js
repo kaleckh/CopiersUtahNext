@@ -43,7 +43,7 @@ const Multicolor = () => {
     {
       model: 'Konica Minolta C558',
       modelNumber: 'Bizhub C458',
-      image: 'C558.webp',
+      image: 'c558.webp',
       brand: 'konica',
       PagesPerMinute: '55',
       paperSize: '12 x 18',
@@ -81,7 +81,7 @@ const Multicolor = () => {
     {
       model: 'Konica Minolta C308',
       modelNumber: 'Bizhub C300i',
-      image: 'C308.webp',
+      image: 'c308.webp',
       PagesPerMinute: '30',
       paperSize: '8.3 x 11.7',
       brand: 'konica',
@@ -94,7 +94,7 @@ const Multicolor = () => {
       model: 'Konica Minolta C458',
       PagesPerMinute: '45',
       modelNumber: 'Bizhub C458',
-      image: 'C458.webp',
+      image: 'c458.webp',
       brand: 'konica',
       paperSize: '12 x 18',
       ScanSpeed: '120',
@@ -218,13 +218,14 @@ const Multicolor = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div className={styles.box}>
+              <div key={copier.modelNumber} className={styles.box}>
                 <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div>
                   <Image
                     src={`/static/${copier.image}`}
                     width={200}
                     height={200}
+                    alt={"copiers utah"}
                   ></Image>
                 </div>
                 <div className={styles.somethingContainer}>

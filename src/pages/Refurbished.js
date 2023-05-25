@@ -22,7 +22,7 @@ const Multicolor = () => {
       paperSize: '12 x 18',
       ScanSpeed: '240 per minute',
       timeOut: '6.5 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       brand: 'konica',
       description:
         'The C658 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.',
@@ -38,7 +38,7 @@ const Multicolor = () => {
       timeOut: '3.6 ',
       description:
         'The C758 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.',
-      type: 'Multicolor',
+      type: 'Refurbished',
     },
     {
       model: 'Konica Minolta C558',
@@ -49,7 +49,7 @@ const Multicolor = () => {
       paperSize: '12 x 18',
       ScanSpeed: '80',
       timeOut: '4.4 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       description:
         'The C558 is a speedy workhorse copier, offering a robust platform fit for high volumes or longevity in smaller offices',
     },
@@ -62,7 +62,7 @@ const Multicolor = () => {
       paperSize: '12 x 18',
       ScanSpeed: '160',
       timeOut: '6.5 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       description:
         'The C368 is a meduium sized office copier-printer with premier color quality and all the functionality of a large office copier. ',
     },
@@ -74,7 +74,7 @@ const Multicolor = () => {
       brand: 'konica',
       paperSize: '12/ x 18',
       timeOut: '7.3 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       description:
         'The C258 is a small office copier-printer with all the functionality and options of a large office copier. This is our most cost effective 12x18-capable rebuilt machine that does not sacrifice any color quality.',
     },
@@ -86,7 +86,7 @@ const Multicolor = () => {
       paperSize: '8.3 x 11.7',
       brand: 'konica',
       timeOut: '6 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       description:
         'The C308 is a small-medium sized office copier-printer with premier color quality and all the functionality of a large office copier.',
     },
@@ -99,7 +99,7 @@ const Multicolor = () => {
       paperSize: '12 x 18',
       ScanSpeed: '120',
       timeOut: '5.1 ',
-      type: 'Multicolor',
+      type: 'Refurbished',
       description:
         'The C458 is out most popular copier-printer. It is ideal for most sized offices, provides top color quality, and full functionality and speed to handel every office need.',
     },
@@ -111,7 +111,7 @@ const Multicolor = () => {
       paperSize: '44.8 x 25.54',
       ScanSpeed: '120',
       brand: 'lexmark',
-      type: 'Multicolor',
+      type: 'Refurbished',
       timeOut: '6.5 ',
       description:
         'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -124,7 +124,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -137,7 +137,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -150,7 +150,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -163,7 +163,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -176,7 +176,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -189,7 +189,7 @@ const Multicolor = () => {
     //   paperSize: '44.8 x 25.54',
     //   ScanSpeed: '120',
     //   brand: 'lexmark',
-    //   type: 'Multicolor',
+    //   type: 'Refurbished',
     //   timeOut: '6.5 ',
     //   description:
     //     'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
@@ -289,13 +289,14 @@ const Multicolor = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div className={styles.box}>
+              <div key={copier.modelNumber} className={styles.box}>
                 <div className={styles.titleBlackSmall}>{copier.model}</div>
                 <div>
                   <Image
                     src={`/static/${copier.image}`}
                     width={200}
                     height={200}
+                    alt={"copiers utah"}
                   ></Image>
                 </div>
                 <div className={styles.somethingContainer}>

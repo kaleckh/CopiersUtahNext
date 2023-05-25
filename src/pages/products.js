@@ -1,58 +1,58 @@
-import React, { useRef, useState } from "react";
-import Header from "./Header";
-import Head from "next/head";
+import React, { useRef, useState } from 'react'
+import Header from './Header'
+import Head from 'next/head'
 import Sliver from './Sliver'
-import Image from "next/image";
-import Footer from "./Footer";
-import { useRouter } from "next/router";
+import Image from 'next/image'
+import Footer from './Footer'
+import { useRouter } from 'next/router'
 
-import styles from "../styles/product.module.css";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
+import styles from '../styles/product.module.css'
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Products = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [message, setMessage] = useState("this is the test message");
-  const router = useRouter();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [number, setNumber] = useState('')
+  const [message, setMessage] = useState('this is the test message')
+  const router = useRouter()
 
-  const tawkMessengerRef = useRef();
+  const tawkMessengerRef = useRef()
 
   const handleMinimize = () => {
-    tawkMessengerRef.current.minimize();
-  };
+    tawkMessengerRef.current.minimize()
+  }
   const onLoad = () => {
-    console.log("onLoad works!");
-  };
+    console.log('onLoad works!')
+  }
   const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("Sending");
+    e.preventDefault()
+    console.log('Sending')
     let data = {
       name,
       email,
       message,
       number,
-    };
-    fetch("/api/contact", {
-      method: "POST",
+    }
+    fetch('/api/contact', {
+      method: 'POST',
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      console.log("Response received");
+      console.log('Response received')
       if (res.status === 200) {
-        console.log("Response succeeded!");
+        console.log('Response succeeded!')
         // setSubmitted(true);
         // setName("");
         // setEmail("");
         // setBody("");
       }
-    });
-  };
+    })
+  }
   return (
     <div className={styles.main}>
-      <Sliver/>
+      <Sliver />
       <Head>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://copiersutah.com/products/" />
@@ -99,52 +99,51 @@ const Products = () => {
       <Header />
       <div
         style={{
-          height: "74%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "center",
+          height: '74%',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          justifyContent: 'center',
         }}
       >
         <h1 className={styles.color}>Our Top Products</h1>
         <div className={styles.centerLine}>
           <div className={styles.line} />
         </div>
-        <div className={styles.row}>
-          <h2 className={styles.title}>Lexmark</h2>
-          <h2 className={styles.title}>Konica Minolta</h2>
-          <h2 className={styles.title}>Epson</h2>
-        </div>
         <div className={styles.copierRow}>
           <div
             onClick={() => {
-              router.push("/lexmark");
+              router.push('/lexmark')
             }}
             className={styles.copierContainer}
           >
-            <div className={styles.lexmark} />
+            <h2 className={styles.title}>Lexmark</h2>
+            <Image src={'/static/Lexmark.webp'} height={'270'} width={'170'}/>
           </div>
           <div
             className={styles.copierContainer}
             onClick={() => {
-              router.push("/konika");
+              router.push('/konika')
             }}
           >
-            <div className={styles.konika} />
+            <h2 className={styles.title}>Konica Minolta</h2>
+            <Image src={'/static/Konika.webp'} height={'300'} width={'300'} />
           </div>
           <div
             className={styles.copierContainer}
             onClick={() => {
-              router.push("/epson");
+              router.push('/epson')
             }}
           >
-            <div style={{ marginTop: "40px" }} className={styles.epson} />
+            <h2 className={styles.title}>Epson</h2>
+            <Image src={'/static/epsonL.webp'} height={'300'} width={'200'} />
+            <div style={{ marginTop: '40px' }} className={styles.epson} />
           </div>
         </div>
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products
