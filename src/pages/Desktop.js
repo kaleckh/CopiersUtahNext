@@ -6,7 +6,7 @@ import Footer from './Footer'
 import Sliver from './Sliver'
 import { useRouter } from 'next/router'
 
-import styles from '../styles/Refurbished.module.css'
+import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Desktop = () => {
   const [name, setName] = useState('')
@@ -18,66 +18,66 @@ const Desktop = () => {
       model: 'Lexmark C6160 Desktop Printer',
       modelNumber: '21K0300',
       image: 'C6160.webp',
-      PagesPerMinute: '60',
-      largestPaperSize: '8.5 x 14',
+      PagesPerMinute: '60', 
+      paperSize: '8.5 x 14',
       ScanSpeed: '57',
-      FirstPageOut: '6.5 Seconds',
-      type:"Desktop"
+      timeOut: '6.5 ',
+      type: 'Desktop',
     },
     {
       model: 'Lexmark C4342 Desktop Multifunction Printer',
       modelNumber: '47C9343',
       image: 'C4342.webp',
       PagesPerMinute: '42',
-      largestPaperSize: '8.5 x 14',
+      paperSize: '8.5 x 14',
       ScanSpeed: '80',
-      FirstPageOut: '6.4 Seconds',
-      type:'Desktop'
+      timeOut: '6.4 ',
+      type: 'Desktop',
     },
     {
       model: 'Lexmark C4150 Desktop Printer',
       modelNumber: '5028-6A9',
       image: 'C4150.webp',
       PagesPerMinute: '50',
-      largestPaperSize: '7.3 x 10.5',
+      paperSize: '7.3 x 10.5',
       ScanSpeed: '50',
-      FirstPageOut: '6.5 Seconds',
-      type:"Desktop"
+      timeOut: '6.5 ',
+      type: 'Desktop',
     },
     {
       model: 'Lexmark XC4140 Desktop Multifunction Printer',
       modelNumber: '40C9708',
       image: 'xc4140.webp',
       PagesPerMinute: '40',
-      largestPaperSize: '8 x 11',
+      paperSize: '8 x 11',
       ScanSpeed: '60',
-      FirstPageOut: '6.5 Seconds',
-      type:"Desktop"
+      timeOut: '6.5 ',
+      type: 'Desktop',
     },
     {
       model: 'Lexmark M5255 Desktop Printer',
       modelNumber: '4064-295',
       image: 'm5255.webp',
       PagesPerMinute: '50',
-      largestPaperSize: '8.3 x 11.7',
-      FirstPageOut: '4.5 Seconds',
-      type:"Desktop"
+      paperSize: '8.3 x 11.7',
+      timeOut: '4.5 ',
+      type: 'Desktop',
     },
     {
       model: 'Lexmark M3250 Desktop Multifunction Printer',
       modelNumber: '4600-895',
       image: 'm3250.webp',
       PagesPerMinute: '50',
-      largestPaperSize: '8.3 x 11.7',
-      FirstPageOut: '6 Seconds',
-      type:"Desktop"
+      paperSize: '8.3 x 11.7',
+      timeOut: '6 ',
+      type: 'Desktop',
     },
     // {
     //   model: 'XM1242',
     //   PagesPerMinute: '42',
-    //   LargestPaperSize: '8.5 x 14',
+    //   paperSize: '8.5 x 14',
     //   ScanSpeed: '45',
-    //   FirstPageOut: '6.5 Seconds',
+    //   timeOut: '6.5 Seconds',
     // },
   ])
   const router = useRouter()
@@ -172,13 +172,15 @@ const Desktop = () => {
         <div className={styles.grid}>
           {copiers.map((copier) => {
             return (
-              <div className={styles.box}>
+              <div key={copier.modelNumber} className={styles.box}>
                 <div className={styles.titleBlackSmall}>{copier.model}</div>
-                <Image
-                  src={`/static/${copier.image}`}
-                  width={200}
-                  height={200}
-                ></Image>
+                <div>
+                  <Image
+                    src={`/static/${copier.image}`}
+                    width={200}
+                    height={200}
+                  ></Image>
+                </div>
                 <div className={styles.somethingContainer}>
                   <div
                     style={{
@@ -191,23 +193,21 @@ const Desktop = () => {
                       onClick={() => {
                         router.push('/Product')
                         localStorage.setItem('Image', `${copier.image}`)
+                        localStorage.setItem('modelNumber', `${copier.modelNumber}`)
                         localStorage.setItem('Model', `${copier.model}`)
                         localStorage.setItem(
                           'PagesPerMinute',
                           `${copier.PagesPerMinute}`,
                         )
                         localStorage.setItem(
-                          'LargestPaperSize',
-                          `${copier.largestPaperSize}`,
+                          'paperSize',
+                          `${copier.paperSize}`,
                         )
                         localStorage.setItem(
-                          'FirstPageOut',
-                          `${copier.FirstPageOut}`,
+                          'timeOut',
+                          `${copier.timeOut}`,
                         )
-                        localStorage.setItem(
-                          'type',
-                          `${copier.type}`,
-                        )
+                        localStorage.setItem('type', `${copier.type}`)
                       }}
                       className={styles.button}
                     >

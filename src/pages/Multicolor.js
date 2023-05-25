@@ -6,13 +6,126 @@ import Image from 'next/image'
 import Footer from './Footer'
 import { useRouter } from 'next/router'
 
-import styles from '../styles/Refurbished.module.css'
+import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const Multicolor = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('this is the test message')
+  const [copiers, setCopiers] = useState([
+    {
+      model: 'Konica Minolta C658',
+      modelNumber: '21K0300',
+      image: 'c658.webp',
+      PagesPerMinute: '65',
+      paperSize: '12 x 18',
+      ScanSpeed: '240 per minute',
+      timeOut: '6.5 ',
+      type: 'Multicolor',
+      brand: 'konica',
+      description:
+        'The C658 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.',
+    },
+    {
+      model: 'Konica Minolta C758',
+      modelNumber: 'Bizhub C758',
+      image: 'c758.webp',
+      PagesPerMinute: '75',
+      brand: 'konica',
+      paperSize: '12 x 18',
+      ScanSpeed: '120',
+      timeOut: '3.6 ',
+      description:
+        'The C758 is a heft workforce copier-printer with a footpring only a couple inches larger than a typical copier. Its internal parts are more robust to handle higher speeds, volume, and longevity.',
+      type: 'Multicolor',
+    },
+    {
+      model: 'Konica Minolta C558',
+      modelNumber: 'Bizhub C458',
+      image: 'C558.webp',
+      brand: 'konica',
+      PagesPerMinute: '55',
+      paperSize: '12 x 18',
+      ScanSpeed: '80',
+      timeOut: '4.4 ',
+      type: 'Multicolor',
+      description:
+        'The C558 is a speedy workhorse copier, offering a robust platform fit for high volumes or longevity in smaller offices',
+    },
+    {
+      model: 'Konica Minolta C368',
+      modelNumber: 'Bizhub C350i',
+      image: 'c368.webp',
+      PagesPerMinute: '43',
+      brand: 'konica',
+      paperSize: '12 x 18',
+      ScanSpeed: '160',
+      timeOut: '6.5 ',
+      type: 'Multicolor',
+      description:
+        'The C368 is a meduium sized office copier-printer with premier color quality and all the functionality of a large office copier. ',
+    },
+    {
+      model: 'Konica Minolta C258',
+      modelNumber: 'Bizhub C258',
+      image: 'c258.webp',
+      PagesPerMinute: '25',
+      brand: 'konica',
+      paperSize: '12/ x 18',
+      timeOut: '7.3 ',
+      type: 'Multicolor',
+      description:
+        'The C258 is a small office copier-printer with all the functionality and options of a large office copier. This is our most cost effective 12x18-capable rebuilt machine that does not sacrifice any color quality.',
+    },
+    {
+      model: 'Konica Minolta C308',
+      modelNumber: 'Bizhub C300i',
+      image: 'C308.webp',
+      PagesPerMinute: '30',
+      paperSize: '8.3 x 11.7',
+      brand: 'konica',
+      timeOut: '6 ',
+      type: 'Multicolor',
+      description:
+        'The C308 is a small-medium sized office copier-printer with premier color quality and all the functionality of a large office copier.',
+    },
+    {
+      model: 'Konica Minolta C458',
+      PagesPerMinute: '45',
+      modelNumber: 'Bizhub C458',
+      image: 'C458.webp',
+      brand: 'konica',
+      paperSize: '12 x 18',
+      ScanSpeed: '120',
+      timeOut: '5.1 ',
+      type: 'Multicolor',
+      description:
+        'The C458 is out most popular copier-printer. It is ideal for most sized offices, provides top color quality, and full functionality and speed to handel every office need.',
+    },
+    // {
+    //   model: 'Lexmark C4140',
+    //   PagesPerMinute: '40',
+    //   modelNumber: '40C9708',
+    //   image: 'xc4140.webp',
+    //   paperSize: '29.9 x 21',
+    //   ScanSpeed: '60',
+    //   timeOut: '6.5 ',
+    // },
+    {
+      model: 'Lexmark XC6152',
+      modelNumber: ' 7563-197',
+      PagesPerMinute: '52',
+      image: 'xc6152.webp',
+      paperSize: '44.8 x 25.54',
+      ScanSpeed: '120',
+      brand: 'lexmark',
+      type: 'Multicolor',
+      timeOut: '6.5 ',
+      description:
+        'The XC6253 was designed for pure efficiency and includes a stapler and three drawers in a standard mass-produced package suited for virtually every office needs. This is one of our top performers in a budget friendly package. ',
+    },
+  ])
   const router = useRouter()
 
   const tawkMessengerRef = useRef()
@@ -103,231 +216,61 @@ const Multicolor = () => {
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C658</div>
-            <Image src="/static/c658.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
+          {copiers.map((copier) => {
+            return (
+              <div className={styles.box}>
+                <div className={styles.titleBlackSmall}>{copier.model}</div>
+                <div>
+                  <Image
+                    src={`/static/${copier.image}`}
+                    width={200}
+                    height={200}
+                  ></Image>
                 </div>
-                <div>*</div>
-                <div className={styles.rowNumber}>
-                   New And Refurbished Available
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C758</div>
-            <Image src="/static/c758.webp" width={200} height={170}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C558</div>
-            <Image src="/static/c558.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Details</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
+                <div className={styles.somethingContainer}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <button
+                      onClick={() => {
+                        router.push('/Product')
+                        localStorage.setItem('Image', `${copier.image}`)
+                        localStorage.setItem('Model', `${copier.model}`)
+                        localStorage.setItem(
+                          'PagesPerMinute',
+                          `${copier.PagesPerMinute}`,
+                        )
+                        localStorage.setItem('paperSize', `${copier.paperSize}`)
+                        localStorage.setItem('brand', `${copier.brand}`)
+                        localStorage.setItem('timeOut', `${copier.timeOut}`)
+                        localStorage.setItem('type', `${copier.type}`)
+                        localStorage.setItem(
+                          'description',
+                          `${copier.description}`,
+                        )
+                      }}
+                      className={styles.button}
+                    >
+                      See Details
+                    </button>
+                  </div>
+                  <div className={styles.fifty}>
+                    <div className={styles.rowNumber}>
+                      <div className={styles.numberContainer}>
+                        Model Number:
+                      </div>
+                      <div>{copier.modelNumber}</div>
+                    </div>
+                    <div className={styles.rowNumber}></div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C368</div>
-            <Image src="/static/c458.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C258</div>
-            <Image src="/static/c308.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C308</div>
-            <Image src="/static/c308.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Konika Minolta C458</div>
-            <Image src="/static/c458.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark XC4140</div>
-            <Image src="/static/xc4140.webp" width={150} height={150}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark XC6152</div>
-            <Image src="/static/xc6152.webp" width={150} height={150}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>See Options</button>  
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
       <Footer />

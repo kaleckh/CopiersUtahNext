@@ -6,13 +6,86 @@ import Footer from './Footer'
 import Sliver from './Sliver'
 import { useRouter } from 'next/router'
 
-import styles from '../styles/Refurbished.module.css'
+import styles from '../styles/Stuff.module.css'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
 const BlackWhite = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [number, setNumber] = useState('')
   const [message, setMessage] = useState('this is the test message')
+  const [copiers, setCopiers] = useState([
+    {
+      model: 'Lexmark C6160 Desktop Printer',
+      modelNumber: '21K0300',
+      image: 'm5255.webp',
+      PagesPerMinute: '60',
+      paperSize: '8.5 x 14',
+      ScanSpeed: '57',
+      timeOut: '6.5 Seconds',
+      brand: 'lexmark',
+      type: 'Desktop',
+    },
+    {
+      model: 'Lexmark C4342 Desktop Multifunction Printer',
+      modelNumber: '47C9343',
+      image: 'C4342.webp',
+      PagesPerMinute: '42',
+      paperSize: '8.5 x 14',
+      ScanSpeed: '80',
+      brand: 'lexmark',
+      timeOut: '6.4 Seconds',
+      type: 'Desktop',
+    },
+    {
+      model: 'Lexmark C4150 Desktop Printer',
+      modelNumber: '5028-6A9',
+      image: 'C4150.webp',
+      PagesPerMinute: '50',
+      paperSize: '7.3 x 10.5',
+      ScanSpeed: '50',
+      timeOut: '6.5 ',
+      brand: 'lexmark',
+      type: 'Desktop',
+    },
+    {
+      model: 'Lexmark XC4140 Desktop Multifunction Printer',
+      modelNumber: '40C9708',
+      image: 'xc4140.webp',
+      PagesPerMinute: '40',
+      paperSize: '8 x 11',
+      brand: 'lexmark',
+      ScanSpeed: '60',
+      timeOut: '6.5 ',
+      type: 'Desktop',
+    },
+    {
+      model: 'Lexmark M5255 Desktop Printer',
+      modelNumber: '4064-295',
+      image: 'm5255.webp',
+      PagesPerMinute: '50',
+      paperSize: '8.3 x 11.7',
+      brand: 'lexmark',
+      timeOut: '4.5 ',
+      type: 'Desktop',
+    },
+    {
+      model: 'Lexmark M3250 Desktop Multifunction Printer',
+      modelNumber: '4600-895',
+      image: 'm3250.webp',
+      PagesPerMinute: '50',
+      paperSize: '8.3 x 11.7',
+      brand: 'lexmark',
+      timeOut: '6 ',
+      type: 'Desktop',
+    },
+    // {
+    //   model: 'XM1242',
+    //   PagesPerMinute: '42',
+    //   paperSize: '8.5 x 14',
+    //   ScanSpeed: '45',
+    //   timeOut: '6.5 ',
+    // },
+  ])
   const router = useRouter()
 
   const tawkMessengerRef = useRef()
@@ -103,163 +176,61 @@ const BlackWhite = () => {
           <div className={styles.line}></div>
         </div>
         <div className={styles.grid}>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark xm7355</div>
-            <Image src="/static/xm7355.webp" width={100} height={150}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>Get Quote</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>xm7355 </div>
+          {copiers.map((copier) => {
+            return (
+              <div className={styles.box}>
+                <div className={styles.titleBlackSmall}>{copier.model}</div>
+                <div>
+                  <Image
+                    src={`/static/${copier.image}`}
+                    width={200}
+                    height={200}
+                  ></Image>
                 </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark xm5365</div>
-            <Image src="/static/m5255.webp" width={200} height={200}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>Get Quote!</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>M5255</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div style={{ width: '5%' }}>*</div>
-                  <div style={{ padding: '1px' }}>
-                    New And Refurbished Available
+                <div className={styles.somethingContainer}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <button
+                      onClick={() => {
+                        router.push('/Product')
+                        localStorage.setItem('Image', `${copier.image}`)
+                        localStorage.setItem('Model', `${copier.model}`)
+                        localStorage.setItem(
+                          'PagesPerMinute',
+                          `${copier.PagesPerMinute}`,
+                        )
+                        localStorage.setItem('paperSize', `${copier.paperSize}`)
+                        localStorage.setItem('brand', `${copier.brand}`)
+                        localStorage.setItem('timeOut', `${copier.timeOut}`)
+                        localStorage.setItem('type', `${copier.type}`)
+                        localStorage.setItem(
+                          'description',
+                          `${copier.description}`,
+                        )
+                      }}
+                      className={styles.button}
+                    >
+                      See Details
+                    </button>
+                  </div>
+                  <div className={styles.fifty}>
+                    <div className={styles.rowNumber}>
+                      <div className={styles.numberContainer}>
+                        Model Number:
+                      </div>
+                      <div>{copier.modelNumber}</div>
+                    </div>
+                    <div className={styles.rowNumber}></div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark Xm5364</div>
-            <Image src="/static/xm5365.webp" width={150} height={150}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <button className={styles.button}>Get Quote!</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div style={{ width: '5%' }}>*</div>
-                  <div style={{ padding: '1px' }}>
-                    New And Refurbished Available
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark 7370</div>
-            <Image src="/static/xm7370.webp" width={200} height={160}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                
-                <button className={styles.button}>Get Quote!</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark 7370</div>
-            <Image src="/static/xm7370.webp" width={200} height={160}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                
-                <button className={styles.button}>Get Quote!</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.box}>
-            <div className={styles.titleBlackSmall}>Lexmark 7370</div>
-            <Image src="/static/xm7370.webp" width={200} height={160}></Image>
-            <div className={styles.somethingContainer}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                
-                <button className={styles.button}>Get Quote!</button>
-              </div>
-              <div className={styles.fifty}>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Model Number:</div>
-                  <div>123456</div>
-                </div>
-                <div className={styles.rowNumber}>
-                  <div className={styles.numberContainer}>Part Number:</div>
-                  <div>123456</div>
-                </div>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
       <Footer />

@@ -6,7 +6,7 @@ import Form from './Form'
 import Footer from './Footer'
 import Image from 'next/image'
 import { PatternFormat } from 'react-number-format'
-import styles from '../styles/lexmark.module.css'
+import styles from '../styles/Refurbished.module.css'
 import { useRouter } from 'next/router'
 import ReCAPTCHA from 'react-google-recaptcha'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react'
@@ -17,10 +17,16 @@ const Lexmark = () => {
   const tawkMessengerRef = useRef()
   const [gray, setGray] = useState(true)
   const [grayBottom, setGrayBottom] = useState(true)
+  const [brandDescription, setBrandDescription] = useState()
   const [quote, setQuote] = useState(false)
   const [model, setModel] = useState()
+  const [description, setDescription] = useState()
   const [image, setImage] = useState()
   const [type, setType] = useState()
+  const [timeOut, setTimeOut] = useState()
+  const [printSpeed, setPrintSpeed] = useState()
+  const [paperSize, setpaperSize] = useState()
+  const [modelNumber, setModelNumber] = useState()
   const handleMinimize = () => {
     tawkMessengerRef.current.minimize()
   }
@@ -32,13 +38,33 @@ const Lexmark = () => {
   }
   const captchaRef = useRef(null)
   useEffect(() => {
-    const storedModel = localStorage.getItem("Model");
-    const photo = localStorage.getItem("Image");
-    const back = localStorage.getItem("type");
-    setModel(storedModel);
+    const storedModel = localStorage.getItem('Model')
+    const photo = localStorage.getItem('Image')
+    const time = localStorage.getItem('timeOut')
+    const back = localStorage.getItem('type')
+    const speed = localStorage.getItem('PagesPerMinute')
+    const modelNumber = localStorage.getItem('modelNumber')
+    const paperSize = localStorage.getItem('paperSize')
+    const desc = localStorage.getItem('description')
+    setModel(storedModel)
     setImage(photo)
     setType(back)
-  }, []);
+    setPrintSpeed(speed)
+    setModelNumber(modelNumber)
+    setpaperSize(paperSize)
+    setTimeOut(time)
+    setDescription(desc)
+
+    if (localStorage.getItem('brand') === 'lexmark') {
+      setBrandDescription(
+        'Lexmark, formerly an IBM company, had produced hands down the most reliable machines ever built. Their modular construction ensures the most efficient paper path in the industry. Independent BLI testing proved their top copier models performing with only 1 jam after 1,000,000 copies tested. Their dominant 85% of the market share in pharmacuetical and medical establishments is a testament to their unrivaled reliability',
+      )
+    } else if((localStorage.getItem('brand') !== 'lexmark')) {
+      debugger
+      setBrandDescription("Konica Minolta offers the top color quality output in the industry. These machines are built to last with minimal disruption. With up to 12x18 paper sizes standard, there is nothing your office cannot do with these copiers.")
+    }
+  }, [])
+
   return (
     <div className={styles.main}>
       <Sliver />
@@ -87,11 +113,11 @@ const Lexmark = () => {
 
       <div
         style={{
-          height: '150vh',
+          height: '121vh',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
-          justifyContent: 'flex-start',
+          justifyContent: 'space-around',
         }}
       >
         <div className={styles.backContainer}>
@@ -105,6 +131,7 @@ const Lexmark = () => {
               fontWeight: '400',
               cursor: 'pointer',
               borderRadius: '100%',
+              
             }}
           >
             {' '}
@@ -117,9 +144,9 @@ const Lexmark = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={`/static/${image}`} width={300} height={250}/>
+            <Image src={`/static/${image}`} width={300} height={250} />
             <button
-              style={{width:"100%"}}
+              style={{ width: '100%' }}
               onClick={() => {
                 router.push('/buy')
               }}
@@ -127,12 +154,24 @@ const Lexmark = () => {
             >
               Request a quote
             </button>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <div style={{ padding: '5px' }} className={styles.title}>
+                Model Number:
+              </div>
+              <div className={styles.title}>{modelNumber}</div>
+            </div>
           </div>
           {quote ? (
             <Form />
           ) : (
-              <div className={styles.column}>
-                <div className={styles.title}>{model}</div>
+            <div className={styles.column}>
+              <div className={styles.bigTitle}>{model}</div>
               <div className={styles.aboutRow}>
                 <div
                   onClick={() => {
@@ -151,20 +190,19 @@ const Lexmark = () => {
                   <div className={styles.bulletContainer}>
                     <div className={styles.bullet}>1s</div>
                     <div className={styles.paragraphSmall}>
-                      The most reliable copier in the world!
+                      Print speeds at {printSpeed} pages per minute!
                     </div>
                   </div>
                   <div className={styles.bulletContainer}>
                     <div className={styles.bullet}>1s</div>
                     <div className={styles.paragraphSmall}>
-                      85% marketshare in HealthCare & Pharmacies because it
-                      always works.
+                      Largest print size is {paperSize} inches
                     </div>
                   </div>
                   <div className={styles.bulletContainer}>
                     <div className={styles.bullet}>1s</div>
                     <div className={styles.paragraphSmall}>
-                      Simple to use color, icon driven touch screen.
+                      First page out time is {timeOut} seconds
                     </div>
                   </div>
                   <div className={styles.bulletContainer}>
@@ -187,18 +225,10 @@ const Lexmark = () => {
             </div>
           )}
         </div>
-        <div style={{height:"40%"}} className={styles.konikaBottom}>
+        <div style={{ height: '40%' }} className={styles.konikaBottom}>
           <div className={styles.bottomProductContainer}>
-            <div className={styles.paragraph}>
-              Konica Minolta copiers are renowned for their exceptional
-              reliability, making them a trusted choice for businesses of all
-              sizes. With a long-standing reputation in the industry, Konica
-              Minolta has consistently delivered copiers that are built to last.
-              Their machines are designed with durability in mind, ensuring they
-              can handle high volumes of printing and copying without
-              compromising on performance.
-            </div>
-          
+            <div className={styles.paragraph}>{brandDescription}</div>
+            <div className={styles.paragraph}>{description}</div>
           </div>
         </div>
       </div>
