@@ -74,7 +74,7 @@ const BlackWhite = () => {
     {
       model: 'Lexmark XM9145 black and white printer',
       modelNumber: '7421-039',
-      image: 'XM9145.webp',
+      image: 'xm9145.webp',
       PagesPerMinute: '65',
       paperSize: '11 x 17 in',
       timeOut: '5.6',

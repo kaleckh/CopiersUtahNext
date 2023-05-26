@@ -27,7 +27,8 @@
 
 .main {
   width: 100%;
-  height: 190vh;
+  
+  height: fit-content;
   background-color: white;
 }
 
@@ -174,6 +175,7 @@
   flex-direction: column;
   cursor: pointer;
   align-items: center;
+  height: 500px;
 }
 
 .paragraphContainer {
@@ -306,6 +308,13 @@
 }
 .thirty {
   width: 30%;
+}
+.mainContainer{
+  height: 61%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .row {
   display: flex;
@@ -505,6 +514,16 @@
   justify-content: space-evenly;
   height: 100%;
 }
+.imageContainer{
+  width: 170px;
+  height: 250px;
+  position: relative;
+}
+.imageContainerSmall{
+  width: 150px;
+  height: 230px;
+  position: relative;
+}
 
 @media (width < 1200px) {
   .keyPointTitle {
@@ -552,9 +571,13 @@
   }
 }
 
+
 @media (max-width: 750px) {
   .konika {
     height: 36vh;
+  }
+  .title{
+    font-size: 20px;
   }
   .epson {
     height: 14vh;
@@ -578,8 +601,31 @@
     width: 95%;
     justify-content: space-around;
   }
+  .color{
+    font-size: 30px;
+    padding: 10px;
+  }
+  
   .container {
     width: 85vw;
+  }
+  .imageContainer{
+    width: 150px;
+    height: 150px;
+  }
+  .imageContainerSmall{
+    width: 100px;
+    height: 150px;
+  }
+  .mainContainer{
+    padding-top: 50px;
+    
+  }
+  .copierRow{
+    width: 100%;
+  }
+  .title{
+    padding: 20px;
   }
 }
 

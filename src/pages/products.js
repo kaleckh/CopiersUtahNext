@@ -97,15 +97,7 @@ const Products = () => {
       </div>
 
       <Header />
-      <div
-        style={{
-          height: '74%',
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      >
+      <div className={styles.mainContainer}>
         <h1 className={styles.color}>Our Top Products</h1>
         <div className={styles.centerLine}>
           <div className={styles.line} />
@@ -118,7 +110,9 @@ const Products = () => {
             className={styles.copierContainer}
           >
             <h2 className={styles.title}>Lexmark</h2>
-            <Image src={'/static/Lexmark.webp'} height={'270'} width={'170'}/>
+            <div className={styles.imageContainerSmall}>
+              <Image src={'/static/Lexmark.webp'} fill={true} />
+            </div>
           </div>
           <div
             className={styles.copierContainer}
@@ -127,7 +121,9 @@ const Products = () => {
             }}
           >
             <h2 className={styles.title}>Konica Minolta</h2>
-            <Image src={'/static/Konika.webp'} height={'300'} width={'300'} />
+            <div className={styles.imageContainer}>
+              <Image src={'/static/Konika.webp'} fill={true} />
+            </div>
           </div>
           <div
             className={styles.copierContainer}
@@ -136,8 +132,10 @@ const Products = () => {
             }}
           >
             <h2 className={styles.title}>Epson</h2>
-            <Image src={'/static/epsonL.webp'} height={'300'} width={'200'} />
-            <div style={{ marginTop: '40px' }} className={styles.epson} />
+            <div className={styles.imageContainer}> 
+              <Image src={'/static/epsonL.webp'} fill={true} />
+            </div>
+            
           </div>
         </div>
       </div>

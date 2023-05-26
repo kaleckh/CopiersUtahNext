@@ -274,7 +274,8 @@
   display: flex; 
   justify-content: flex-end; 
   letter-spacing:1px; 
-  padding-right:20px
+  padding-right:20px;
+  width:100%
 }
 .title {
   font-size: 30px;
@@ -661,6 +662,10 @@
 @media (max-width: 640px) {
   .woman {
     display: none;
+  }
+  .sliver{
+    font-size: 12px;
+    width: 100%;
   }
   
   .eighty{
