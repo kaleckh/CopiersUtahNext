@@ -124,7 +124,7 @@ const Lexmark = () => {
 
       <div
         style={{
-          height: '121vh',
+          height: 'fit-content',
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
@@ -154,7 +154,7 @@ const Lexmark = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={`/static/${image}`} width={300} height={250} />
+            <Image src={`/static/${image}`} width={200} height={150} />
             <button
               style={{ width: '100%' }}
               onClick={() => {

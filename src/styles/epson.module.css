@@ -548,6 +548,12 @@
   .konika {
     height: 36vh;
   }
+  .paragraph{
+    font-size: 20px;
+  }
+  .bulletContainer{
+    padding: 3px;
+  }
   .epson {
     height: 14vh;
     width: 26vw;
@@ -555,8 +561,19 @@
   .row {
     width: 100%;
   }
-  .bulletContainer {
-    padding: 8px;
+  .konikaBottom{
+    width: 100%;
+  }
+  .bottomProductContainer{
+    text-align: center;
+    width: 100%;
+    
+  }
+  .titleMid{
+    font-size: 15px;
+  }
+  .button{
+    width: 85%;
   }
 }
 
@@ -594,6 +611,6 @@
   }
   .button {
     font-size: 13px;
-    width: 80%;
+    
   }
 }

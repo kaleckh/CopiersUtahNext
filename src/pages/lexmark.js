@@ -76,7 +76,8 @@ const Lexmark = () => {
 
       <div
         style={{
-          height: '150vh',
+          height: 'fit-content',
+          padding:"20px",
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
@@ -106,7 +107,7 @@ const Lexmark = () => {
         </div>
         <div className={styles.row}>
           <div className={styles.copierContainer}>
-            <Image src={'/static/Lexmark.webp'} height={300} width={200}/>
+            <Image src={'/static/Lexmark.webp'} height={150} width={100}/>
             <button
               onClick={() => {
                 router.push('/buy')

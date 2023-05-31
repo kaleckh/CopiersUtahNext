@@ -76,7 +76,8 @@ const Epson = () => {
 
       <div
         style={{
-          height: '190vh',
+          height: 'fit-content',
+          padding:"20px",
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
